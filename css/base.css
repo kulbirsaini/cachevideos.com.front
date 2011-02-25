@@ -118,5 +118,8 @@ p.incr, .incr p {font-size: 10px;line-height: 1.44em; margin-bottom: 1.5em;}
 
 .navi { height: 60px; }
 h2 a:hover { color: #000; text-decoration: underline; }
-.hidden { visibility: hidden; height: 0px; }
+li.hidden, li.hidden .page-content { visibility: hidden; height: 0px; }
 .pages { margin-top: 20px; }
+.navi h2 { font-size: 150%; }
+table { margin-bottom: 0; }
+.paypal-page { margin: 10px 0px 0px 40px; }

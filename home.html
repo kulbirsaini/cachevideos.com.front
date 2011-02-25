@@ -22,7 +22,7 @@
     </script>
     <script type="text/javascript">
       jQuery(document).ready(function() {
-        $('.menu-item a').bind('click', function(){
+        $('a.menu-item').bind('click', function(){
           display_page($(this).attr('href'));
           return false;
         });
@@ -39,68 +39,152 @@
     <div class="container ">
       <div id="menu">
         <div id="color">
-          <div class="pad-3 colora navi"><h2 class="menu-item active" style="opacity: 0.4;"><a href="#home">Home</a></h2></div>
-          <div class="pad-3 colorb navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#pricing">Pricing</a></h2></div>
-          <div class="pad-3 colorc navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#install">Install</a></h2></div>
-          <div class="pad-3 colord navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#configure">Configure</a></h2></div>
+          <div class="pad-3 colora navi"><h2 class="active" style="opacity: 0.4;"><a class="menu-item" href="#home">Home</a></h2></div>
+          <div class="pad-3 colorb navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#pricing">Pricing</a></h2></div>
+          <div class="pad-3 colorc navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#install">Install</a></h2></div>
+          <div class="pad-3 colord navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#configure">Configure</a></h2></div>
           <div class="pad-3 colore navi"><h2 style="opacity: 0.4;"><a href="/">Support</a></h2></div>
-          <div class="pad-3 colorf navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#faqs">FAQs</a></h2></div>
+          <div class="pad-3 colorf navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
           <div class="pad-3 colorg navi lastPad"> <h2 style="opacity: 0.4;"><a href="/contact">Contact</a></h2></div>
           <br class="clear" />
         </div>
 
         <ul class="span-23 pages">
-          <li id="home" class='page'>
-            <div class="page-content">
-              <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
-              <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
+          <li id="home" class='hidden page'>
+          <div class="page-content">
+            <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
+            <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
+            <br class="clear" />
+
+            <div class="span-10">
+              <h3><strong>Supported Websites</strong></h3>
+              <p>Videocache currently supports the caching of dynamically served videos from the following websites</p>
+              <ol>
+                <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com. This includes the youtube videos served from Google (googlevideo.com) servers.</li>
+                <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
+                <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
+                <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
+                <li><strong>Bing &amp; MSN</strong> Videos - Video.bing.com</li>
+                <li><strong>Blip TV</strong> Videos - Blip.tv</li>
+                <li><strong>Break</strong> Videos - Break.com</li>
+                <li><strong>Red Tube</strong> Videos - Redtube dot com</li>
+                <li><strong>X Tube</strong> Videos - Xtube dot com</li>
+                <li><strong>You P0rn</strong> Videos - Youporn dot com</li>
+                <li><strong>Tube 8</strong> Videos - Tube8 dot com</li>
+                <li><strong>Wrzuta</strong> Audio &amp; Videos - Wrzuta.pl</li>
+              </ol>
+              <br class="clear" />
+            </div>
+
+            <div class="span-12">
+              <h3><strong>Supported Operating Systems</strong></h3>
+              <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong> provided the following required packages are installed and working.</p>
+              <ol>
+                <li><strong>Squid</strong> &gt;= 2.6.Stable21 or 3.x</li>
+                <li><strong>Python</strong> &gt;= 2.4.3</li>
+                <li><strong>Python-iniparse</strong> (Any version)</li>
+                <li><strong>Apache</strong> (Any version)</li>
+              </ol>
               <br class="clear" />
 
-              <div class="span-10">
-                <h3><strong>Supported Websites</strong></h3>
-                <p>Videocache currently supports the caching of dynamically served videos from the following websites</p>
-                <ol>
-                    <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com. This includes the youtube videos served from Google (googlevideo.com) servers.</li>
-                    <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
-                    <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
-                    <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
-                    <li><strong>Bing &amp; MSN</strong> Videos - Video.bing.com</li>
-                    <li><strong>Blip TV</strong> Videos - Blip.tv</li>
-                    <li><strong>Break</strong> Videos - Break.com</li>
-                    <li><strong>Red Tube</strong> Videos - Redtube dot com</li>
-                    <li><strong>X Tube</strong> Videos - Xtube dot com</li>
-                    <li><strong>You P0rn</strong> Videos - Youporn dot com</li>
-                    <li><strong>Tube 8</strong> Videos - Tube8 dot com</li>
-                    <li><strong>Wrzuta</strong> Audio &amp; Videos - Wrzuta.pl</li>
-                </ol>
-                <br class="clear" />
-              </div>
+              <p>Videocache also works on <strong>Mac OS X</strong>. It also works on <strong>Microsoft Windows</strong> with Cygwin. (<strong>Note: </strong> We don't support these platforms officially.)</p>
+              <br class="clear" />
 
-              <div class="span-12">
-                <h3><strong>Supported Operating Systems</strong></h3>
-                <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong> provided the following required packages are installed and working.</p>
-                <ol>
-                    <li><strong>Squid</strong> &gt;= 2.6.Stable21 or 3.x</li>
-                    <li><strong>Python</strong> &gt;= 2.4.3</li>
-                    <li><strong>Python-iniparse</strong> (Any version)</li>
-                    <li><strong>Apache</strong> (Any version)</li>
-                </ol>
-                <br class="clear" />
-
-                <p>Videocache also works on <strong>Mac OS X</strong>. It also works on <strong>Microsoft Windows</strong> with Cygwin. (<strong>Note: </strong> We don't support these platforms officially.)</p>
-                <br class="clear" />
-
-                <h3><strong>Supported Video Formats</strong></h3>
-                <p>Videocache currently supports caching of following audio/video formats from the websites specified above: flv, 3gp, mp3, wmv, mp4, rm, ram, mov, avi, m4v</p>
-                <br class="clear" />
-              </div>
+              <h3><strong>Supported Video Formats</strong></h3>
+              <p>Videocache currently supports caching of following audio/video formats from the websites specified above: flv, 3gp, mp3, wmv, mp4, rm, ram, mov, avi, m4v</p>
+              <br class="clear" />
             </div>
+          </div>
           </li>
 
-          <li id="pricing" class="hidden page">
-            <div class="page-content">
-              WTF2
+          <li id="pricing" class="page">
+          <div class="page-content">
+            <div class="span-11">
+              <h3><strong>Package Availability</strong></h3>
+              <p><strong>Videocache</strong> is available in two formats.</p>
+              <ol>
+                <li><strong>RPM</strong> - Binary for rpm based distros like Red Hat, Fedora, CentOS, OpenSuSE etc.</li>
+                <li><strong>Source Archive</strong> - In case your distro doesn't support RPM, you can use the source archive (.tar.gz) and install Videocache using setup script included in the package. Intended for Ubuntu, Debian, BSD, Slackware users.</li>
+              </ol>
+              <br class="clear" />
             </div>
+
+            <div class="span-10">
+              <h3><strong>Latest Version</strong></h3>
+              <p>Latest version of Videocache is <strong>1.9.8</strong>. Videocache Bundle is one file containing the two packages (rpm and tar.gz) in one archive. With this package, you get free support via <a href="/forum">Support Forums</a>. We will mail you the software bundle within 24 hours of the purchase.</p>
+              <br class="clear" />
+            </div>
+            <hr class="space" />
+
+            <div class="span-11">
+              <h3><strong>Purchase License</strong></h3>
+              <p><strong>Note:</strong> If you don't have <strong>PayPal</strong>, you can pay using <strong>moneybookers.com, Western Union</strong> or other means. Please contact using <a href="/contact/">Contact Link</a> for alternate payment methods.</p>
+              <div class="paypal-page">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Download') } catch(err) {}; return true;">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
+                  <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
+                  <select name="os0" class="clear" style="margin-bottom:8px;">
+                    <option value="One Server">One Server $199.00</option>
+                    <option value="Two Servers">Two Servers $369.00</option>
+                    <option value="Three Servers">Three Servers $499.00</option>
+                  </select>
+                  <div class="clear"></div>
+                  <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
+                  <br class="clear" />
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                </form>
+              </div>
+              <br class="clear" />
+            </div>
+
+            <div class="span-11">
+              <h3><strong>Upgrade License</strong></h3>
+              <p>If your Videocache license has expired, then renew your license using the simple form below to receive upgrades in future.</p>
+              <div class="paypal-page">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Download') } catch(err) {}; return true;">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
+                  <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
+                  <select name="os0" class="clear" style="margin-bottom:8px;">
+                    <option value="One Server">One Server $99.00</option>
+                    <option value="Two Servers">Two Servers $179.00</option>
+                    <option value="Three Servers">Three Servers $249.00</option>
+                  </select>
+                  <div class="clear"></div>
+                  <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
+                  <br class="clear" />
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+                  <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                </form>
+              </div>
+              <br class="clear" />
+            </div>
+            <hr class="space" />
+
+            <div class="span-7">
+              <h3><strong>Installation</strong></h3>
+              <p>Installing Videocache is an easy process which is extensively documented in INSTALL file included in the source package. You can also check the instructions on <a class="menu-item" href="#install">Installation Page</a> for details on how to install videocache on different operating systems.</p>
+              <br class="clear" />
+            </div>
+
+            <div class="span-7">
+              <h3><strong>Configuration</strong></h3>
+              <p>Videocache is controlled by the configuration file located at <em>/etc/videocache.conf</em>. Please follow instructions on <a class="menu-item" href="#configure">Configuration Page</a> for details on how to configure videocache to get the most out of your bandwidth.</p>
+              <br class="clear" />
+            </div>
+
+            <div class="span-7">
+              <h3><strong>Support</strong></h3>
+              <p>Though we test Videocache thoroughly before releasing the new version, some issues may remain unnoticed. In case you are face any problem or stuck while installing or configuring videocache, use our <a href="/forum">Support Forums</a> to get help.</p>
+              <br class="clear" />
+            </div>
+          </div>
           </li>
 
           <li id="install" class="hidden page">
