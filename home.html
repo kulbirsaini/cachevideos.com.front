@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8">
+    <title>Cache Videos Using Squid | Videocache</title>
+    <meta name="description" content="Videocache is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine." />
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="css/base.css" type="text/css" media="screen, projection" />
+    <link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js'></script>
+    <script type="text/javascript" src='js/easyslider.js'></script>
+    <script type="text/javascript">
+      $(function() {
+        $('.active').css({'opacity' : .8});
+        $('.navi').hover(function(){
+          $(this).children('h2:not(.active)').animate({'opacity' : .8}, 200);
+        }, 
+        function(){
+          $(this).children('h2:not(.active)').animate({'opacity' : .4}, 100)
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        $('.menu-item a').bind('click', function(){
+          display_page($(this).attr('href'));
+          return false;
+        });
+      });
+      function display_page(page_id) {
+        $('.pages li.page').attr('class', 'hidden page');
+        $(page_id).attr('class', 'page');
+        return false;
+      };
+    </script>
+
+  </head>
+  <body class="">
+    <div class="container ">
+      <div id="menu">
+        <div id="color">
+          <div class="pad-3 colora navi"><h2 class="menu-item active" style="opacity: 0.4;"><a href="#home">Home</a></h2></div>
+          <div class="pad-3 colorb navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#pricing">Pricing</a></h2></div>
+          <div class="pad-3 colorc navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#install">Install</a></h2></div>
+          <div class="pad-3 colord navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#configure">Configure</a></h2></div>
+          <div class="pad-3 colore navi"><h2 style="opacity: 0.4;"><a href="/">Support</a></h2></div>
+          <div class="pad-3 colorf navi"><h2 class="menu-item" style="opacity: 0.4;"><a href="#faqs">FAQs</a></h2></div>
+          <div class="pad-3 colorg navi lastPad"> <h2 style="opacity: 0.4;"><a href="/contact">Contact</a></h2></div>
+          <br class="clear" />
+        </div>
+
+        <ul class="span-23 pages">
+          <li id="home" class='page'>
+            <div class="page-content">
+              <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
+              <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
+              <br class="clear" />
+
+              <div class="span-10">
+                <h3><strong>Supported Websites</strong></h3>
+                <p>Videocache currently supports the caching of dynamically served videos from the following websites</p>
+                <ol>
+                    <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com. This includes the youtube videos served from Google (googlevideo.com) servers.</li>
+                    <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
+                    <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
+                    <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
+                    <li><strong>Bing &amp; MSN</strong> Videos - Video.bing.com</li>
+                    <li><strong>Blip TV</strong> Videos - Blip.tv</li>
+                    <li><strong>Break</strong> Videos - Break.com</li>
+                    <li><strong>Red Tube</strong> Videos - Redtube dot com</li>
+                    <li><strong>X Tube</strong> Videos - Xtube dot com</li>
+                    <li><strong>You P0rn</strong> Videos - Youporn dot com</li>
+                    <li><strong>Tube 8</strong> Videos - Tube8 dot com</li>
+                    <li><strong>Wrzuta</strong> Audio &amp; Videos - Wrzuta.pl</li>
+                </ol>
+                <br class="clear" />
+              </div>
+
+              <div class="span-12">
+                <h3><strong>Supported Operating Systems</strong></h3>
+                <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong> provided the following required packages are installed and working.</p>
+                <ol>
+                    <li><strong>Squid</strong> &gt;= 2.6.Stable21 or 3.x</li>
+                    <li><strong>Python</strong> &gt;= 2.4.3</li>
+                    <li><strong>Python-iniparse</strong> (Any version)</li>
+                    <li><strong>Apache</strong> (Any version)</li>
+                </ol>
+                <br class="clear" />
+
+                <p>Videocache also works on <strong>Mac OS X</strong>. It also works on <strong>Microsoft Windows</strong> with Cygwin. (<strong>Note: </strong> We don't support these platforms officially.)</p>
+                <br class="clear" />
+
+                <h3><strong>Supported Video Formats</strong></h3>
+                <p>Videocache currently supports caching of following audio/video formats from the websites specified above: flv, 3gp, mp3, wmv, mp4, rm, ram, mov, avi, m4v</p>
+                <br class="clear" />
+              </div>
+            </div>
+          </li>
+
+          <li id="pricing" class="hidden page">
+            <div class="page-content">
+              WTF2
+            </div>
+          </li>
+
+          <li id="install" class="hidden page">
+            <div class="page-content">
+              WTF3
+            </div>
+          </li>
+
+          <li id="configure" class="hidden page">
+            <div class="page-content">
+              WTF4
+            </div>
+          </li>
+
+          <li id="faqs" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="span-15 statement">
+        <div class="span-7">
+          <h1 id="clients" class="section">Client Projects</h1>
+          <h4>Below is a selection of our recent commercial consulting work.</h4>
+          <hr class="space" />
+
+          <h3><a class="external" href="http://mozilla.org/">Mozilla Foundation</a></h3>
+          <p>Bocoup is working in partnership with Mozilla <a href="http://www.drumbeat.org/webmademovies" title="Mozilla's Open Video Lab">Web Made Movies</a> project and <a href="http://cdot.senecac.on.ca/">CDOT</a> on the development of <a href="http://popcornjs.org">Popcorn JS</a>, a JavaScript Framework for HTML5 Video, and Butter, a point and click authoring tool for Popcorn.
+          </p>
+
+          <hr class="space" />
+
+        </div>
+
+        <div class="prepend-1 span-7 last">
+          <h1 id="training" class="section">Training</h1>
+
+          <h4>Bocoup offers comprehensive JavaScript and HTML5 training onsite and at Bocoup.</h4>
+          <hr class="space" />
+
+          <h3><a href="http://training.bocoup.com/comprehensive-jquery-training-2011-03-02/">Comprehensive jQuery Training</a></h3>
+          <p>March 2-4th, 2011 | 9:30am - 5:00pm | <strong>$1199</strong></p>
+          <p><strong><a href="http://training.bocoup.com/comprehensive-jquery-training-2011-03-02/">Read More</a></strong> | <strong><a href="http://www.eventbrite.com/event/955968327">Reserve A Seat &rarr;</a></strong></p>
+
+          <hr class="space"/>
+        </div>
+      </div>
+      <div class="span-8 prepend-1 last">
+        <h1 id="code" class="section">Open Source</h1>
+        <h4>Below are some of the open source projects that Bocoup has produced and has been contributing to.</h4>
+        <hr class="space" />
+        <div class="project" id="w3c">
+          <h3><a class="external" href="http://www.w3.org/2010/04/audio/audio-incubator-charter.html">W3C Audio Incubator Group</a></h3>
+          <p>We have a member chairing the W3C Audio Incubator Group, facillitating technical discussions between The Mozilla Foundation, The Department of Informatics PUC-Rio, The BBC, Google and other invited experts.</p>
+        </div>
+        <hr class="space"/>
+      </div>
+      <hr class="space" />
+      <hr class="space" />
+      <hr class="space" />
+      <hr class="space" />
+
+      <hr class="space" />
+      <hr class="full"/>
+      <h2 class="center">
+        Copyright &copy; 2008-2011 Kulbir Saini.
+      </h2>
+      <hr class="space" />
+      <hr class="space" />
+    </div><!--end .container-->
+  </body>
+</html>

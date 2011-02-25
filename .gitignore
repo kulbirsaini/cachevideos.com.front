@@ -1,0 +1,9 @@
+.bundle
+db/*.sqlite3
+log/*
+tmp/quotes
+.*.sw*
+private/data/
+*.*sql
+*.src.js
+webrat.log
