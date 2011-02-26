@@ -22,23 +22,36 @@
     <script type="text/javascript">
       var pages = Array('#home', '#pricing', '#install', '#configure', '#faqs', '#upgrade', '#upgrade-policy', '#vc-cleaner', '#vc-update', 'vc-scheduler', '#response-codes', '#changelog');
       jQuery(document).ready(function() {
+        // Main Menu
         $('a.menu-item').bind('click', function(){
           display_page($(this).attr('href'));
           return false;
         });
+        // Direct landing
         if (pages.indexOf(window.location.hash) > -1) { display_page(window.location.hash); };
+        $('div.options div.option').attr('class', 'hidden option');
+        $('#enable_videocache').attr('class', 'option');
       });
+      // Display page corresponding to the menu
       function display_page(page_id) {
         $('.pages li.page').attr('class', 'hidden page');
         $(page_id).attr('class', 'page');
         return false;
       };
+      // Switch tabs on install page
       function switch_tabs(cur_li, cur_tab, hide_tab) {
         $('.install-tabs li').attr('class', '');
         $(cur_li).attr('class', 'active');
         $(cur_tab).attr('class', '');
         $(hide_tab).attr('class', 'hidden');
         return false;
+      };
+      // Options on configure page
+      function switch_option_tab(cur_li, new_div) {
+        $('.option-tabs li').attr('class', '');
+        $(cur_li).attr('class', 'active');
+        $('div.options div.option').attr('class', 'hidden option');
+        $(new_div).attr('class', 'option');
       };
     </script>
 
@@ -195,7 +208,7 @@
           </div>
           </li>
 
-          <li id="install" class="page">
+          <li id="install" class="hidden page">
             <div class="page-content">
               <p>If you have not purchased <strong>Videocache</strong> license already, please go to <a class="menu-item" href="#pricing">Pricing Page</a> to purchase a license now.</p>
               <br class="clear" />
@@ -346,9 +359,398 @@
             </div>
           </li>
 
-          <li id="configure" class="hidden page">
+          <li id="configure" class="page">
             <div class="page-content">
-              WTF4
+              <p>Configuring <strong>Videocache</strong> is very easy. The configuration file for videocache is located at <em>/etc/videocache.conf</em>. Below is a brief explanation of different options used in <em>videocache.conf</em>.</p>
+              <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> If you change options in this file, please use the <a class="menu-item" href="#vc-update">Update Script</a> to update the videocache installation and restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</span></p>
+              <p>Click on the option name to get the details.</p>
+              <br class="clear" />
+
+              <ul class="option-tabs">
+                <li onclick="switch_option_tab(this, '#enable_videocache');" class='active'>enable_videocache</li>
+                <li onclick="switch_option_tab(this, '#client_email');">client_email</li>
+                <li onclick="switch_option_tab(this, '#offline_mode');">offline_mode</li>
+                <li onclick="switch_option_tab(this, '#videocache_user');">videocache_user</li>
+                <li onclick="switch_option_tab(this, '#cache_host');">cache_host</li>
+                <li onclick="switch_option_tab(this, '#base_dir');">base_dir</li>
+                <li onclick="switch_option_tab(this, '#max_cache_processes');">max_cache_processes</li>
+                <li onclick="switch_option_tab(this, '#proxy');">proxy</li>
+                <li onclick="switch_option_tab(this, '#proxy_username');">proxy_username</li>
+                <li onclick="switch_option_tab(this, '#proxy_password');">proxy_password</li>
+                <li onclick="switch_option_tab(this, '#hit_threshold');">hit_threshold</li>
+                <li onclick="switch_option_tab(this, '#max_video_size');">max_video_size</li>
+                <li onclick="switch_option_tab(this, '#min_video_size');">min_video_size</li>
+                <li onclick="switch_option_tab(this, '#disk_avail_threshold');">disk_avail_threshold</li>
+                <li onclick="switch_option_tab(this, '#enable_videocache_cleaner');">enable_videocache_cleaner</li>
+                <li onclick="switch_option_tab(this, '#video_lifetime');">video_lifetime</li>
+                <li onclick="switch_option_tab(this, '#logformat');">logformat</li>
+                <li onclick="switch_option_tab(this, '#logformat');">scheduler_logformat</li>
+                <li onclick="switch_option_tab(this, '#logformat');">cleaner_logformat</li>
+                <li onclick="switch_option_tab(this, '#timeformat');">timeformat</li>
+                <li onclick="switch_option_tab(this, '#logdir');">logdir</li>
+                <li onclick="switch_option_tab(this, '#logfile');">logfile</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_size');">max_logfile_size</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_backups');">max_logfile_backups</li>
+                <!--
+                <li onclick="switch_option_tab(this, '#logfile');">scheduler_logfile</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_size');">max_scheduler_logfile_size</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_backups');">max_scheduler_logfile_backups</li>
+                <li onclick="switch_option_tab(this, '#logfile');">cleaner_logfile</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_size');">max_cleaner_logfile_size</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_backups');">max_cleaner_logfile_backups</li>
+                <li onclick="switch_option_tab(this, '#logfile');">tracefile</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_size');">max_tracefile_size</li>
+                <li onclick="switch_option_tab(this, '#max_logfile_backups');">max_tracefile_backups</li>
+                -->
+                <li onclick="switch_option_tab(this, '#scheduler_pidfile');">scheduler_pidfile</li>
+                <li onclick="switch_option_tab(this, '#temp_dir');">temp_dir</li>
+                <li onclick="switch_option_tab(this, '#rpc_host');">rpc_host</li>
+                <li onclick="switch_option_tab(this, '#rpc_port');">rpc_port</li>
+                <li onclick="switch_option_tab(this, '#enable_youtube_cache');">enable_youtube_cache</li>
+              </ul>
+              <br class="clear" />
+              <br class="clear" />
+
+              <div class="options">
+                <div id="enable_videocache" class="option">
+                  <p>This option controls the global behavior of videocache plugin. If it is 0, videocache will stop caching or serving anything. This option&rsquo;s value can be either 0 or 1.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      enable_videocache = 1
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="client_email" class="option">
+                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
+                  <p>Please set this option to the email address using which you purchased Videocache license.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      client_email = &lt;blank&gt;
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="offline_mode" class="option">
+                  <p>When offline mode is enabled, videocache will serve the videos already in cache and will skip caching the new videos. When set to 0, videocache will cache new video and when set to 1, videocache will serve the already cached videos and will not cache the new videos it encounters.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      offline_mode = 0
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="videocache_user" class="option">
+                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
+                  <p>Use this option to set the user which should be running videocache scheduler. This user must be same as the squid user. On RedHat/CentOS/SuSE, it's generally <em>squid</em> and on Debian/Ubuntu/BSDs, it generally <em>proxy</em>.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      videocache_user = squid
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="cache_host" class="option">
+                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT</strong> : Please change this to actual IP address or domain name of your proxy server, otherwise videocache will not work properly.</span></p>
+                  <p>The hostname or IP address of the system on which caching is being done. This is used for serving the videos from the cache. Please don&rsquo;t use http:// or slashes (/). Just specify the domain name or IP address.</p>
+                  <p><strong>Example</strong> : proxy.example.com</p>
+                  <p>Additionally you can specifiy an alternative port to for HTTP. <strong>Example</strong> : 192.168.36.204:81</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      cache_host = 127.0.0.1
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="base_dir" class="option">
+                  <p>Base directories for caching the videos. You can specify multiple caching directories here separated by '|' symbol.</p>
+                  <p><strong>Example</strong>: To keep <em>/videocache1</em> and <em>/videocache2</em> as your cache directories, set <em>base_dir</em> to</p>
+                  <div class='code'>
+                    <pre>
+                      base_dir = /videocache/ | /videocache2
+                    </pre>
+                  </div>
+                  <p>Please avoid special characters in directory names like whitespaces, $ etc.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      base_dir = /var/spool/videocache/
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="max_cache_processes" class="option">
+                  <p>The maximum number of parallel cache processes allowed. If all connections are consumed, videos will be queued for caching.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      max_cache_processes = 30
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="proxy" class="option">
+                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> Use this option only when Videocache server should go through another proxy server.</span></p>
+                  <p>Proxy to be used for caching videos via HTTP.</p>
+                  <p><strong>Example</strong> : http://proxy.example.com:3128/ or http://192.0.2.25:8080/</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      proxy = &lt;blank&gt;
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="proxy_username" class="option">
+                  <p>If the proxy server specified using proxy option requires authentication, please specify the username.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      proxy_username = &lt;blank&gt;
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="proxy_password" class="option">
+                  <p>If the proxy server specified using proxy option requires authentication, please specify the password.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      proxy_password = &lt;blank&gt;
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="hit_threshold" class="option">
+                  <p>No of times a video should be requested before we cache it.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      hit_threshold = 2
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="max_video_size" class="option">
+                  <p>The video of size more than <em>max_video_size</em> (MegaBytes) will not be cached.</p>
+                  <p><strong>Example</strong> : If <em>max_video_size</em> = 50, videocache will not cache videos of size more than 50MB.  Set this to 0 to disable this check. Don't append MB.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      max_video_size = 0
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="min_video_size" class="option">
+                  <p>The video of size less than <em>min_video_size</em> (MegaBytes) will not be cached.</p>
+                  <p><strong>Example</strong> : If <em>min_video_size</em> = 2, videocache will not cache videos of size less than 2MB.  Set this to 0 to disable this check. Don't append MB.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      min_video_size = 0
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="disk_avail_threshold" class="option">
+                  <p>This option sets the minimum available free space in Mega Bytes that is left in a partition containing a cache directory before videocache treats that partition as FULL.</p>
+                  <p><strong>Example</strong> : If <em>disk_avail_threshold</em> = 200, videocache will stop caching videos in a cache directory if the free space available in that cache directory is less than 200 Mega Bytes.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      disk_avail_threshold = 1000
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="enable_videocache_cleaner" class="option">
+                  <p>Enables the videocache cleaner script which will remove videos from cache which have not been used since long. The value of this option can be 0 or 1.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      enable_videocache_cleaner = 1
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="video_lifetime" class="option">
+                  <p>The maximum life of a video in cache without being used. If the video was not accessed for more than <em>video_lifetime</em> days, it'll be removed from the cache. The unit of <em>video_lifetime</em> is days.</p>
+                  <p><strong>Example</strong> : <em>video_lifetime</em> = 15 will remove videos which were not used since last 15 or more days.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      video_lifetime = 30
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="logformat" class="option">
+                  <p>Logformat allows you to get log messages in your preferred format. This <em>logformat</em>, <em>scheduler_logformat</em>, <em>cleaner_logformat</em> are applicable to main videocache log, scheduler log and cleaner log respectively. Use the format codes described below.</p>
+                  <div class='code'>
+                    <pre>
+                      %  - A literal % character
+                      ts - Seconds since epoch
+                      tu - Time in millisecond
+                      tl - Local Time
+                      tg - GMT Time
+                      p  - Process ID of the process logging the message
+                      s  - Severity level of the log message
+                      i  - Client's IP address
+                      w  - Website ID (eg. YOUTUBE/GOOGLE/VIMEO etc.)
+                      c  - Status Code (CACHE_HIT/CACHE_MISS etc.)
+                      v  - Video ID of current video
+                      m  - Additional Message (for verbose logs)
+                      d  - Debug message (for debugging purpose)
+                    </pre>
+                  </div>
+                  <p><strong>Example</strong> : <em>logformat</em> = %ts %i %w %c %v</p>
+                  <p>Default Values:</p>
+                  <div class="code">
+                    <pre>
+                      logformat = %tl %p %s %i %w %c %v %m %d
+                      scheduler_logformat = %tl %p %s %i %w %c %v %m %d
+                      cleaner_logformat = %tl %p %s %w %c %v %m %d
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="timeformat" class="option">
+                  <p>You can use a custom format for displaying time in log messages. Use the format codes described below</p>
+                  <div class='code'>
+                    <pre>
+                      %a    Abbreviated weekday name (Sun, Mon, ...)
+                      %A    Full weekday name (Sunday, Monday, ...)
+                      %b    Abbreviated month name (Jan, Feb, Mar, ...)
+                      %B    Full month name (January, February, ...)
+                      %d    Day of the month as a decimal number [01..31]
+                      %H    Hour (24-hour clock) as a decimal number [00..23]
+                      %I    Hour (12-hour clock) as a decimal number [01..12]
+                      %j    Day of the year as a decimal number [001..366]
+                      %m    Month as a decimal number [01..12]
+                      %M    Minute as a decimal number [00..59]
+                      %p    Either AM or PM
+                      %S    Second as a decimal number [00..59]
+                      %y    Year without century as a decimal number [00..99]
+                      %Y    Year with century as a decimal number
+                    </pre>
+                  </div>
+                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> This format will be applicable to localtime and GMT time in the log messages.</span></p>
+                  <p><strong>Example</strong> : <em>timeformat</em> = %B %b, %Y %H:%M:%S</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      timeformat = %d/%b/%Y:%H:%M:%S
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="logdir" class="option">
+                  <p>Directory where videocache logs will be stored.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      logdir = /var/log/videocache/
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="logfile" class="option">
+                  <p>The name of log file can be specified using different logfile options. Please avoid any special characters in filename.</p>
+                  <p>Default Values:</p>
+                  <div class='code'>
+                    <pre>
+                      logfile = videocache.log
+                      scheduler_logfile = scheduler.log
+                      cleaner_logfile = cleaner.log
+                      tracefile = trace.log
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="max_logfile_size" class="option">
+                  <p>Maximum size of logfiles specified above. The size is in mega bytes. The log files will be rotated once they exceed the maximum specified size.</p>
+                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> Please don’t use <em>max_logfile_size</em> = 10MB. Don’t append MB.</span></p>
+                  <p>Default Values:</p>
+                  <div class='code'>
+                    <pre>
+                      max_logfile_size = 10
+                      max_scheduler_logfile_size = 10
+                      max_cleaner_logfile_size = 10
+                      max_tracefile_size = 10
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="max_logfile_backups" class="option">
+                  <p>The logfiles are automatically rotated once they have exceeded the <em>max_logfile_size</em>. The <em>max_logfile_backups</em> is the number of backup files you want to keep.</p>
+                  <p><strong>Example</strong> : <em>max_logfile_backups</em> = 2 will keep <em>videocache.log</em> and <em>videocache.log.1</em> and <em>videocache.log.2</em> as logfiles.</p>
+                  <p>Default Values:</p>
+                  <div class='code'>
+                    <pre>
+                      max_logfile_backups = 10
+                      max_scheduler_logfile_backups = 10
+                      max_cleaner_logfile_backups = 5
+                      max_tracefile_backups = 1
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="scheduler_pidfile" class="option">
+                  <p>The <em>scheduler_logfile</em> option can be used to specify the location of a file which will be used to track process ID of the currently running Videocache scheduler.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      scheduler_pidfile = /var/run/videocache.pid
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="temp_dir" class="option">
+                  <p>Directory to store partially cached videos. Directory name is relative to <em>base_dir</em>.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      temp_dir = tmp
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="rpc_host" class="option">
+                  <p>XMLRPC server is used for memory sharing across different instances of videocache. Leave these settings as it is if you don't have a fair idea of XMLRPC. This will be 127.0.0.1 in most cases.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      rpc_host = 127.0.0.1
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="rpc_port" class="option">
+                  <p>Please make sure this port is not currently in use. If it is in use by some other program, change this to some port above 1024 which is not in use by any other program.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      rpc_port = 9100
+                    </pre>
+                  </div>
+                </div>
+
+                <div id="enable_youtube_cache" class="option">
+                  <p>This option enables the caching of Youtube videos. This option&rsquo;s value can be either 0 or 1.</p>
+                  <p>Default value:</p>
+                  <div class='code'>
+                    <pre>
+                      enable_youtube_cache = 1
+                    </pre>
+                  </div>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -395,6 +797,12 @@
           </li>
 
           <li id="changelog" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+
+          <li id="restart" class="hidden page">
             <div class="page-content">
               WTF5
             </div>

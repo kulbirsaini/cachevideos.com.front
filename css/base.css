@@ -126,6 +126,10 @@ table { margin-bottom: 0; }
 span.number_title { font-size: 120%; font-weight: bold; padding-right: 5px; }
 div.code { background: #F8F8F8; border: 1px solid #bbb; padding: 0.5em; margin: 5px 0px 5px 25px; }
 div.code pre { white-space: pre-line; margin: 0; padding: 0px 10px; }
-ul.install-tabs { margin: 0; }
-.install-tabs li { float: left; margin: 0px; padding: 10px 0px 10px 20px; cursor: pointer; font-family: georgia, times, serif; margin: 0;color: #999;;font-size:1.6em;line-height:1;font-weight:bold;margin: 0 0 .2em 0; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 10px; border:1px solid;}
-.install-tabs li.active {color: #000; }
+
+ul.install-tabs, ul.option-tabs { margin: 0; }
+.install-tabs li { float: left; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:1.6em;line-height:1;font-weight:bold;margin: 0 0 .2em 0; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 10px; border:1px solid;}
+.install-tabs li.active, .option-tabs li.active {color: #000; }
+
+.option-tabs li { float: left; margin: 7px 6px 0px 0px; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:120%;line-height:1;font-weight:bold; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 3px; border:1px solid;}
+
