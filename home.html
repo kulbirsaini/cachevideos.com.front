@@ -359,7 +359,7 @@
             </div>
           </li>
 
-          <li id="configure" class="page">
+          <li id="configure" class="hidden page">
             <div class="page-content">
               <p>Configuring <strong>Videocache</strong> is very easy. The configuration file for videocache is located at <em>/etc/videocache.conf</em>. Below is a brief explanation of different options used in <em>videocache.conf</em>.</p>
               <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> If you change options in this file, please use the <a class="menu-item" href="#vc-update">Update Script</a> to update the videocache installation and restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</span></p>
@@ -762,13 +762,81 @@
 
           <li id="upgrade" class="hidden page">
             <div class="page-content">
-              WTF5
+              <p>Upgrading <strong>Videocache</strong> from one version to another is pretty easy. Just follow the easy steps below.</p>
+              <br class="clear" />
+
+              <h4><strong>Backup Configuration File</strong></h4>
+              <p>Take a backup of your current videocache configuration file normally located at <em>/etc/videocache.conf</em>. <strong>You don't need to backup cache directories as videocache doesn't recreate cache directories if they exist already</strong>.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# cp /etc/videocache.conf /etc/videocache.conf.back
+                </pre>
+              </div>
+              <br class="clear" />
+
+              <h4><strong>Install the New Version</strong></h4>
+              <p>Now copy the latest version of Videocache to your server and follow the instruction on <a class="menu-item" href="#install">Installation Page</a> to install Videocache normally.</p>
+              <br class="clear" />
+
+              <h4><strong>Configure Videocache</strong></h4>
+              <p>Now open the backed up configuration file and the new configuration file created by videocache in an editor. Compare the options in the two files and set the options in new configuration file appropriately.</p>
+              <br class="clear" />
+
+              <h4><strong>Run Update Script</strong></h4>
+              <p>Once you are done with the configuring Videocache, you need to run Videocache Update Script as shown.</p>
+              <div class='code'>
+                <pre>
+                  [root@localhost ~]# vc-update
+                </pre>
+              </div>
+              <p>For help related to vc-update, please check <a class="menu-item" href="#vc-update">Update Script Page</a>.</p>
+              <br class="clear" />
+
+              <h4><strong>Restart Videocache</strong></h4>
+              <p>After running the update script, restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</p>
+              <p>Thats all for upgrading videocache from one version to another. Now check videocache logs in <em>/var/log/videocache</em> directory for current videocache activity.</p>
             </div>
           </li>
 
           <li id="vc-cleaner" class="hidden page">
             <div class="page-content">
-              WTF5
+              <p><strong>Videocache Cleaner</strong> script was first introduced in version 1.9. This script helps you to remove stale videos from the cache directories. This script uses two options <a class="menu-item" href="#configure">enable_videocache_cleaner</a> and <a class="menu-item" href="#configure">video_lifetime</a> from the <em>/etc/videocache.conf</em> file. So, if the value of <em>video_lifetime</em> is 30, then all the videos which were not used since last 30 days will be purged from the cache.</p>
+              <br class="clear" />
+
+              <h4><strong>Usage</strong></h4>
+              <p>To use this script, set the appropriate value of <em>video_lifetime</em> and then run the following command</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# vc-cleaner
+                </pre>
+              </div>
+              <p><strong>OR</strong></p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# /usr/sbin/vc-cleaner
+                </pre>
+              </div>
+              <p>If you installed videocache with --prefix option, then you should run update script command as given below.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# vc-cleaner --prefix=/path/to/videocache/
+                </pre>
+              </div>
+              <p>For a list of available options with vc-cleaner command, use option -h as shown below.</p>
+              <div class='code'>
+                <pre lang="bash">
+                [root@localhost ~]# /usr/sbin/vc-cleaner -h
+                </pre>
+              </div>
+              <br class="clear" />
+
+              <h4><strong>Automate</strong></h4>
+              <p>This script is not run automatically. To run Videocache cleaner automatically, you can use the following crontab.</p>
+              <div class='code'>
+                <pre>
+                  0 4 * * * /usr/sbin/vc-cleaner
+                </pre>
+              </div>
             </div>
           </li>
 
@@ -780,7 +848,53 @@
 
           <li id="vc-update" class="hidden page">
             <div class="page-content">
-              WTF5
+              <p>The <strong>Videocache Update Script</strong> was first introduced in version 1.3. Update script helps in updating the videocache installation by creating cache and log directories and making other changes that you intend to make via the main configuration file <em>/etc/videocache.conf</em>. It also generates the new Apache configuration file for videocache to suit your new configuration. Let's learn the usage of update script with a sample scenario.</p>
+              <p><strong>IMPORTANT:</strong> <span style="color: rgb(255, 0, 0);">You must <a class="menu-item" href="#restart">Restart Videocache</a> after running the update script.<span></p>
+              <br class="clear" />
+              <h4><strong>Usage</strong></h4>
+              <p><strong>Scenario:</strong> You want to store the cached videos in <em>/videocache/</em> directory instead of <em>/var/spool/videocache/</em>.</p>
+              <p><strong>Solution:</strong> Change the <a class="menu-item" href="#configure">base_dir</a> option in <em>/etc/videocache.conf</em> file as shown below.</p>
+              <div class='code'>
+                <pre>
+                  base_dir = /videocache/
+                </pre>
+              </div>
+              <p>Then run update script script as root</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# update-vc
+                  Created : /videocache/
+                  Ownership changed : /videocache/
+                  Created : /videocache/vimeo
+                  Ownership changed : /videocache/vimeo
+                  Created : /videocache/youtube
+                  Ownership changed : /videocache/youtube
+                  Created : /videocache/metacafe
+                  Ownership changed : /videocache/metacafe
+                  Created : /videocache/tmp
+                  Ownership changed : /videocache/tmp
+                  ...
+                </pre>
+              </div>
+              <p><strong>OR</strong></p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# /usr/sbin/update-vc
+                </pre>
+              </div>
+              <p><strong>NOTE:</strong> The second command should be used if <em>/usr/sbin</em> is not in your <em>$PATH</em>.</p>
+              <p>If you installed videocache with --prefix option, then you should run update script command as shown below.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# update-vc --prefix=/path/to/videocache/
+                </pre>
+              </div>
+              <p>For a list of available options with vc-update command, use option -h as shown below.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# update-vc -h
+                </pre>
+              </div>
             </div>
           </li>
 
