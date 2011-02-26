@@ -29,8 +29,12 @@
         });
         // Direct landing
         if (pages.indexOf(window.location.hash) > -1) { display_page(window.location.hash); };
+        // Options
         $('div.options div.option').attr('class', 'hidden option');
         $('#enable_videocache').attr('class', 'option');
+        // Versions
+        $('div.versions div.version').attr('class', 'hidden version');
+        $('#version_198').attr('class', 'version');
       });
       // Display page corresponding to the menu
       function display_page(page_id) {
@@ -52,6 +56,13 @@
         $(cur_li).attr('class', 'active');
         $('div.options div.option').attr('class', 'hidden option');
         $(new_div).attr('class', 'option');
+      };
+      // Versions on changelog page
+      function switch_version_tab(cur_li, new_div) {
+        $('.version-tabs li').attr('class', '');
+        $(cur_li).attr('class', 'active');
+        $('div.versions div.version').attr('class', 'hidden version');
+        $(new_div).attr('class', 'version');
       };
     </script>
 
@@ -910,13 +921,345 @@
             </div>
           </li>
 
-          <li id="changelog" class="hidden page">
+          <li id="changelog" class="page">
             <div class="page-content">
-              WTF5
-            </div>
-          </li>
+              <p>Please click on a version to see the changes for that version.</p>
+              <br class="clear" />
 
-          <li id="restart" class="hidden page">
+              <ul class="version-tabs">
+                <li onclick="switch_version_tab(this, '#version_198');" class='active'>1.9.8</li>
+                <li onclick="switch_version_tab(this, '#version_197');">1.9.7</li>
+                <li onclick="switch_version_tab(this, '#version_196');">1.9.6</li>
+                <li onclick="switch_version_tab(this, '#version_195');">1.9.5</li>
+                <li onclick="switch_version_tab(this, '#version_194');">1.9.4</li>
+                <li onclick="switch_version_tab(this, '#version_193');">1.9.3</li>
+                <li onclick="switch_version_tab(this, '#version_192');">1.9.2</li>
+                <li onclick="switch_version_tab(this, '#version_191');">1.9.1</li>
+                <li onclick="switch_version_tab(this, '#version_19');">1.9</li>
+                <li onclick="switch_version_tab(this, '#version_18');">1.8</li>
+                <li onclick="switch_version_tab(this, '#version_17');">1.7</li>
+                <li onclick="switch_version_tab(this, '#version_16');">1.6</li>
+                <li onclick="switch_version_tab(this, '#version_15');">1.5</li>
+                <li onclick="switch_version_tab(this, '#version_14');">1.4</li>
+                <li onclick="switch_version_tab(this, '#version_13');">1.3</li>
+                <li onclick="switch_version_tab(this, '#version_12');">1.2</li>
+                <li onclick="switch_version_tab(this, '#version_11');">1.1</li>
+                <li onclick="switch_version_tab(this, '#version_10');">1.0</li>
+                <li onclick="switch_version_tab(this, '#version_09');">0.9</li>
+                <li onclick="switch_version_tab(this, '#version_08');">0.8</li>
+                <li onclick="switch_version_tab(this, '#version_07');">0.7</li>
+                <li onclick="switch_version_tab(this, '#version_06');">0.6</li>
+                <li onclick="switch_version_tab(this, '#version_05');">0.5</li>
+                <li onclick="switch_version_tab(this, '#version_04');">0.4</li>
+                <li onclick="switch_version_tab(this, '#version_03');">0.3</li>
+                <li onclick="switch_version_tab(this, '#version_02');">0.2</li>
+                <li onclick="switch_version_tab(this, '#version_01');">0.1</li>
+              </ul>
+              <br class="clear" />
+              <br class="clear" />
+
+              <div class='versions'>
+                <div id="version_198" class="version">
+                  <ul>
+                    <li></li>
+                  </ul>
+                </div>
+
+                <div id="version_197" class="version">
+                  <ul>
+                    <li>Fixed URL timeout bug.</li>
+                    <li>Youtube URL change fix.</li>
+                  </ul>
+                </div>
+
+                <div id="version_196" class="version">
+                  <ul>
+                    <li>New download system for Youtube/Google videos.</li>
+                    <li>squid.conf lines fixed.</li>
+                    <li>break.com issue fixed.</li>
+                    <li>Fixed problems with Vimeo, Tube8, Youporn, Bliptv, Break.</li>
+                    <li>Dailymotion testing.</li>
+                  </ul>
+                </div>
+
+                <div id="version_195" class="version">
+                  <ul>
+                    <li>Removed urlgrabber dependency.</li>
+                    <li>Improved logging.</li>
+                    <li>Changes to update script.</li>
+                  </ul>
+                </div>
+
+                <div id="version_194" class="version">
+                  <ul>
+                    <li>Fixed redtube caching.</li>
+                    <li>Using Exception instead of BaseException. BaseException is available only with python &gt;= 2.5.</li>
+                    <li>DOWNLOAD_ERR fixes. Better video_id linking for Youtube.</li>
+                    <li>Efficient youtube caching.</li>
+                    <li>Moved license to videocache directory.</li>
+                    <li>Youtube Download Error fixed.</li>
+                    <li>Youtube Videos now cached only once.</li>
+                  </ul>
+                </div>
+
+                <div id="version_193" class="version">
+                  <ul>
+                    <li>Docs and spec changes.</li>
+                    <li>Youtube new urls working.</li>
+                    <li>Manpage changes.</li>
+                  </ul>
+                </div>
+
+                <div id="version_192" class="version">
+                  <ul>
+                    <li>Fixed videocache to support new url formats for videos served by Youtube, Metacafe and RedTube.</li>
+                    <li>urllib2.splitquery has been moved to urllib.splitquery.</li>
+                  </ul>
+                </div>
+
+                <div id="version_191" class="version">
+                  <ul>
+                    <li>Entire plugin has been restructured.</li>
+                    <li>Base plugin is now totally separate from the caching process which will facilitate enhanced performance.</li>
+                    <li>Disk size calculation will no more hang up the plugin.</li>
+                    <li>Directory size is not calculated before every download now.</li>
+                    <li>The calculated size of the cache directories is cached for next 50 downloads.</li>
+                    <li>The caching mechanism is not based on time because cache size will not increase unless there is a download.</li>
+                    <li>The cached directory size stays with XMLRPC server.</li>
+                    <li>The size calculation is done in a forked daemon so that the normal plugin behavior is not affected.</li>
+                    <li>Cache size calculator function is also made generic. Earlier it used to work for 2 level deep directories.</li>
+                    <li>VideoIDPool class is revised to remove unnecessary functions.</li>
+                    <li>'start' and 'begin' parameters are dropped from url while downloading for caching.</li>
+                    <li>Logfiles are rotated properly now. Logfile rotation doesn't require restarting squid.</li>
+                    <li>If there is only one cache directory, apache alias will be /videocache instead of /videocache/0.</li>
+                    <li>Added option disk_avail_threshold to check disk full scenarios.</li>
+                    <li>Now size of individual cache directories can be specified via base_dir option itself.</li>
+                    <li>Removed cache_size option attached with individual website directory to speed up and cleanup things.</li>
+                    <li>Fixed a bug related to <a href="http://cachevideos.com/forum/post/multiple-caches#comment-523">cache directory switching</a>.</li>
+                  </ul>
+                </div>
+
+                <div id="version_19" class="version">
+                  <ul>
+                    <li>Added support for youtube videos served directly from IP Address(without using domains names).</li>
+                    <li>Added support for tube8 videos for mobile platform.</li>
+                    <li>Fixed <a href="http://cachevideos.com/forum/post/confused-log-files">log misbehavior bug</a>.</li>
+                    <li>Added a cache cleaner script to remove unused videos automatically.</li>
+                    <li>Last modified time of a video is updated whenever its a CACHE_HIT to help the removal script.</li>
+                    <li>VideoCache now supports multiple caching directories separated by '|' in configuration file.</li>
+                  </ul>
+                </div>
+
+                <div id="version_18" class="version">
+                  <ul>
+                    <li>Few more optimizations for XMLRPC Server. Lets see how this goes.</li>
+                    <li>Cleaned up code at a large scale.</li>
+                    <li>Improved assigment for website specific global variables.</li>
+                    <li>Moved deamon forking from XMLRPC Server to client as it would result in less occupied sockets.</li>
+                    <li>Reduced total number of queries to XMLRPC Server in order to get rid of TIME_WAIT sockets.</li>
+                    <li>Major cleanup for cache_video and squid_part functions.</li>
+                  </ul>
+                </div>
+
+                <div id="version_17" class="version">
+                  <ul>
+                    <li>Videos are now cached only when requested more than once. Option can be customized.</li>
+                    <li>Updated to cache tube8.com, tvuol.uol.com.br, blip.tv and break.com videos (including High Quality Videos).</li>
+                    <li>Merged Google and Youtube videos.</li>
+                    <li>Broaden the domains of google/youtube domains for video caching.</li>
+                    <li>Optimized communcation between XMLRPC client and server to minimize the sockets left in TIME_WAIT state.</li>
+                    <li>Extended SimpleXMLRPCServer class to add socket options and shutdown hangle to server.</li>
+                    <li>Additional exception handling at every step.</li>
+                    <li>Fixed Bug : <a href="http://cachevideos.com/forum/post/cache-directory-size-limiting-checked-only-video-queued">cache directory check</a>.</li>
+                    <li>Added extensive exception handling for XMLRPC Server.</li>
+                  </ul>
+                </div>
+
+                <div id="version_16" class="version">
+                  <ul>
+                    <li>videocache.log is not created at installation time when using setup.py. It is wrong according to debian packaging policy to create empty files at installation time.</li>
+                    <li>Extended support for Dailymotion videos served via Content Delivery Networks.</li>
+                    <li>Improved logging.</li>
+                    <li>In case connection breaks, incomplete videos will remain in tmp folder.</li>
+                    <li>Fixed setup and update script to finally work with --home or --prefix or --install-root options.</li>
+                    <li>Fixed videocache script to write videos are 0644 and not 0755.</li>
+                    <li>Updated spec file to change permissions of folders only and not recursively.</li>
+                    <li>Plugin renamed from youtube_cache to videocache as videocache is more expressive name and the plugin cache not just youtube but other websites as well.</li>
+                    <li>Complete plugin rebase again to suite python and debian naming/packaging conventions.</li>
+                    <li><p>New plugin structure:</p>
+                    <div class='code'>
+                      <pre>
+                        /etc/videocache.conf # Global config file
+                        /etc/httpd/conf.d/videocache.conf # Apache config file [Red Hat]
+                        /etc/apache2/conf.d/videocache.conf # Apache config file [Debian]
+                        /usr/share/videocache/ # Core plugin code
+                        /usr/share/man/man8/videocache.8.gz # Man Page
+                        /usr/sbin/update-vc # Update file
+                        /var/spool/videocache/ # Cache directories
+                        /var/log/videocache/ # Logging directories
+                      </pre>
+                    </div>
+                    <li>No symbolik links as they are considered bad according to packaging guidelines.</li>
+                    <li>Squid acls revised.</li>
+                    <li>OptionParser added to setup and update scripts.</li>
+                    <li>Now --home or --prefix or --install-root option can be used while installing and updating videocache.</li>
+                    <li>setup and update scripts' code is documented properly using comments.</li>
+                    <li>Another option enable_video_cache added to config file to control overall caching of all the websites.</li>
+                    <li>videocache.py revised to log more sensible messages. Fixed bug which was reporting false url parser errors.</li>
+                  </ul>
+                </div>
+
+                <div id="version_15" class="version">
+                  <ul>
+                    <li>Rebased the entire plugin. Everything moved out of squid directories.</li>
+                    <li>The core plugin code now resides in /usr/share/youtube_cache/.</li>
+                    <li>The logfiles are now in /var/log/youtube_cache/ directory.</li>
+                    <li>The caching directories are now in /var/spool/video_cache/ directory.</li>
+                    <li>Moved youtube_cache_sysconfig.conf to youtube_cache/youtube_cache.conf.</li>
+                    <li>/etc/youtube_cache.conf will now be a symlink to /usr/share/youtube_cache/youtube_cache.conf .</li>
+                    <li>logfile is not an option anymore. Instead logdir is used now.</li>
+                    <li>Corrected and updated INSTALL/Readme/Manpage files.</li>
+                    <li>Setup file configured to make the transition for caching directories.</li>
+                    <li>Corrected spec file. Uninstalling rpm will not delete cached files.</li>
+                    <li>Added critical lines missing from INSTALL/Readme/Manpage.</li>
+                    <li>Manpage generation using <a href="http://txt2tags.org/">Text2Tags</a>.</li>
+                    <li>Manpage will be delivered uncompressed.</li>
+                  </ul>
+                </div>
+
+                <div id="version_14" class="version">
+                  <ul>
+                    <li>Added support for soapbox.msn.com video caching.</li>
+                    <li>Fixed bug with download scheduler. Scheduler was not scheduling more than one video at a time.</li>
+                    <li>Added CHANGELOG file.</li>
+                    <li>Youtube Cache updated to cache videos from You Pr0n.</li>
+                    <li>Fixed logging error with wrzuta.pl.</li>
+                  </ul>
+                </div>
+
+                <div id="version_13" class="version">
+                  <ul>
+                    <li>Fixed problem with setup.py to copy update-yc to /usr/sbin/.</li>
+                    <li>Fixed spec file to create /usr/sbin/.</li>
+                    <li>Fixed a few problems with setup.py.</li>
+                    <li>Fixed unavailable video bug with youtube cache even when video is available in cache.</li>
+                    <li>Introtuced update-yc to update changes made to /etc/youtube_cache.conf.</li>
+                    <li>Added 'Options +Indexes' to youtube_cache.conf for apache.</li>
+                  </ul>
+                </div>
+
+                <div id="version_12" class="version">
+                  <ul>
+                    <li>Updated to cache Youtube videos served from googlevideo.com servers.</li>
+                    <li>Updated to cache audio from wrzuta.pl.</li>
+                    <li>Setup new website for youtube cache at http:///cachevideos.com/.</li>
+                    <li>Removed md5 module dependency completely.</li>
+                  </ul>
+                </div>
+
+                <div id="version_11" class="version">
+                  <ul>
+                    <li>Fixed serious mistake in squid.conf for youtube_cache.</li>
+                    <li>Improved INSTALL and Readme files.</li>
+                    <li>Improved video id detection for youtube and google videos.</li>
+                    <li>Removed python 2.5 dependency. Now works with python 2.4.</li>
+                    <li>Sanitized the reloading system while squid reloads.</li>
+                    <li>Added setup file for automating youtube_cache installation.</li>
+                    <li>Fixed loads of bugs generated due to forking daemons.</li>
+                    <li>All external processes except downloader are now started as threads.</li>
+                    <li>Processes and threads are immedietely killed whenever squid is reloaded or restarted.</li>
+                    <li>No backtracing goes to cache.log now.</li>
+                  </ul>
+                </div>
+
+                <div id="version_10" class="version">
+                  <ul>
+                    <li>Fixes for crashes by adding try-except statements.</li>
+                    <li>A bit of performance enhancement by avoiding md5 hashes for video ids.</li>
+                    <li>Implemented bandwidth management.</li>
+                    <li>User can put cap on max parallel downloads of videos so that entire banwidth is not consumed in caching.</li>
+                  </ul>
+                </div>
+
+                <div id="version_09" class="version">
+                  <ul>
+                    <li>Implemented caching for Vimeo.com HD videos.</li>
+                    <li>Fixed INSTALL/Readme/manpage file for version 0.8.</li>
+                  </ul>
+                </div>
+
+                <div id="version_08" class="version">
+                  <ul>
+                    <li>Implemented video caching for redtube and xtube.</li>
+                    <li>Renovated manpage and config file.</li>
+                    <li>Updated INSTALL/Readme files.</li>
+                  </ul>
+                </div>
+
+                <div id="version_07" class="version">
+                  <ul>
+                    <li>Clients access the video files are logged for statistics.</li>
+                    <li>Logfile size introduced to control logging.</li>
+                    <li>Logrotate facility for rotating logfiles added.</li>
+                    <li>Added video file size to logging for statistics.</li>
+                    <li>Whenever cache is full, warning will be logged now.</li>
+                    <li>Bug fix : If cache is full, the videos from cache will be served.</li>
+                    <li>Previously, the plugin used to exit if the cache was full.</li>
+                    <li>Google Video caching implemented. Need to update spec/INSTALL/Readme/manpage files.</li>
+                  </ul>
+                </div>
+
+                <div id="version_06" class="version">
+                  <ul>
+                    <li>Implemented caching for yet another video site dailymotion.com.</li>
+                  </ul>
+                </div>
+
+                <div id="version_05" class="version">
+                  <ul>
+                    <li>Updated INSTALL/Readme/Spec/manpage files.</li>
+                    <li>Implemented Metacafe.com video caching.</li>
+                  </ul>
+                </div>
+
+                <div id="version_04" class="version">
+                  <ul>
+                    <li>Fixed spec and sysconfig file.</li>
+                    <li>Fixed bugs related to large video files. Implemened all the options related to video size.</li>
+                    <li>Removed python based webserver as it was creating problems in seeking in large video files. Added httpd dependency again.</li>
+                    <li>Now XMLRPC will be used for communcations among forked daemons.</li>
+                    <li>Added support for proxy authentication.</li>
+                    <li>A new set of configuration options.</li>
+                  </ul>
+                </div>
+
+                <div id="version_03" class="version">
+                  <ul>
+                    <li>Removed apache dependency. Now python web-server is used for serving videos. Fixed few bugs.</li>
+                    <li>Modified config and Readme files. Added INSTALL file.</li>
+                    <li>Added Readme file again.</li>
+                  </ul>
+                </div>
+
+                <div id="version_02" class="version">
+                  <ul>
+                    <li>Fixed some more bugs. Added spec file to generate rpms for fedora :)</li>
+                    <li>Hierarchy rearranged.</li>
+                    <li>Added config file support. Now videos are not checked for updates assuming that videos will never change.</li>
+                    <li>Previously youtube_cache tried to connect to internet directly. Now it uses the proxy on which its hosted.</li>
+                  </ul>
+                </div>
+
+                <div id="version_01" class="version">
+                  <ul>
+                    <li>Initial Version: youtube_cache-0.1 . Works well with squid-2.6STABLE16 and up. Redundand caching.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </li>
+
+            <li id="restart" class="hidden page">
             <div class="page-content">
               WTF5
             </div>
