@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="css/base.css" type="text/css" media="screen, projection" />
     <link href="http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js'></script>
-    <script type="text/javascript" src='js/easyslider.js'></script>
+    <script type="text/javascript" src='js/jquery.js'></script>
     <script type="text/javascript">
       $(function() {
         $('.active').css({'opacity' : .8});
@@ -21,15 +20,24 @@
       });
     </script>
     <script type="text/javascript">
+      var pages = Array('#home', '#pricing', '#install', '#configure', '#faqs', '#upgrade', '#upgrade-policy', '#vc-cleaner', '#vc-update', 'vc-scheduler', '#response-codes', '#changelog');
       jQuery(document).ready(function() {
         $('a.menu-item').bind('click', function(){
           display_page($(this).attr('href'));
           return false;
         });
+        if (pages.indexOf(window.location.hash) > -1) { display_page(window.location.hash); };
       });
       function display_page(page_id) {
         $('.pages li.page').attr('class', 'hidden page');
         $(page_id).attr('class', 'page');
+        return false;
+      };
+      function switch_tabs(cur_li, cur_tab, hide_tab) {
+        $('.install-tabs li').attr('class', '');
+        $(cur_li).attr('class', 'active');
+        $(cur_tab).attr('class', '');
+        $(hide_tab).attr('class', 'hidden');
         return false;
       };
     </script>
@@ -97,7 +105,7 @@
           </div>
           </li>
 
-          <li id="pricing" class="page">
+          <li id="pricing" class="hidden page">
           <div class="page-content">
             <div class="span-11">
               <h3><strong>Package Availability</strong></h3>
@@ -187,9 +195,154 @@
           </div>
           </li>
 
-          <li id="install" class="hidden page">
+          <li id="install" class="page">
             <div class="page-content">
-              WTF3
+              <p>If you have not purchased <strong>Videocache</strong> license already, please go to <a class="menu-item" href="#pricing">Pricing Page</a> to purchase a license now.</p>
+              <br class="clear" />
+
+              <h3><strong>Required Packages</strong></h3>
+              <p><strong>Videocache</strong> requires following packages to work. You should have these packages installed and properly configured on your system. In case you don't have these packages installed check the respective links as shown below.</p>
+              <ol>
+                <li><a href="http://www.squid-cache.org" target="_blank" rel="nofollow">Squid</a> &gt;= 2.6</li>
+                <li><a href="http://python.org" target="_blank" rel="nofollow">Python</a> &gt;= 2.4.3</li>
+                <li><a href="http://code.google.com/p/iniparse/" target="_blank" rel="nofollow">Python-iniparse</a> (Any version)</li>
+                <li><a href="http://www.apache.org/" target="_blank" rel="nofollow">Apache (httpd) Web Server</a> (Any version)</li>
+              </ol>
+              <br class="clear" />
+
+              <ul class="install-tabs">
+                <li class="active" onclick="switch_tabs(this, '#install-rpm', '#install-script');">Installation Using RPM</li>
+                <li style="margin-left: 10px !important;" onclick="switch_tabs(this, '#install-script', '#install-rpm');">Installation Using setup Script</li>
+              </ul>
+              <br class="clear" />
+
+              <!-- Installation Using RPM -->
+              <div id="install-rpm" class="">
+                <p><span class="number_title">1.</span> Extract <em>videocache-bundle-x.x.x.tar.gz</em></p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz
+                  </pre>
+                </div>
+                <p><span class="number_title">2.</span> Change directory to <em>videocache-bundle-x.x.x</em></p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# cd videocache-bundle-x.x.x
+                  </pre>
+                </div>
+                <p><span class="number_title">3.</span> Login as <strong>root</strong> user and install the rpm using the following command.</p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# rpm -ivh videocache-x.x-x-x.noarch.rpm
+                  </pre>
+                </div>
+                <p><span class="number_title">4.</span> If the installation was successful, open the videocache man page (<em>man videocache</em>) or <em>Readme.txt</eM> or <em>Readme.html</em> and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    # --BEGIN-- videocache config for squid
+                    # LINES THAT SHOULD GO IN squid.conf
+                    # --END-- videocache config for squid
+                  </div>
+                </p>
+                <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
+
+                <p><span class="number_title">5.</span> Now follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to configure Videocache using the configuration file located at <em>/etc/videocache.conf</em> . Please don't overlook the critical options like <a class="menu-item" href="#configure">cache_host</a>, <a class="menu-item" href="/configure">videocache_user</a>, <a class="menu-item" href="#configure">client_email</a>, <a class="menu-item" href="#configure">proxy</a> etc.</p>
+                <p><span class="number_title">6.</span> Restart your Apache(httpd) webserver using the following command.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    [root@localhost ~]# apachectl -k restart
+                  </pre>
+                </div>
+                <p><span class="number_title">7.</span> Start (or restart) videocache scheduler (<a class="menu-item" href="#vc-scheduler">vc-scheduler</a>) using the following command.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    [root@localhost ~]# vc-scheduler -s restart
+                  </pre>
+                </div>
+                <p><span class="number_title">8.</span> And finally restart Squid server as well using the following command.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    [root@localhost ~]# /etc/init.d/squid restart
+                  </pre>
+                </div>
+                <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
+                <br class="clear" />
+              </div>
+
+
+
+              <!-- Installation using setup script -->
+              <div id="install-script" class="hidden">
+                <p><span class="number_title">1.</span> Extract <em>videocache-bundle-x.x.x.tar.gz</em></p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz
+                  </pre>
+                </div>
+                <p><span class="number_title">2.</span> Change directory to <em>videocache-bundle-x-x-x</em></p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# cd videocache-bundle-x-x-x
+                  </pre>
+                </div>
+                <p><span class="number_title">3.</span> Untar the <em>videocache-x-x-x</em> archive using the following command</p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# tar -xvzf videocache-x.x-x.tar.gz
+                  </pre>
+                </div>
+                <p><span class="number_title">4.</span> Find out the user who runs Squid on your system. On RedHat/CentOS/Fedora/OpenSuse/Gentoo etc., Squid is run by the user <em>squid</em>. On Debian/Ubuntu/pfSense, Squid is generally run by the user <em>proxy</em>. If squid is already running, use the following command to find out the user running Squid.</p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# ps aux | grep squid
+                  </pre>
+                </div>
+                <p><span class="number_title">5.</span> Install videocache using the <em>setup.py</em> script. Once the user who runs Squid is known, you can use the following command to install videocache.</p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# python setup.py -u _squid_user_ install
+                  </pre>
+                </div>
+                Let's say if the Squid is run by the user <em>proxy</em>, then we have to use the following command.</p>
+                <div class='code'>
+                  <pre lang="bash">
+                    [root@localhost ~]# python setup.py -u proxy install
+                  </pre>
+                </div>
+
+                <p>All the activities and errors of the setup script are logged standard output or standard error. Please check the messages for any errors.</p>
+                <p><span class="number_title">6.</span> If the installation was successful, open the videocache man-page (<em>man videocache</em>) or <em>INSTALL</em> or <em>Readme.txt</em> or <em>Readme.html</em> file and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    # --BEGIN-- videocache config for squid
+                    # LINES THAT SHOULD GO IN squid.conf
+                    # --END-- videocache config for squid 
+                  </pre>
+                </div>
+                <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
+                <p><span class="number_title">7.</span> Now follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to configure videocache using the configuration file <em>/etc/videocache.conf</em> . Please don't overlook the critical options like <a class="menu-item" href="#configure">cache_host</a>, <a class="menu-item" href="#configure">videocache_user</a>, <a class="menu-item" href="#configure">client_email</a>, <a class="menu-item" href="#configure">proxy</a> etc.</p>
+                <p><span class="number_title">8.</span> Now restart Apache(httpd) web server using the following command.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    [root@localhost ~]# apachectl -k restart
+                  </pre>
+                </div>
+                <p><span class="number_title">9.</span> Start (or restart) videocache scheduler (<a class="menu-item" href="#vc-scheduler">vc-scheduler</a>) using the following command.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    [root@localhost ~]# vc-scheduler -s restart
+                  </pre>
+                </div>
+                <p><span class="number_title">10.</span> And finally restart your Squid server using the following command.</p>
+                <div class='code'>
+                  <pre language="bash">
+                    [root@localhost ~]# /etc/init.d/squid restart
+                  </pre>
+                </div>
+                <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
+                <br class="clear" />
+              </div>
+
             </div>
           </li>
 
@@ -204,57 +357,54 @@
               WTF5
             </div>
           </li>
+
+          <li id="upgrade" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+
+          <li id="vc-cleaner" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+
+          <li id="vc-scheduler" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+
+          <li id="vc-update" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+
+          <li id="upgrade-policy" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+
+          <li id="response-codes" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
+
+          <li id="changelog" class="hidden page">
+            <div class="page-content">
+              WTF5
+            </div>
+          </li>
         </ul>
       </div>
-
-      <div class="span-15 statement">
-        <div class="span-7">
-          <h1 id="clients" class="section">Client Projects</h1>
-          <h4>Below is a selection of our recent commercial consulting work.</h4>
-          <hr class="space" />
-
-          <h3><a class="external" href="http://mozilla.org/">Mozilla Foundation</a></h3>
-          <p>Bocoup is working in partnership with Mozilla <a href="http://www.drumbeat.org/webmademovies" title="Mozilla's Open Video Lab">Web Made Movies</a> project and <a href="http://cdot.senecac.on.ca/">CDOT</a> on the development of <a href="http://popcornjs.org">Popcorn JS</a>, a JavaScript Framework for HTML5 Video, and Butter, a point and click authoring tool for Popcorn.
-          </p>
-
-          <hr class="space" />
-
-        </div>
-
-        <div class="prepend-1 span-7 last">
-          <h1 id="training" class="section">Training</h1>
-
-          <h4>Bocoup offers comprehensive JavaScript and HTML5 training onsite and at Bocoup.</h4>
-          <hr class="space" />
-
-          <h3><a href="http://training.bocoup.com/comprehensive-jquery-training-2011-03-02/">Comprehensive jQuery Training</a></h3>
-          <p>March 2-4th, 2011 | 9:30am - 5:00pm | <strong>$1199</strong></p>
-          <p><strong><a href="http://training.bocoup.com/comprehensive-jquery-training-2011-03-02/">Read More</a></strong> | <strong><a href="http://www.eventbrite.com/event/955968327">Reserve A Seat &rarr;</a></strong></p>
-
-          <hr class="space"/>
-        </div>
-      </div>
-      <div class="span-8 prepend-1 last">
-        <h1 id="code" class="section">Open Source</h1>
-        <h4>Below are some of the open source projects that Bocoup has produced and has been contributing to.</h4>
-        <hr class="space" />
-        <div class="project" id="w3c">
-          <h3><a class="external" href="http://www.w3.org/2010/04/audio/audio-incubator-charter.html">W3C Audio Incubator Group</a></h3>
-          <p>We have a member chairing the W3C Audio Incubator Group, facillitating technical discussions between The Mozilla Foundation, The Department of Informatics PUC-Rio, The BBC, Google and other invited experts.</p>
-        </div>
-        <hr class="space"/>
-      </div>
-      <hr class="space" />
-      <hr class="space" />
-      <hr class="space" />
-      <hr class="space" />
-
-      <hr class="space" />
       <hr class="full"/>
       <h2 class="center">
         Copyright &copy; 2008-2011 Kulbir Saini.
       </h2>
-      <hr class="space" />
       <hr class="space" />
     </div><!--end .container-->
   </body>
