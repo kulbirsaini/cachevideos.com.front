@@ -51,6 +51,12 @@
           $(this).parent().children('div.answer').slideToggle();
           return false;
         });
+        // Set appropriate container width
+        if (($('body').width() - $('.container').width() - $('#floating-menu').width() - 20) < 0) {
+          $('.container').attr('style', 'width:' + ($('body').width() - $('#floating-menu').width() - 20) + 'px; float:right;');
+        }
+        // Floating box
+        $('#floating-menu').attr('style', 'left:' + ($('.container').offset().left - $('#floating-menu').width() - 20) + 'px');
       });
       // Display page corresponding to the menu
       function display_page(page_id) {
@@ -87,18 +93,18 @@
     <div class="container ">
       <div id="menu">
         <div id="color">
-          <div class="pad-3 colora navi"><h2 class="active" style="opacity: 0.4;"><a class="menu-item" href="#home">Home</a></h2></div>
-          <div class="pad-3 colorb navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#pricing">Pricing</a></h2></div>
-          <div class="pad-3 colorc navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#install">Install</a></h2></div>
-          <div class="pad-3 colord navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#configure">Configure</a></h2></div>
-          <div class="pad-3 colorf navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
-          <div class="pad-3 colore navi"><h2 style="opacity: 0.4;"><a href="/forum">Support</a></h2></div>
-          <div class="pad-3 colorg navi lastPad"> <h2 style="opacity: 0.4;"><a href="/contact">Contact</a></h2></div>
+          <div class="colora navi"><h2 class="active" style="opacity: 0.4;"><a class="menu-item" href="#home">Home</a></h2></div>
+          <div class="colorb navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#pricing">Pricing</a></h2></div>
+          <div class="colorc navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#install">Install</a></h2></div>
+          <div class="colord navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#configure">Configure</a></h2></div>
+          <div class="colorf navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
+          <div class="colore navi"><h2 style="opacity: 0.4;"><a href="/forum">Support</a></h2></div>
+          <div class="colorg navi lastPad"> <h2 style="opacity: 0.4;"><a href="/contact">Contact</a></h2></div>
           <br class="clear" />
         </div>
       </div>
 
-      <div class="pages span-23">
+      <div class="pages">
         <ul class="page-container">
           <li id="home" class='hidden page'>
             <div class="page-content">
@@ -106,7 +112,7 @@
               <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
               <br class="clear" />
 
-              <div class="span-10">
+              <div class="half">
                 <h3><strong>Supported Websites</strong></h3>
                 <p>Videocache currently supports the caching of dynamically served videos from the following websites</p>
                 <ol>
@@ -126,7 +132,7 @@
                 <br class="clear" />
               </div>
 
-              <div class="span-12">
+              <div class="half last">
                 <h3><strong>Supported Operating Systems</strong></h3>
                 <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong> provided the following required packages are installed and working.</p>
                 <ol>
@@ -149,7 +155,7 @@
 
           <li id="pricing" class="hidden page">
             <div class="page-content">
-              <div class="span-11">
+              <div class="half">
                 <h3><strong>Package Availability</strong></h3>
                 <p><strong>Videocache</strong> is available in two formats.</p>
                 <ol>
@@ -159,14 +165,14 @@
                 <br class="clear" />
               </div>
 
-              <div class="span-10">
+              <div class="half last">
                 <h3><strong>Latest Version</strong></h3>
                 <p>Latest version of Videocache is <strong>1.9.8</strong>. Videocache Bundle is one file containing the two packages (rpm and tar.gz) in one archive. With this package, you get free support via <a href="/forum">Support Forums</a>. We will mail you the software bundle within 24 hours of the purchase.</p>
                 <br class="clear" />
               </div>
               <hr class="space" />
 
-              <div class="span-11">
+              <div class="half">
                 <h3><strong>Purchase License</strong></h3>
                 <p><strong>Note:</strong> If you don't have <strong>PayPal</strong>, you can pay using <strong>moneybookers.com, Western Union</strong> or other means. Please check our <a class="menu-item" href="#faqs">FAQ on Payment</a> for alternate payment methods.</p>
                 <div class="paypal-page">
@@ -191,7 +197,7 @@
                 <br class="clear" />
               </div>
 
-              <div class="span-11">
+              <div class="half last">
                 <h3><strong>Upgrade License</strong></h3>
                 <p>If your Videocache license has expired, then renew your license using the simple form below to receive upgrades in future.</p>
                 <div class="paypal-page">
@@ -217,19 +223,19 @@
               </div>
               <hr class="space" />
 
-              <div class="span-7">
+              <div class="one-third">
                 <h3><strong>Installation</strong></h3>
                 <p>Installing Videocache is an easy process which is extensively documented in INSTALL file included in the source package. You can also check the instructions on <a class="menu-item" href="#install">Installation Page</a> for details on how to install videocache on different operating systems.</p>
                 <br class="clear" />
               </div>
 
-              <div class="span-7">
+              <div class="one-third">
                 <h3><strong>Configuration</strong></h3>
                 <p>Videocache is controlled by the configuration file located at <em>/etc/videocache.conf</em>. Please follow instructions on <a class="menu-item" href="#configure">Configuration Page</a> for details on how to configure videocache to get the most out of your bandwidth.</p>
                 <br class="clear" />
               </div>
 
-              <div class="span-7">
+              <div class="one-third last">
                 <h3><strong>Support</strong></h3>
                 <p>Though we test Videocache thoroughly before releasing the new version, some issues may remain unnoticed. In case you are face any problem or stuck while installing or configuring videocache, use our <a href="/forum">Support Forums</a> to get help.</p>
                 <br class="clear" />
@@ -1674,10 +1680,21 @@
             </div>
           </li>
         </ul>
+
+        <hr class="full"/>
+        <h2 class="center">Copyright &copy; 2008-2011 Kulbir Saini.</h2>
+        <hr class="space" />
       </div>
-      <hr class="full"/>
-      <h2 class="center">Copyright &copy; 2008-2011 Kulbir Saini.</h2>
-      <hr class="space" />
     </div><!--end .container-->
+    <div id="floating-menu">
+      <ul class="list-menu">
+        <li class="colorb"><a class="menu-item" href="#vc-cleaner">Cleaner Script</a></li>
+        <li class="colorc"><a class="menu-item" href="#vc-update">Update Script</a></li>
+        <li class="colord"><a class="menu-item" href="#vc-scheduler">Scheduler Script</a></li>
+        <li class="colore"><a class="menu-item" href="#restart">Restart</a></li>
+        <li class="colorf"><a class="menu-item" href="#upgrade">Upgrade</a></li>
+        <li class="colorg"><a class="menu-item" href="#changelog">Change Log</a></li>
+      </ul>
+    </div>
   </body>
 </html>
