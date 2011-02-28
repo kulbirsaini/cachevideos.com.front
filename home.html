@@ -35,10 +35,26 @@
         // Versions
         $('div.versions div.version').attr('class', 'hidden version');
         $('#version_198').attr('class', 'version');
+        // FAQs
+        $('div.faqs').attr('style', 'display:none;');
+        $('div.answer').attr('style', 'display:none;');
+        $('.question').attr('style', 'cursor:pointer;');
+        $('div.faqs-category .faqs-category-name').attr('style', 'cursor:pointer;');
+        // Slide Toggle Category
+        $('div.faqs-category .faqs-category-name').bind('click', function() {
+          $(this).parent().children('div.faqs').slideToggle();
+          $(this).parent().children('.faqs').children('ul.list-faqs').children('li').children('div.answer').attr('style', 'display:none;');
+          return false;
+        });
+        // Slide Toggle Question
+        $('ul.list-faqs li .question').bind('click', function() {
+          $(this).parent().children('div.answer').slideToggle();
+          return false;
+        });
       });
       // Display page corresponding to the menu
       function display_page(page_id) {
-        $('.pages li.page').attr('class', 'hidden page');
+        $('.pages > ul > li.page').attr('class', 'hidden page');
         $(page_id).attr('class', 'page');
         return false;
       };
@@ -75,148 +91,150 @@
           <div class="pad-3 colorb navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#pricing">Pricing</a></h2></div>
           <div class="pad-3 colorc navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#install">Install</a></h2></div>
           <div class="pad-3 colord navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#configure">Configure</a></h2></div>
-          <div class="pad-3 colore navi"><h2 style="opacity: 0.4;"><a href="/">Support</a></h2></div>
           <div class="pad-3 colorf navi"><h2 style="opacity: 0.4;"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
+          <div class="pad-3 colore navi"><h2 style="opacity: 0.4;"><a href="/forum">Support</a></h2></div>
           <div class="pad-3 colorg navi lastPad"> <h2 style="opacity: 0.4;"><a href="/contact">Contact</a></h2></div>
           <br class="clear" />
         </div>
+      </div>
 
-        <ul class="span-23 pages">
+      <div class="pages span-23">
+        <ul class="page-container">
           <li id="home" class='hidden page'>
-          <div class="page-content">
-            <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
-            <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
-            <br class="clear" />
-
-            <div class="span-10">
-              <h3><strong>Supported Websites</strong></h3>
-              <p>Videocache currently supports the caching of dynamically served videos from the following websites</p>
-              <ol>
-                <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com. This includes the youtube videos served from Google (googlevideo.com) servers.</li>
-                <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
-                <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
-                <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
-                <li><strong>Bing &amp; MSN</strong> Videos - Video.bing.com</li>
-                <li><strong>Blip TV</strong> Videos - Blip.tv</li>
-                <li><strong>Break</strong> Videos - Break.com</li>
-                <li><strong>Red Tube</strong> Videos - Redtube dot com</li>
-                <li><strong>X Tube</strong> Videos - Xtube dot com</li>
-                <li><strong>You P0rn</strong> Videos - Youporn dot com</li>
-                <li><strong>Tube 8</strong> Videos - Tube8 dot com</li>
-                <li><strong>Wrzuta</strong> Audio &amp; Videos - Wrzuta.pl</li>
-              </ol>
+            <div class="page-content">
+              <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
+              <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
               <br class="clear" />
+
+              <div class="span-10">
+                <h3><strong>Supported Websites</strong></h3>
+                <p>Videocache currently supports the caching of dynamically served videos from the following websites</p>
+                <ol>
+                  <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com. This includes the youtube videos served from Google (googlevideo.com) servers.</li>
+                  <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
+                  <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
+                  <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
+                  <li><strong>Bing &amp; MSN</strong> Videos - Video.bing.com</li>
+                  <li><strong>Blip TV</strong> Videos - Blip.tv</li>
+                  <li><strong>Break</strong> Videos - Break.com</li>
+                  <li><strong>Red Tube</strong> Videos - Redtube dot com</li>
+                  <li><strong>X Tube</strong> Videos - Xtube dot com</li>
+                  <li><strong>You P0rn</strong> Videos - Youporn dot com</li>
+                  <li><strong>Tube 8</strong> Videos - Tube8 dot com</li>
+                  <li><strong>Wrzuta</strong> Audio &amp; Videos - Wrzuta.pl</li>
+                </ol>
+                <br class="clear" />
+              </div>
+
+              <div class="span-12">
+                <h3><strong>Supported Operating Systems</strong></h3>
+                <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong> provided the following required packages are installed and working.</p>
+                <ol>
+                  <li><strong>Squid</strong> &gt;= 2.6.Stable21 or 3.x</li>
+                  <li><strong>Python</strong> &gt;= 2.4.3</li>
+                  <li><strong>Python-iniparse</strong> (Any version)</li>
+                  <li><strong>Apache</strong> (Any version)</li>
+                </ol>
+                <br class="clear" />
+
+                <p>Videocache also works on <strong>Mac OS X</strong>. It also works on <strong>Microsoft Windows</strong> with Cygwin. (<strong>Note: </strong> We don't support these platforms officially.)</p>
+                <br class="clear" />
+
+                <h3><strong>Supported Video Formats</strong></h3>
+                <p>Videocache currently supports caching of following audio/video formats from the websites specified above: flv, 3gp, mp3, wmv, mp4, rm, ram, mov, avi, m4v</p>
+                <br class="clear" />
+              </div>
             </div>
-
-            <div class="span-12">
-              <h3><strong>Supported Operating Systems</strong></h3>
-              <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong> provided the following required packages are installed and working.</p>
-              <ol>
-                <li><strong>Squid</strong> &gt;= 2.6.Stable21 or 3.x</li>
-                <li><strong>Python</strong> &gt;= 2.4.3</li>
-                <li><strong>Python-iniparse</strong> (Any version)</li>
-                <li><strong>Apache</strong> (Any version)</li>
-              </ol>
-              <br class="clear" />
-
-              <p>Videocache also works on <strong>Mac OS X</strong>. It also works on <strong>Microsoft Windows</strong> with Cygwin. (<strong>Note: </strong> We don't support these platforms officially.)</p>
-              <br class="clear" />
-
-              <h3><strong>Supported Video Formats</strong></h3>
-              <p>Videocache currently supports caching of following audio/video formats from the websites specified above: flv, 3gp, mp3, wmv, mp4, rm, ram, mov, avi, m4v</p>
-              <br class="clear" />
-            </div>
-          </div>
           </li>
 
           <li id="pricing" class="hidden page">
-          <div class="page-content">
-            <div class="span-11">
-              <h3><strong>Package Availability</strong></h3>
-              <p><strong>Videocache</strong> is available in two formats.</p>
-              <ol>
-                <li><strong>RPM</strong> - Binary for rpm based distros like Red Hat, Fedora, CentOS, OpenSuSE etc.</li>
-                <li><strong>Source Archive</strong> - In case your distro doesn't support RPM, you can use the source archive (.tar.gz) and install Videocache using setup script included in the package. Intended for Ubuntu, Debian, BSD, Slackware users.</li>
-              </ol>
-              <br class="clear" />
-            </div>
-
-            <div class="span-10">
-              <h3><strong>Latest Version</strong></h3>
-              <p>Latest version of Videocache is <strong>1.9.8</strong>. Videocache Bundle is one file containing the two packages (rpm and tar.gz) in one archive. With this package, you get free support via <a href="/forum">Support Forums</a>. We will mail you the software bundle within 24 hours of the purchase.</p>
-              <br class="clear" />
-            </div>
-            <hr class="space" />
-
-            <div class="span-11">
-              <h3><strong>Purchase License</strong></h3>
-              <p><strong>Note:</strong> If you don't have <strong>PayPal</strong>, you can pay using <strong>moneybookers.com, Western Union</strong> or other means. Please contact using <a href="/contact/">Contact Link</a> for alternate payment methods.</p>
-              <div class="paypal-page">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Download') } catch(err) {}; return true;">
-                  <input type="hidden" name="cmd" value="_s-xclick">
-                  <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
-                  <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
-                  <select name="os0" class="clear" style="margin-bottom:8px;">
-                    <option value="One Server">One Server $199.00</option>
-                    <option value="Two Servers">Two Servers $369.00</option>
-                    <option value="Three Servers">Three Servers $499.00</option>
-                  </select>
-                  <div class="clear"></div>
-                  <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
-                  <br class="clear" />
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  <input type="hidden" name="currency_code" value="USD">
-                  <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                  <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                </form>
+            <div class="page-content">
+              <div class="span-11">
+                <h3><strong>Package Availability</strong></h3>
+                <p><strong>Videocache</strong> is available in two formats.</p>
+                <ol>
+                  <li><strong>RPM</strong> - Binary for rpm based distros like Red Hat, Fedora, CentOS, OpenSuSE etc.</li>
+                  <li><strong>Source Archive</strong> - In case your distro doesn't support RPM, you can use the source archive (.tar.gz) and install Videocache using setup script included in the package. Intended for Ubuntu, Debian, BSD, Slackware users.</li>
+                </ol>
+                <br class="clear" />
               </div>
-              <br class="clear" />
-            </div>
 
-            <div class="span-11">
-              <h3><strong>Upgrade License</strong></h3>
-              <p>If your Videocache license has expired, then renew your license using the simple form below to receive upgrades in future.</p>
-              <div class="paypal-page">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Download') } catch(err) {}; return true;">
-                  <input type="hidden" name="cmd" value="_s-xclick">
-                  <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
-                  <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
-                  <select name="os0" class="clear" style="margin-bottom:8px;">
-                    <option value="One Server">One Server $99.00</option>
-                    <option value="Two Servers">Two Servers $179.00</option>
-                    <option value="Three Servers">Three Servers $249.00</option>
-                  </select>
-                  <div class="clear"></div>
-                  <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
-                  <br class="clear" />
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  <input type="hidden" name="currency_code" value="USD">
-                  <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-                  <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                </form>
+              <div class="span-10">
+                <h3><strong>Latest Version</strong></h3>
+                <p>Latest version of Videocache is <strong>1.9.8</strong>. Videocache Bundle is one file containing the two packages (rpm and tar.gz) in one archive. With this package, you get free support via <a href="/forum">Support Forums</a>. We will mail you the software bundle within 24 hours of the purchase.</p>
+                <br class="clear" />
               </div>
-              <br class="clear" />
-            </div>
-            <hr class="space" />
+              <hr class="space" />
 
-            <div class="span-7">
-              <h3><strong>Installation</strong></h3>
-              <p>Installing Videocache is an easy process which is extensively documented in INSTALL file included in the source package. You can also check the instructions on <a class="menu-item" href="#install">Installation Page</a> for details on how to install videocache on different operating systems.</p>
-              <br class="clear" />
-            </div>
+              <div class="span-11">
+                <h3><strong>Purchase License</strong></h3>
+                <p><strong>Note:</strong> If you don't have <strong>PayPal</strong>, you can pay using <strong>moneybookers.com, Western Union</strong> or other means. Please check our <a class="menu-item" href="#faqs">FAQ on Payment</a> for alternate payment methods.</p>
+                <div class="paypal-page">
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Download') } catch(err) {}; return true;">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
+                    <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
+                    <select name="os0" class="clear" style="margin-bottom:8px;">
+                      <option value="One Server">One Server $199.00</option>
+                      <option value="Two Servers">Two Servers $369.00</option>
+                      <option value="Three Servers">Three Servers $499.00</option>
+                    </select>
+                    <div class="clear"></div>
+                    <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
+                    <br class="clear" />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+                </div>
+                <br class="clear" />
+              </div>
 
-            <div class="span-7">
-              <h3><strong>Configuration</strong></h3>
-              <p>Videocache is controlled by the configuration file located at <em>/etc/videocache.conf</em>. Please follow instructions on <a class="menu-item" href="#configure">Configuration Page</a> for details on how to configure videocache to get the most out of your bandwidth.</p>
-              <br class="clear" />
-            </div>
+              <div class="span-11">
+                <h3><strong>Upgrade License</strong></h3>
+                <p>If your Videocache license has expired, then renew your license using the simple form below to receive upgrades in future.</p>
+                <div class="paypal-page">
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Download') } catch(err) {}; return true;">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
+                    <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
+                    <select name="os0" class="clear" style="margin-bottom:8px;">
+                      <option value="One Server">One Server $99.00</option>
+                      <option value="Two Servers">Two Servers $179.00</option>
+                      <option value="Three Servers">Three Servers $249.00</option>
+                    </select>
+                    <div class="clear"></div>
+                    <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
+                    <br class="clear" />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+                    <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+                </div>
+                <br class="clear" />
+              </div>
+              <hr class="space" />
 
-            <div class="span-7">
-              <h3><strong>Support</strong></h3>
-              <p>Though we test Videocache thoroughly before releasing the new version, some issues may remain unnoticed. In case you are face any problem or stuck while installing or configuring videocache, use our <a href="/forum">Support Forums</a> to get help.</p>
-              <br class="clear" />
+              <div class="span-7">
+                <h3><strong>Installation</strong></h3>
+                <p>Installing Videocache is an easy process which is extensively documented in INSTALL file included in the source package. You can also check the instructions on <a class="menu-item" href="#install">Installation Page</a> for details on how to install videocache on different operating systems.</p>
+                <br class="clear" />
+              </div>
+
+              <div class="span-7">
+                <h3><strong>Configuration</strong></h3>
+                <p>Videocache is controlled by the configuration file located at <em>/etc/videocache.conf</em>. Please follow instructions on <a class="menu-item" href="#configure">Configuration Page</a> for details on how to configure videocache to get the most out of your bandwidth.</p>
+                <br class="clear" />
+              </div>
+
+              <div class="span-7">
+                <h3><strong>Support</strong></h3>
+                <p>Though we test Videocache thoroughly before releasing the new version, some issues may remain unnoticed. In case you are face any problem or stuck while installing or configuring videocache, use our <a href="/forum">Support Forums</a> to get help.</p>
+                <br class="clear" />
+              </div>
             </div>
-          </div>
           </li>
 
           <li id="install" class="hidden page">
@@ -765,9 +783,317 @@
             </div>
           </li>
 
-          <li id="faqs" class="hidden page">
+          <li id="faqs" class="page">
             <div class="page-content">
-              WTF5
+              <p>We have divided our <strong>Freequently Asked Questions</strong> in several categories. Please click on a category to view its questions. And then click on a question to view its answer. The page will not reload when you open a category or answer.</p>
+              <br class="clear" />
+              <div class="faqs-category">
+                <h3 class="faqs-category-name">General</h3>
+                <div class="faqs">
+                  <ul class="list-faqs">
+                    <li>
+                      <h5 class="question">What is Videocache?</h5>
+                      <div class="answer">
+                        <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine.</p>
+                        <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
+                        <p>For more details, check <a class="menu-item" href="#home">Home Page</a>.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">How can I get Videocache?</h5>
+                      <div class="answer">
+                        <p>Please check the <a class="menu-item" href="#pricing">Pricing Page</a> and select an appropriate license for yourself. Once you purchase a license, we deliver the software bundle to you via email within 24 hours of receiving the client information.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">How many sites does Videocache support?</h5>
+                      <div class="answer">
+                        <p>Please check <strong>Supported Websites</strong> section on <a class="menu-item" href="#home">Home Page</a> for a list of supported websites.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">What version of Squid does Videocache work with?</h5>
+                      <div class="answer">
+                        <p>Videocache currently works with all Squid versions later than Squid-2.6.STABLE21. That means it work with Squid 2.6.x, 2.7.x and also with 3.0.x, 3.1.x and 3.2.x.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Does Videocache work with Squid 3.x?</h5>
+                      <div class="answer">
+                        <p>Yes.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Does Videocache work with Squid 2.7?</h5>
+                      <div class="answer">
+                        <p>Yes.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Does Videocache work on XYZ operating system?</h5>
+                      <div class="answer">
+                        <p>Videocache work on almost all Linux/Unix operating systems provided they have support for the packages mentioned in <strong>Required Packages</strong> section on <a class="menu-item" href="#install">Installation Page</a>.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Does Videocache work on FreeBSD/NetBSD/OtherBSD?</h5>
+                      <div class="answer">
+                        <p>Yes.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Does Videocache work on Debian or Ubuntu?</h5>
+                      <div class="answer">
+                        <p>Yes.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Does Videocache work on RedHat/CentOS/Fedora/OpenSuSE/Gentoo?</h5>
+                      <div class="answer">
+                        <p>Yes.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Where the cached videos are stored on my system?</h5>
+                      <div class="answer">
+                        <p>Normally, the cached videos are stored in <em>/var/spool/videocache/</em>. If the cached videos are not there or this directory doesn't exits, check the value of <a class="menu-item" href="#configure">base_dir</a> option in <em>/etc/videocache.conf</em> and look for videos in the directory specified there.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Which python version is required for videocache?</h5>
+                      <div class="answer">
+                        <p>Python later than 2.4.3 will work.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faqs-category">
+                <h3 class="faqs-category-name">Payment/Purchase</h3>
+                <div class="faqs">
+                  <ul class="list-faqs">
+                    <li>
+                      <h5 class="question">What are the supported payment methods?</h5>
+                      <div class="answer">
+                        <p>We support the following payments methods:</p>
+                        <ul class="list-square">
+                          <li><a href="https://www.paypal.com/">PayPal</a> (Recommended)</li>
+                          <li><a href="http://moneybookers.com/">MoneyBookers</a></li>
+                          <li><a href="http://www.westernunion.com/">Western Union</a></li>
+                          <li><a href="http://en.wikipedia.org/wiki/Wire_transfer">Wire Transfer/Direct Bank Transfer</a></li>
+                          <li><a href="http://en.wikipedia.org/wiki/Online_banking">Internet Banking/Online Banking</a> (Supported only in selected countries)</li>
+                          <li>Cheque or Demand Draft (Supported only in selected countries)</a>
+                        </ul>
+                        <p><strong>NOTE:</strong> Customer will have to bear any extra charges charged by various payments gateways other than PayPal and MoneyBookers.</p> 
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">PayPal doesn't work in my country. How can I purchase Videocache?</h5>
+                      <div class="answer">
+                        <p>Please check the above FAQ on supported payment methods.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Can I use a friend's PayPal account or credit card to purchase Videocache?</h5>
+                      <div class="answer">
+                        <p>Yes. But we encourage you to use your own account or credit card. In case you are using a friend's account or credit card, please leave a note mentioning the same.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">It's been more than 24 hours since I purchased the software but I have not received it yet. Why?</h5>
+                      <div class="answer">
+                        <p>First of all, we apologize if you had to face any such delays. The reason can be any of the below.</p>
+                        <ul class="list-square">
+                          <li>Mostly, the reason is that you have not entered the Client Information in our Cilent Information System and we were unable to process your order.</li>
+                          <li>We have sent you the package and it might have been marked as spam by your mail client. Please check your spam folder.</li>
+                          <li>Sometimes we are unable to process your order because of the local holidays or festivals. We owe you an apology for that. We'll try to email you the software bundle as soon as we can.</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Why are you asking for Client Information?</h5>
+                      <div class="answer">
+                        <p>So that we can answer your support questions as quickly as possible if you face a problem with Videocache.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Will you put my information on Videocache website, any other third party website or anywhere on Internet?</h5>
+                      <div class="answer">
+                        <p>NO. We never do that. We never share your information with any third party website or anywhere on Internet. If we want to put your information on our website, we'll take your permission first. Your information will be put on our website only after your approval.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faqs-category">
+                <h3 class="faqs-category-name">License</h3>
+                <div class="faqs">
+                  <ul class="list-faqs">
+                    <li>
+                      <h5 class="question">What are the Videocache Commercial License terms?</h5>
+                      <div class="answer">
+                        <p>The license terms are very simple. Simply put,</p>
+                        <ul class="list-square">
+                          <li>You can not pass on the software to your friends. In case you do, your license will be terminated.</li>
+                          <li>Videocache licensed for one server can only be installed one server. You can not install Videocache licensed for one server on more than one servers. But there are no limits like number of CPUs on the server.</li>
+                          <li>In case you happen to format your server, you can reinstall Videocache.</li>
+                          <li>You can first test your Videocache bundle on a test machine and then transfer the setup to production server. But remember only one server at a time. That means you can't keep the setup on test machine anymore.</li>
+                        </ul>
+                        <p><strong>NOTE:</strong> : The terms mentioned above are not the only terms forced by the Commercial License. Please check the <em>Commercial License.txt</em> included with your Videocache bundle for details.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Can I reinstall my Videocache if I format my server or my hard disk crashes?</h5>
+                      <div class="answer">
+                        <p>Yes. The only condition is that you should not install videocache licensed for one server on more than one servers.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Can I first test my Videocache on a test server and then install it on my production server?</h5>
+                      <div class="answer">
+                        <p>Yes. But once you install Videocache on production server, you'll have to remove Videocache from the test server.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Is there a discount if I purchase licenses in bulk?</h5>
+                      <div class="answer">
+                        <p>Yes. Please contact us using the <a href="/contact">Contact Link</a> mentioning your requirements.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">I want to redistribute Videocache in my area. Is there a program for that?</h5>
+                      <div class="answer">
+                        <p>Yes. We have a very attractive redistribution program. All you need to do is to find the clients in your area and we'll handle the rest. We offer technical support on the redistributed licenses. Please contact us using the <a href="/contact">Contact Link</a>.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">What if I don't obey the license terms?</h5>
+                      <div class="answer">
+                        <p>You'll not receive any free upgrades in future and your Videocache license will be terminated.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faqs-category">
+                <h3 class="faqs-category-name">Installation</h3>
+                <div class="faqs">
+                  <ul class="list-faqs">
+                    <li>
+                      <h5 class="question">How to install videocache?</h5>
+                      <div class="answer">
+                        <p>Videocache can be installed from available binaries or source. For details on installation methods and steps, please check the <a class="menu-item" href="#install">Installation Page</a>.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Python-iniparse is not installed on my system. How do I install python-iniparse?</h5>
+                      <div class="answer">
+                        <p>For all Unix/Linux systems, download python-iniparse from <a href="http://code.google.com/p/iniparse/">iniparse website</a>. Untar the package. Go to iniparse-x.x.x directory and use this command to install it.</p>
+                        <div class='code'>
+                          <pre>
+                            [root@localhost iniparse-x.x.x]# python setup.py install
+                          </pre>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">I don't have Apache web server. Can I use some other web server?</h5>
+                      <div class="answer">
+                        <p>Yes. But we officially support only Apache. You can use any web-server you want. Videocache requires your web-server to alias <em>/var/spool/videocache/</em> directory as <em>/videocache/</em> so that it can be accessed via http://your_system/videocache/. If you have a web server that supports aliasing, you can use it without any worries.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faqs-category">
+                <h3 class="faqs-category-name">Configuration</h3>
+                <div class="faqs">
+                  <ul class="list-faqs">
+                    <li>
+                      <h5 class="question">How to configure videocache?</h5>
+                      <div class="answer">
+                        <p>Configuring videocache involves setting some options to correct values in the configuration file located at <em>/etc/videocache.conf</em> for your system/environment. Check the <a class="menu-item" href="#configure">Configuration Page</a> for detailed instructions.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faqs-category">
+                <h3 class="faqs-category-name"></h3>
+                <div class="faqs">
+                  <ul class="list-faqs">
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question"></h5>
+                      <div class="answer">
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <br class="clear" />
+              <p>Didn't find the question you want to ask? Contact us using the <a href="/contact">Contact Link</a>.</p>
+
             </div>
           </li>
 
@@ -800,7 +1126,7 @@
                   [root@localhost ~]# vc-update
                 </pre>
               </div>
-              <p>For help related to vc-update, please check <a class="menu-item" href="#vc-update">Update Script Page</a>.</p>
+              <p>For help related to <em>vc-update</em>, please check <a class="menu-item" href="#vc-update">Update Script Page</a>.</p>
               <br class="clear" />
 
               <h4><strong>Restart Videocache</strong></h4>
@@ -812,6 +1138,7 @@
           <li id="vc-cleaner" class="hidden page">
             <div class="page-content">
               <p><strong>Videocache Cleaner</strong> script was first introduced in version 1.9. This script helps you to remove stale videos from the cache directories. This script uses two options <a class="menu-item" href="#configure">enable_videocache_cleaner</a> and <a class="menu-item" href="#configure">video_lifetime</a> from the <em>/etc/videocache.conf</em> file. So, if the value of <em>video_lifetime</em> is 30, then all the videos which were not used since last 30 days will be purged from the cache.</p>
+              <p><strong>NOTE:</strong> Log messages generated by this script are logged in <em>cleaner.log</em> logfile.
               <br class="clear" />
 
               <h4><strong>Usage</strong></h4>
@@ -833,7 +1160,7 @@
                   [root@localhost ~]# vc-cleaner --prefix=/path/to/videocache/
                 </pre>
               </div>
-              <p>For a list of available options with vc-cleaner command, use option -h as shown below.</p>
+              <p>For a list of available options with <em>vc-cleaner</em> command, use option -h as shown below.</p>
               <div class='code'>
                 <pre lang="bash">
                 [root@localhost ~]# /usr/sbin/vc-cleaner -h
@@ -853,7 +1180,55 @@
 
           <li id="vc-scheduler" class="hidden page">
             <div class="page-content">
-              WTF5
+              <p><strong>Videocache Scheduler (<em>vc-scheduler</em>)</strong> daemon was first introduced in version 1.9.8 in order to decouple the XMLRPC server from the base Videocache plugin. Videocache Scheduler is a daemon script which runs an XMLRPC server on port 9100 and a simple scheduler program which schedules the videos for caching periodically.</p>
+              <p><strong>NOTE:</strong> Log messages generated by this script are logged in <em>cleaner.log</em> logfile.
+              <br class="clear" />
+
+              <h4><strong>Usage</strong></h4>
+              <p>Using this script is easy. We basically need to send one of the various available signals to this script. The signals available are as follows.</p>
+              <ul class='list-square'>
+                <li><strong>start</strong> : Starts the Videocache Scheduler.</li>
+                <li><strong>stop</strong> : Stops the already running Videocache Scheduler.</li>
+                <li><strong>restart</strong> : Stops the already running Videocache Scheduler and starts it again.</li>
+                <li><strong>kill</strong> : Send a TERM (kill) signal to Videocache Scheduler. Sending this signal will kill the process immediately.</li>
+              </ul>
+              <p>To send one of the above singals to <em>vc-scheduler</em> script, use the following command.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# vc-scheduler -s signal
+                </pre>
+              </div>
+              <p>For example, to send a restart signal, use the following command.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# vc-scheduler -s restart
+                  Videocache Scheduler stopped.
+                  Videocache Scheduler started.
+                  [root@localhost ~]#
+                </pre>
+              </div>
+              <p>Sometimes, you may get a message like shown below when you try to start <em>vc-scheduler</em>.</p>
+              <div class='code'>
+                <pre lang="bash">
+                [root@localhost ~]# vc-scheduler -s start
+                Pidfile exists and Videocache Scheduler is already running with process id: 8388.
+                [root@localhost ~]#
+                </pre>
+              </div>
+              <p>Please note that the XMLRPC server mentioned above listens on port 9100 and hence no other application can listen on port 9100. If there is a process already listening on port 9100, then you should either stop that process or change the <a class="menu-item" href="#configure">rpc_port</a> option in <em>/etc/videocache.conf</em> to a port above 1024 which is free. To find out the program listening on port 9100, use the following command as root.</p>
+              <div class='code'>
+                <pre lang="bash">
+                [root@localhost ~]# netstat -atpn | grep 9100 | grep LISTEN
+                tcp        0      0 127.0.0.1:9100              0.0.0.0:*                   LISTEN      8481/python         
+                </pre>
+              </div>
+              <p>In such cases, we can send the restart signal and <em>vc-scheduler</em> will try to restart the process anyway. For a list of available options with <em>vc-scheduler</em> script, use option -h as shown below.</p>
+              <div class='code'>
+                <pre lang="bash">
+                [root@localhost ~]# vc-scheduler -h
+                </pre>
+              </div>
+              <br class="clear" />
             </div>
           </li>
 
@@ -900,7 +1275,7 @@
                   [root@localhost ~]# update-vc --prefix=/path/to/videocache/
                 </pre>
               </div>
-              <p>For a list of available options with vc-update command, use option -h as shown below.</p>
+              <p>For a list of available options with <em>vc-update</em> command, use option -h as shown below.</p>
               <div class='code'>
                 <pre lang="bash">
                   [root@localhost ~]# update-vc -h
@@ -911,17 +1286,57 @@
 
           <li id="upgrade-policy" class="hidden page">
             <div class="page-content">
-              WTF5
             </div>
           </li>
 
           <li id="response-codes" class="hidden page">
             <div class="page-content">
-              WTF5
             </div>
           </li>
 
-          <li id="changelog" class="page">
+          <li id="restart" class="hidden page">
+            <div class="page-content">
+              <p>Restarting <strong>Videocache</strong> is a multistep process and doesn't involve actual restarting of Videocache script. We need to restart the different components on which Videocache depends. Below is a step by step process to restart different components.</p>
+              <p><strong>NOTE:</strong> If you made any changes to the configuration file located at <em>/etc/videcache.conf</em>, then you need to run <a class="menu-item" href="#vc-update">Update Script</a> before restarting Videocache.</p>
+              <br class="clear" />
+
+              <h4><strong>Restart Apache(httpd) Web Server</strong></h4>
+              <p>As Videocache serves the cached videos via HTTP, we first need to restart our Apache(httpd) Web Server daemon. To restart Apache web server, use the following command.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# apachectl -k restart
+                </pre>
+              </div>
+              <br class="clear" />
+
+              <h4><strong>Restart Videocache Scheduler</strong></h4>
+              <p>Videocache Scheduler is a script which is used to maintain a queue of videos which should be cached. Videocache Scheduler script basically fires up an XMLRPC server which listens on port 9100 and maintains a collection of queued videos. To restart Videocache Scheduler, use the following command.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# vc-scheduler -s restart
+                </pre>
+              </div>
+              <p>For more details on <em>vc-scheduler</em> script, please check <a class="menu-item" href="#vc-scheduler">Videocache Scheduler</a> page.</p>
+              <br class="clear" />
+
+              <h4><strong>Restart or Reload Squid Proxy Server</strong></h4>
+              <p>Once you are done restarting Apache Web Server and Videocache Scheduler script, we finally need to reload or restart our Squid proxy server daemon. To restart Squid daemon, use the following command.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# /etc/init.d/squid restart
+                </pre>
+              </div>
+              <p>Or to reload the Squid daemon, please use the following command.</p>
+              <div class='code'>
+                <pre lang="bash">
+                  [root@localhost ~]# /etc/init.d/squid reload
+                </pre>
+              </div>
+              <p>That's all for restarting Videocache. Now check videocache logs in <em>/var/log/videocache</em> directory for current videocache activity.</p>
+            </div>
+          </li>
+
+          <li id="changelog" class="hidden page">
             <div class="page-content">
               <p>Please click on a version to see the changes for that version.</p>
               <br class="clear" />
@@ -1257,19 +1672,11 @@
                 </div>
               </div>
             </div>
-            </li>
-
-            <li id="restart" class="hidden page">
-            <div class="page-content">
-              WTF5
-            </div>
           </li>
         </ul>
       </div>
       <hr class="full"/>
-      <h2 class="center">
-        Copyright &copy; 2008-2011 Kulbir Saini.
-      </h2>
+      <h2 class="center">Copyright &copy; 2008-2011 Kulbir Saini.</h2>
       <hr class="space" />
     </div><!--end .container-->
   </body>

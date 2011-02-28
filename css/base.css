@@ -120,6 +120,7 @@ p.incr, .incr p {font-size: 10px;line-height: 1.44em; margin-bottom: 1.5em;}
 h2 a:hover { color: #000; text-decoration: underline; }
 .hidden { display: none; height: 0px; }
 .pages { margin-top: 20px; }
+ul.page-container { margin: 0px; }
 .navi h2 { font-size: 150%; }
 table { margin-bottom: 0; }
 .paypal-page { margin: 10px 0px 0px 40px; }
@@ -133,4 +134,8 @@ ul.install-tabs, ul.option-tabs, ul.version-tabs { margin: 0; }
 
 .option-tabs li, .version-tabs li { float: left; margin: 7px 6px 0px 0px; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:120%;line-height:1;font-weight:bold; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 3px; border:1px solid;}
 .version li { list-style-type: square; }
+
+ul.list-square li { list-style-type: square; }
+h5.question { margin-top: 15px; }
+.answer p + p { margin: 5px 0 0; }
 
