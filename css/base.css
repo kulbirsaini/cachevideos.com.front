@@ -80,7 +80,7 @@ h1.section						    {line-height: 1.4;padding: 0 0 7px 0}
 .dquo     {margin-left: -.5em; } 
 p.incr, .incr p {font-size: 10px;line-height: 1.44em; margin-bottom: 1.5em;}
 .caps     {font-variant: small-caps; letter-spacing: 1px; text-transform: lowercase; font-size:1.2em; line-height:1%; font-weight:bold; padding:0 2px;}
-.active a {color: #000099;}
+.active a {color: #000;}
 
 /*Profiles*/
 .bio      {display: block;font-size:20px;line-height: 39px;margin:20px 0 30px 0px;padding: 0px;font-family: 'OFL Sorts Mill Goudy TT', georgia, times, serif;text-shadow: rgba(255, 255, 255, 0.796875) 0px 1px 0px;color: rgba(20, 20, 20, 0.796875);}
@@ -105,7 +105,7 @@ ul.install-tabs, ul.option-tabs, ul.version-tabs, ul.list-menu { margin: 0; }
 .install-tabs li.active, .option-tabs li.active, .version-tabs li.active {color: #000; }
 
 .option-tabs li, .version-tabs li { float: left; margin: 7px 6px 0px 0px; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:120%;line-height:1;font-weight:bold; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 3px; border:1px solid;}
-.version li { list-style-type: square; }
+.versions li { list-style-type: square; }
 
 ul.list-square li { list-style-type: square; }
 h5.question { margin-top: 15px; }
@@ -117,4 +117,5 @@ h5.question { margin-top: 15px; }
 #floating-menu a {display:block;margin:0;padding:2px 0;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size: 110%;}
 #floating-menu a:hover { color: #000; text-decoration: underline; }
 #floating-menu ul li { border: 1px solid #000; }
+.floating-navi a {display:block;position:relative;text-align:center;color: #222;text-shadow:  0 1px 0 rgba(255, 255, 255, 0.5)}
 
