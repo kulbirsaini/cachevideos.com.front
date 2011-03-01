@@ -1,8 +1,7 @@
-body                     {font-family: arial, helvetica, sans-serif; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);background: #d7d7d7 url(images/background.jpg)}
+body                     {font-family: arial, helvetica, sans-serif; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);background: #d7d7d7 url(../images/background.jpg)}
 h1, h2, h3, h4, h5, h6 p {font-family: georgia, times, serif; margin: 0;color: rgba(20, 20, 20, 0.8)}
 h1, h2       			  		 {font-family: 'OFL Sorts Mill Goudy TT', georgia, times, serif;}
 h1                       {line-height: 1.2}
-.wordpress h1			  		 {margin: 0 0 .3em 0; width: 94%}
 h2, h3       			  		 {margin: 0 0 .2em 0}
 h2.center    			  		 {font-size: 1.65em}
 h2 											 {font-size:1.85em;}
@@ -11,42 +10,26 @@ p                   		 {font-size: 1em; font-family: arial, helvetica, sans-seri
 a                   		 {text-decoration: none;color: rgba(10, 10, 110, 0.8)}
 a:hover             		 {color: #000099}
 a img               		 {border: none}
-hr                  		 {background: url("../img/long-line.png") no-repeat scroll -155px bottom transparent;;height:2px}
+hr                  		 {height:2px}
 hr.full             		 {background-position: center bottom}
-hr.left             		 {background: url("../img/long-line.png") no-repeat scroll 545px bottom transparent;height: 2px;margin: 0}
+hr.left             		 {height: 2px;margin: 0}
 hr.space            		 {visibility: hidden}
 input.text 							 {width:180px;}
 input.text 							 {width:180px;}
 .pad                		 {padding: 5px 20px 0 20px;}
-.showgrid           		 {background: url('grid.png');}
-a.external:hover    		 {padding: 4px 13px 0 0}
-h3 a.external:hover 		 {padding: 0 13px 0 0}
-a.external:hover    		 {background: url('../img/externalkernal.png')  right 6px no-repeat;}
-abbr, acronym       		 {color: #222; cursor: help}
 label               		 {font-weight: normal;}
 strong              		 {color: #222}
 b                   		 {color: #222}
-div.colborder       		 {border-right: 1px solid #bbb}
 blockquote          		 {font-size:2em;}
-.box                		 {-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; background:rgba(160, 150, 150, 0.15); border:1px solid rgba(155, 155, 155, 0.2); color:rgba(0, 0, 0, 0.6) !important; padding:4px 10px; font-size: 22px; margin-right: 22px; text-shadow:0 1px 1px rgba(255, 255, 255, 0.75); padding: 10px}
 .right                   {text-align: right}
 
-ul.listless  {list-style-type: none;margin: 0;}
-.listless li {list-style-type: none;margin: 0 0 10px 0;}
 .center      {text-align: center}
 .fine        {font-size: .6em}
-.bordered    {border: 1px solid #c2c2c2}
-.alignright  {float: right; margin: 0 0 10px 10px}
-.alignleft   {float: left; margin: 0 10px 10px 0}
 
-h1.section, h2.section    {background: url("../img/long-line.png") no-repeat scroll -155px bottom transparent;margin: 0 0 10px 0;}
+h1.section, h2.section    {margin: 0 0 10px 0;}
 h1.section						    {line-height: 1.4;padding: 0 0 7px 0}
 #color{border-bottom: 1px solid #3F002A;}
-.statement h2 {font-size:22px;line-height:1.8;margin:120px 0 151px 100px;}
-.statement h2 em, .bio em {font-size: 50px;line-height:1;font-style: normal}
-.curlie{font-size:250px; line-height: 1.2;margin: 35px 0 0 0;color: rgba(0,0,0, 0.2);text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);height: 280px}
 
-/*Color Blocks*/
 .colora{background-color: #dd4f4c;}
 .colorb{background-color: #EDD155;}
 .colorc{background-color: #fdbf42;}
@@ -73,23 +56,9 @@ h1.section						    {line-height: 1.4;padding: 0 0 7px 0}
 .colorx{background-color: #cc4800;}
 .colory{background-color: #cc1d00;}
 
-.colora h3 a,.colorb h3 a,.colorc h3 a,.colord h3 a,.colore h3 a,.colorf h3 a{color: rgba(20, 20, 20, 0.8)}
-.countMe{height:470px}
-
-/*Typography*/
-.dquo     {margin-left: -.5em; } 
-p.incr, .incr p {font-size: 10px;line-height: 1.44em; margin-bottom: 1.5em;}
-.caps     {font-variant: small-caps; letter-spacing: 1px; text-transform: lowercase; font-size:1.2em; line-height:1%; font-weight:bold; padding:0 2px;}
-.active a {color: #000;}
-
-/*Profiles*/
-.bio      {display: block;font-size:20px;line-height: 39px;margin:20px 0 30px 0px;padding: 0px;font-family: 'OFL Sorts Mill Goudy TT', georgia, times, serif;text-shadow: rgba(255, 255, 255, 0.796875) 0px 1px 0px;color: rgba(20, 20, 20, 0.796875);}
-.mastimg  {height:228px; border-bottom: 1px solid #bbbbbb; margin-top: 40px;}
-.bob {background:url("http://bocoup.com/core/brandguide/logo/bocoup-604.png") no-repeat scroll right top transparent;height:502px;margin-top:-80px;width:389px !important;z-index:-10;border-bottom: 1px solid #ccc}
-
-.navi { height: 60px; float: left; width: 113px; }
-.navi h2 a {display:block;margin:-4px 0 0 -4px;position:relative;text-align:center;color: #222;text-shadow:  0 1px 0 rgba(255, 255, 255, 0.5)}
-.navi h2 { font-size: 150%; padding: 15px 0; }
+.top-navi { height: 60px; float: left; width: 113px; }
+.top-navi h2 a {display:block;margin:-4px 0 0 -4px;position:relative;text-align:center;color: #222;text-shadow:  0 1px 0 rgba(255, 255, 255, 0.5)}
+.top-navi h2 { font-size: 150%; padding: 15px 0; }
 
 h2 a:hover { color: #000; text-decoration: underline; }
 .hidden { display: none; height: 0px; }
@@ -114,8 +83,11 @@ h5.question { margin-top: 15px; }
 .container #menu { position: fixed; top: 0px; float: left; z-index: 10;}
 .container .pages { position: absolute; top: 90px; float: left; z-index: 0; }
 #floating-menu { position:fixed; width: 150px; top: 95px; background: #78B340; }
-#floating-menu a {display:block;margin:0;padding:2px 0;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size: 110%;}
-#floating-menu a:hover { color: #000; text-decoration: underline; }
+li.floating-navi h2 { margin: 0px; padding: 0px; font-size: 1em; }
+li.floating-navi h2 a {display:block;margin:0;padding:2px 0;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size: 110%;}
+li.floating-navi a:hover { color: #000; text-decoration: underline; }
 #floating-menu ul li { border: 1px solid #000; }
-.floating-navi a {display:block;position:relative;text-align:center;color: #222;text-shadow:  0 1px 0 rgba(255, 255, 255, 0.5)}
 
+.navi h2 a.underline { text-decoration: underline; }
+
+.header { background: url(../images/header.jpg) no-repeat 0 0; }
