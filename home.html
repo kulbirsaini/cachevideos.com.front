@@ -27,7 +27,7 @@
 
       <div class="pages">
         <ul class="page-container">
-          <li id="home" class='page'>
+          <li id="home" class='hidden page'>
             <div class="page-content">
               <h2>Cache Videos Using Squid + Videocache</h2>
               <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
@@ -139,24 +139,6 @@
                 <br class="clear" />
               </div>
               <hr class="space" />
-
-              <div class="one-third">
-                <h3><strong>Installation</strong></h3>
-                <p>Installing Videocache is an easy process which is extensively documented in INSTALL file included in the source package. You can also check the instructions on <a class="menu-item" href="#install">Installation Page</a> for details on how to install videocache on different operating systems.</p>
-                <br class="clear" />
-              </div>
-
-              <div class="one-third">
-                <h3><strong>Configuration</strong></h3>
-                <p>Videocache is controlled by the configuration file located at <em>/etc/videocache.conf</em>. Please follow instructions on <a class="menu-item" href="#configure">Configuration Page</a> for details on how to configure videocache to get the most out of your bandwidth.</p>
-                <br class="clear" />
-              </div>
-
-              <div class="one-third last">
-                <h3><strong>Support</strong></h3>
-                <p>Though we test Videocache thoroughly before releasing the new version, some issues may remain unnoticed. In case you are face any problem or stuck while installing or configuring videocache, use our <a href="/forum">Support Forums</a> to get help.</p>
-                <br class="clear" />
-              </div>
             </div>
           </li>
 
@@ -317,7 +299,7 @@
             <div class="page-content">
               <h2>Configuring Videocache</h2>
               <p>Configuring Videocache is very easy. The configuration file for videocache is located at <em>/etc/videocache.conf</em>. Below is a brief explanation of different options used in <em>videocache.conf</em>.</p>
-              <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> If you change options in this file, please use the <a class="menu-item" href="#vc-update">Update Script</a> to update the videocache installation and restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</span></p>
+              <p><span class="warn"><strong>IMPORTANT:</strong> If you change options in this file, please use the <a class="menu-item" href="#vc-update">Update Script</a> to update the videocache installation and restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</span></p>
               <p>Click on the option name to get the details.</p>
               <br class="clear" />
 
@@ -365,7 +347,7 @@
                 </div>
 
                 <div id="client_email" class="option">
-                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
+                  <p><span class="warn"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
                   <p>Please set this option to the email address using which you purchased Videocache license.</p>
                   <p>Default value:</p>
                   <div class='code'>
@@ -386,7 +368,7 @@
                 </div>
 
                 <div id="videocache_user" class="option">
-                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
+                  <p><span class="warn"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
                   <p>Use this option to set the user which should be running videocache scheduler. This user must be same as the squid user. On RedHat/CentOS/SuSE, it's generally <em>squid</em> and on Debian/Ubuntu/BSDs, it generally <em>proxy</em>.</p>
                   <p>Default value:</p>
                   <div class='code'>
@@ -397,7 +379,7 @@
                 </div>
 
                 <div id="cache_host" class="option">
-                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT</strong> : Please change this to actual IP address or domain name of your proxy server, otherwise videocache will not work properly.</span></p>
+                  <p><span class="warn"><strong>IMPORTANT</strong> : Please change this to actual IP address or domain name of your proxy server, otherwise videocache will not work properly.</span></p>
                   <p>The hostname or IP address of the system on which caching is being done. This is used for serving the videos from the cache. Please don&rsquo;t use http:// or slashes (/). Just specify the domain name or IP address.</p>
                   <p><strong>Example</strong> : proxy.example.com</p>
                   <p>Additionally you can specifiy an alternative port to for HTTP. <strong>Example</strong> : 192.168.36.204:81</p>
@@ -437,7 +419,7 @@
                 </div>
 
                 <div id="proxy" class="option">
-                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> Use this option only when Videocache server should go through another proxy server.</span></p>
+                  <p><span class="warn"><strong>IMPORTANT:</strong> Use this option only when Videocache server should go through another proxy server.</span></p>
                   <p>Proxy to be used for caching videos via HTTP.</p>
                   <p><strong>Example</strong> : http://proxy.example.com:3128/ or http://192.0.2.25:8080/</p>
                   <p>Default value:</p>
@@ -582,7 +564,7 @@
                       %Y    Year with century as a decimal number
                     </pre>
                   </div>
-                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> This format will be applicable to localtime and GMT time in the log messages.</span></p>
+                  <p><span class="warn"><strong>IMPORTANT:</strong> This format will be applicable to localtime and GMT time in the log messages.</span></p>
                   <p><strong>Example</strong> : <em>timeformat</em> = %B %b, %Y %H:%M:%S</p>
                   <p>Default value:</p>
                   <div class='code'>
@@ -617,7 +599,7 @@
 
                 <div id="max_logfile_size" class="option">
                   <p>Maximum size of logfiles specified above. The size is in mega bytes. The log files will be rotated once they exceed the maximum specified size.</p>
-                  <p><span style="color: rgb(255, 0, 0);"><strong>IMPORTANT:</strong> Please don’t use <em>max_logfile_size</em> = 10MB. Don’t append MB.</span></p>
+                  <p><span class="warn"><strong>IMPORTANT:</strong> Please don’t use <em>max_logfile_size</em> = 10MB. Don’t append MB.</span></p>
                   <p>Default Values:</p>
                   <div class='code'>
                     <pre>
@@ -739,6 +721,12 @@
                     </li>
                     <li>
                       <h5 class="question">Does Videocache work with Squid 2.7?</h5>
+                      <div class="answer">
+                        <p>Yes.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <h5 class="question">Does Videocache work with Lusca Cache?</h5>
                       <div class="answer">
                         <p>Yes.</p>
                       </div>
@@ -1153,7 +1141,7 @@
             <div class="page-content">
               <h2>Videocache Update Script</h2>
               <p>The <strong>Videocache Update Script (<em>vc-update</em>)</strong> was first introduced in version 1.3. Update script helps in updating the videocache installation by creating cache and log directories and making other changes that you intend to make via the main configuration file <em>/etc/videocache.conf</em>. It also generates the new Apache configuration file for videocache to suit your new configuration. Let's learn the usage of update script with a sample scenario.</p>
-              <p><strong>IMPORTANT:</strong> <span style="color: rgb(255, 0, 0);">You must <a class="menu-item" href="#restart">Restart Videocache</a> after running the update script.<span></p>
+              <p><strong>IMPORTANT:</strong> <span class="warn">You must <a class="menu-item" href="#restart">Restart Videocache</a> after running the update script.<span></p>
               <br class="clear" />
               <h4><strong>Usage</strong></h4>
               <p><strong>Scenario:</strong> You want to store the cached videos in <em>/videocache/</em> directory instead of <em>/var/spool/videocache/</em>.</p>
@@ -1286,8 +1274,8 @@
                 <li class="version_15" onclick="skip_to_section('changelog', 'version_15');">1.5</li>
                 <li class="version_14" onclick="skip_to_section('changelog', 'version_14');">1.4</li>
                 <li class="version_13" onclick="skip_to_section('changelog', 'version_13');">1.3</li>
-                <li class="version_13" onclick="skip_to_section('changelog', 'version_12');">1.2</li>
-                <li class="version_12" onclick="skip_to_section('changelog', 'version_11');">1.1</li>
+                <li class="version_12" onclick="skip_to_section('changelog', 'version_12');">1.2</li>
+                <li class="version_11" onclick="skip_to_section('changelog', 'version_11');">1.1</li>
                 <li class="version_10" onclick="skip_to_section('changelog', 'version_10');">1.0</li>
                 <li class="version_09" onclick="skip_to_section('changelog', 'version_09');">0.9</li>
                 <li class="version_08" onclick="skip_to_section('changelog', 'version_08');">0.8</li>
@@ -1605,20 +1593,62 @@
         </ul>
 
         <hr class="full"/>
-        <h2 class="center">Copyright &copy; 2008-2011 Kulbir Saini.</h2>
+        <p class="center">Copyright &copy; 2008-2011 Kulbir Saini.</p>
         <hr class="space" />
       </div>
     </div><!--end .container-->
-    <div id="floating-menu">
-      <ul class="list-menu">
-        <li class="floating-navi navi colorb"><h2 class="vc-cleaner"><a class="menu-item" href="#vc-cleaner">Cleaner Script</a></h2></li>
-        <li class="floating-navi navi colorc"><h2 class="vc-update"><a class="menu-item" href="#vc-update">Update Script</a></h2></li>
-        <li class="floating-navi navi colord"><h2 class="vc-scheduler"><a class="menu-item" href="#vc-scheduler">Scheduler Script</a></h2></li>
-        <li class="floating-navi navi colore"><h2 class="restart"><a class="menu-item" href="#restart">Restart</a></h2></li>
-        <li class="floating-navi navi colorf"><h2 class="upgrade"><a class="menu-item" href="#upgrade">Upgrade</a></h2></li>
-        <li class="floating-navi navi colorg"><h2 class="changelog"><a class="menu-item" href="#changelog">Change Log</a></h2></li>
-        <li class="floating-navi navi colorv"><h2 class="upgrade-policy"><a class="menu-item" href="#upgrade-policy">Upgrade Policy</a></h2></li>
-      </ul>
+    <div id="floating-box">
+      <div id="floating-menu">
+        <ul class="list-menu">
+          <li class="floating-navi navi colorc"><h2 class="vc-update"><a class="menu-item" href="#vc-update">Update Script</a></h2></li>
+          <li class="floating-navi navi colord"><h2 class="vc-scheduler"><a class="menu-item" href="#vc-scheduler">Scheduler Script</a></h2></li>
+          <li class="floating-navi navi colore"><h2 class="restart"><a class="menu-item" href="#restart">Restart</a></h2></li>
+          <li class="floating-navi navi colorb"><h2 class="vc-cleaner"><a class="menu-item" href="#vc-cleaner">Cleaner Script</a></h2></li>
+          <li class="floating-navi navi colorf"><h2 class="upgrade"><a class="menu-item" href="#upgrade">Upgrade</a></h2></li>
+          <li class="floating-navi navi colorg"><h2 class="changelog"><a class="menu-item" href="#changelog">Change Log</a></h2></li>
+          <li class="floating-navi navi colorv"><h2 class="upgrade-policy"><a class="menu-item" href="#upgrade-policy">Upgrade Policy</a></h2></li>
+        </ul>
+      </div>
+      <div class="sidebar-clear"></div>
+      <div id="buynow" class="buy-sidebar">
+        <p class="title colorb">Buy Now</p>
+        <div class="paypal-page">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Sidebar') } catch(err) {}; return true;">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
+            <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
+            <select name="os0" class="clear" style="margin-bottom:8px;">
+              <option value="One Server">One Server $199.00</option>
+              <option value="Two Servers">Two Servers $369.00</option>
+              <option value="Three Servers">Three Servers $499.00</option>
+            </select>
+            <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+      </div>
+      <div class="sidebar-clear"></div>
+      <div id="upgradenow" class="buy-sidebar">
+        <p class="title colord">Upgrade</p>
+        <div class="paypal-page">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Sidebar') } catch(err) {}; return true;">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
+            <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
+            <select name="os0" class="clear" style="margin-bottom:8px;">
+              <option value="One Server">One Server $99.00</option>
+              <option value="Two Servers">Two Servers $179.00</option>
+              <option value="Three Servers">Three Servers $249.00</option>
+            </select>
+            <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+            <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

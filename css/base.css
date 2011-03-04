@@ -1,14 +1,15 @@
 body                     {font-family: arial, helvetica, sans-serif; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);background: #d7d7d7 url(../images/background.jpg)}
 h1, h2, h3, h4, h5, h6 p {font-family: georgia, times, serif; margin: 0;color: rgba(20, 20, 20, 0.8)}
-h1, h2       			  		 {font-family: 'OFL Sorts Mill Goudy TT', georgia, times, serif;}
+h1, h2       			  		 {font-family: georgia, times, serif;}
 h1                       {line-height: 1.2}
 h2, h3       			  		 {margin: 0 0 .2em 0}
 h2.center    			  		 {font-size: 1.65em}
 h2 											 {font-size:1.85em;}
 h4 											 {font-family: Arial;}
 p                   		 {font-size: 1em; font-family: arial, helvetica, sans-serif;}
-a                   		 {text-decoration: none;color: rgba(10, 10, 110, 0.8)}
-a:hover             		 {color: #000099}
+a                   		 {text-decoration: none;color:#DA1C0E;}
+a:hover, a:active {border-bottom:2px solid #AA0000;color:#BB0000; }
+h2 a:hover, h2 a:active {border-bottom:0px;}
 a img               		 {border: none}
 hr                  		 {height:2px}
 hr.full             		 {background-position: center bottom}
@@ -63,17 +64,16 @@ h1.section						    {line-height: 1.4;padding: 0 0 7px 0}
 h2 a:hover { color: #000; text-decoration: underline; }
 .hidden { display: none; height: 0px; }
 ul.page-container { margin: 0px; }
-table { margin-bottom: 0; }
-.paypal-page { margin: 10px 0px 0px 40px; }
+
 span.number_title { font-size: 120%; font-weight: bold; padding-right: 5px; }
 div.code { background: #F8F8F8; border: 1px solid #bbb; padding: 0.5em; margin: 5px 0px 5px 25px; }
 div.code pre { white-space: pre-line; margin: 0; padding: 0px 10px; }
 
 ul.install-tabs, ul.option-tabs, ul.version-tabs, ul.list-menu { margin: 0; }
-.install-tabs li { float: left; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:1.6em;line-height:1;font-weight:bold;margin: 0 0 .2em 0; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 10px; border:1px solid;}
+.install-tabs li { float: left; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:1.6em;line-height:1;font-weight:bold;margin: 0 0 .2em 0; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 10px; border:1px solid;border-color:#999;}
 .install-tabs li.active, .option-tabs li.active, .version-tabs li.active {color: #000; }
 
-.option-tabs li, .version-tabs li { float: left; margin: 7px 6px 0px 0px; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:120%;line-height:1;font-weight:bold; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 3px; border:1px solid;}
+.option-tabs li, .version-tabs li { float: left; margin: 7px 6px 0px 0px; cursor: pointer; font-family: georgia, times, serif; color: #4488AA;;font-size:120%;line-height:1;font-weight:bold; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 3px; border:1px solid;border-color:#999;}
 .versions li { list-style-type: square; }
 
 ul.list-square li { list-style-type: square; }
@@ -82,12 +82,28 @@ h5.question { margin-top: 15px; }
 
 .container #menu { position: fixed; top: 0px; float: left; z-index: 10;}
 .container .pages { position: absolute; top: 90px; float: left; z-index: 0; }
-#floating-menu { position:fixed; width: 150px; top: 95px; background: #78B340; }
-li.floating-navi h2 { margin: 0px; padding: 0px; font-size: 1em; }
-li.floating-navi h2 a {display:block;margin:0;padding:2px 0;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size: 110%;}
-li.floating-navi a:hover { color: #000; text-decoration: underline; }
+#floating-box { position:fixed; width: 160px; top: 60px;}
 #floating-menu ul li { border: 1px solid #000; }
+li.floating-navi h2 { margin: 0px; padding: 0px; font-size: 1em; }
+li.floating-navi h2 a {display:block;margin:0;padding:1px 0;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size: 110%;}
+li.floating-navi a:hover { color: #000; text-decoration: underline; }
+
+#floating-box 
 
 .navi h2 a.underline { text-decoration: underline; }
 
 .header { background: url(../images/header.jpg) no-repeat 0 0; }
+.warn {color: rgba(50, 150, 50, 0.898); font-size:110%;}
+.warn a {font-size:100%;}
+
+
+table { margin-bottom: 0; }
+.paypal-page { margin: 10px 0px 0px 40px; }
+.buy-sidebar {border: 1px solid #222;}
+.buy-sidebar .title {text-align: center; padding: 1px 0px;margin:0px 0px 5px 0px;border-bottom:1px solid #222;text-transform:uppercase;font-size:120%; font-weight:bold;}
+.buy-sidebar .paypal-page {margin: 0px;}
+.buy-sidebar form {text-align: center;}
+.buy-sidebar form select {max-width: 155px;}
+.buy-sidebar form input {max-width: 130px;}
+.sidebar-clear {margin-bottom:10px;clear:both;}
+
