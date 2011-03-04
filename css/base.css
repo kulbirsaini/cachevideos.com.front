@@ -15,22 +15,13 @@ hr                  		 {height:2px}
 hr.full             		 {background-position: center bottom}
 hr.left             		 {height: 2px;margin: 0}
 hr.space            		 {visibility: hidden}
-input.text 							 {width:180px;}
-input.text 							 {width:180px;}
 .pad                		 {padding: 5px 20px 0 20px;}
 label               		 {font-weight: normal;}
 strong              		 {color: #222}
 b                   		 {color: #222}
 blockquote          		 {font-size:2em;}
-.right                   {text-align: right}
 
-.center      {text-align: center}
-.fine        {font-size: .6em}
-
-h1.section, h2.section    {margin: 0 0 10px 0;}
-h1.section						    {line-height: 1.4;padding: 0 0 7px 0}
 #color{border-bottom: 1px solid #3F002A;}
-
 .colora{background-color: #dd4f4c;}
 .colorb{background-color: #EDD155;}
 .colorc{background-color: #fdbf42;}
@@ -38,65 +29,57 @@ h1.section						    {line-height: 1.4;padding: 0 0 7px 0}
 .colore{background-color: #40B383;}
 .colorf{background-color: #409EB3;}
 .colorg{background-color: #B86CAF;}
-.colorh{background-color: #cc0000;}
-.colori{background-color: #cc0043;}
-.colorj{background-color: #cc00b2;}
-.colork{background-color: #0066cc;}
-.colorl{background-color: #de1c8e;}
-.colorm{background-color: #7a108a;}
-.colorn{background-color: #2a108a;}
-.coloro{background-color: #10808a;}
-.colorp{background-color: #00a3cc;}
-.colorq{background-color: #00cc9e;}
-.colorr{background-color: #00cc2b;}
-.colors{background-color: #52cc00;}
-.colort{background-color: #86cc00;}
-.coloru{background-color: #b2cc00;}
 .colorv{background-color: #cca300;}
-.colorw{background-color: #cc5b00;}
-.colorx{background-color: #cc4800;}
-.colory{background-color: #cc1d00;}
 
-.top-navi { height: 60px; float: left; width: 113px; }
-.top-navi h2 a {display:block;margin:-4px 0 0 -4px;position:relative;text-align:center;color: #222;text-shadow:  0 1px 0 rgba(255, 255, 255, 0.5)}
-.top-navi h2 { font-size: 150%; padding: 15px 0; }
-
-h2 a:hover { color: #000; text-decoration: underline; }
+/* General */
+.first {margin-left:0;padding-left:0;}
+.last{margin-right: 0px !important;}
+.clear {clear:both;}
+.center{text-align: center}
 .hidden { display: none; height: 0px; }
+.warn {color: rgba(50, 150, 50, 0.898); font-size:110%;}
+.warn a {font-size:100%;}
 ul.page-container { margin: 0px; }
+ul.list-square li { list-style-type: square; }
 
+/* Container/Partitions */
+.container {width:800px;margin:0 auto;position: relative;}
+.half { width: 378px; float: left; margin-right: 40px; }
+.one-third { width: 248px; float: left; margin-right: 25px; }
+
+/* Code */
 span.number_title { font-size: 120%; font-weight: bold; padding-right: 5px; }
 div.code { background: #F8F8F8; border: 1px solid #bbb; padding: 0.5em; margin: 5px 0px 5px 25px; }
 div.code pre { white-space: pre-line; margin: 0; padding: 0px 10px; }
 
+/* Tabs on all pages */
 ul.install-tabs, ul.option-tabs, ul.version-tabs, ul.list-menu { margin: 0; }
 .install-tabs li { float: left; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:1.6em;line-height:1;font-weight:bold;margin: 0 0 .2em 0; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 10px; border:1px solid;border-color:#999;}
 .install-tabs li.active, .option-tabs li.active, .version-tabs li.active {color: #000; }
-
 .option-tabs li, .version-tabs li { float: left; margin: 7px 6px 0px 0px; cursor: pointer; font-family: georgia, times, serif; color: #4488AA;;font-size:120%;line-height:1;font-weight:bold; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 3px; border:1px solid;border-color:#999;}
 .versions li { list-style-type: square; }
 
-ul.list-square li { list-style-type: square; }
+/* FAQs */
 h5.question { margin-top: 15px; }
 .answer p + p { margin: 5px 0 0; }
 
+/* Navigation/Menu */
 .container #menu { position: fixed; top: 0px; float: left; z-index: 10;}
 .container .pages { position: absolute; top: 90px; float: left; z-index: 0; }
+.top-navi { height: 60px; float: left; width: 113px; }
+.top-navi h2 a {display:block;margin:-4px 0 0 -4px;position:relative;text-align:center;color: #222;text-shadow:  0 1px 0 rgba(255, 255, 255, 0.5)}
+.top-navi h2 { font-size: 150%; padding: 15px 0; }
+.navi h2 a.underline { text-decoration: underline; }
+h2 a:hover { color: #000; text-decoration: underline; }
+
+/* Sidebar */
 #floating-box { position:fixed; width: 160px; top: 60px;}
 #floating-menu ul li { border: 1px solid #000; }
 li.floating-navi h2 { margin: 0px; padding: 0px; font-size: 1em; }
 li.floating-navi h2 a {display:block;margin:0;padding:1px 0;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size: 110%;}
 li.floating-navi a:hover { color: #000; text-decoration: underline; }
 
-#floating-box 
-
-.navi h2 a.underline { text-decoration: underline; }
-
-.header { background: url(../images/header.jpg) no-repeat 0 0; }
-.warn {color: rgba(50, 150, 50, 0.898); font-size:110%;}
-.warn a {font-size:100%;}
-
-
+/* Buy/Upgrade in Sidebar */
 table { margin-bottom: 0; }
 .paypal-page { margin: 10px 0px 0px 40px; }
 .buy-sidebar {border: 1px solid #222;}
