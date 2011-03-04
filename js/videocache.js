@@ -62,6 +62,7 @@ function jQueryMain(){
   $('div.answer').attr('style', 'display:none;');
   // Direct landing
   landing_page();
+  $('.navi h2.' + current_page + ' a').attr('class', 'menu-item underline');
 
   // Listeners
   // Main Menu

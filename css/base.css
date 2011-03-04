@@ -1,5 +1,5 @@
 /* Reset */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, ol, ul, li, form, label {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, ol, ul, li, form, label {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:inherit;font-family:inherit;vertical-align:baseline;}
 ul li { list-style-type: none; }
 ol li { list-style-type: decimal; }
 p { text-align: justify }
@@ -7,7 +7,7 @@ a {text-decoration:none;}
 a:focus { outline: none; }
 input {width:170px;}
 
-body {line-height:1.5;font-size:95%;color:#222;}
+body {line-height:1.5;font-size:14px;color:#222;}
 h2, h3, h4, h5 {font-weight:normal;}
 h2 {font-size:2em;margin-bottom:0.75em;}
 h3 {font-size:1.6em;line-height:1;margin-bottom:1em;}
@@ -17,26 +17,24 @@ a:focus, a:hover {color:#000;}
 strong {font-weight:bold;}
 pre {margin:1.5em 0;white-space:pre;}
 pre, code {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
-ul, ol {margin:5px 0px 10px 1.5em;}
+ul, ol {margin:5px 0px 10px 35px;}
 em{font-style:italic;}
 
 hr {background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:2px;margin:10px 0 ;border:none;}
 hr.clear {clear:both;float:none;width:100%;height:0;margin:0 ;border:none;visibility:hidden}
-hr.full {background-position: center bottom}
+hr.full {background-position: center bottom;width:90%; margin:0 auto;}
 hr.left {height: 2px;margin: 0}
 hr.space {visibility: hidden}
 p + p{margin: 7px 0 0 0}
 
 /* base */
-body {font-family: arial, helvetica, sans-serif;;background: #d7d7d7 url(../images/background.jpg);}
+body {font-family: Verdana,arial, helvetica, sans-serif;background: #fff;;}
 h2, h3, h4, h5 {font-family: georgia, times, serif; margin: 0;color: rgba(20, 20, 20, 0.8)}
 h2 {font-family: georgia, times, serif;}
 h1 {line-height: 1.2}
 h2, h3 {margin: 0 0 .2em 0}
 h2.center {font-size: 1.65em}
 h2 {font-size:1.85em;}
-h4 {font-family: Arial;}
-p {font-size: 1em; font-family: arial, helvetica, sans-serif;}
 a {text-decoration: none;color:#DA1C0E;}
 a:hover, a:active {border-bottom:2px solid #AA0000;color:#BB0000; }
 h2 a:hover, h2 a:active {border-bottom:0px;}
@@ -52,24 +50,26 @@ strong {color: #222}
 .clear {clear:both;}
 .center{text-align: center}
 .hidden { display: none; height: 0px; }
-ul.page-container { margin: 0px; }
+.underline {text-decoration: underline; }
+ul.page-container { margin:0px;}
 ul.list-square li { list-style-type: square; }
 
 /* Message Boxes */
-.info, .warn {border: 1px solid;margin: 10px 0px;padding:15px 10px 15px 70px;background-repeat: no-repeat;background-position: 10px center;}
+.info, .warn {border: 1px solid;margin: 10px 0px;padding:15px 10px 15px 70px;background-repeat: no-repeat;background-position: 10px center;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
 .warn {color: #9F6000;background-color: #FEEFB3;background-image: url('../images/warn.png');}
 .info {color: #00529B;background-color: #BDE5F8;background-image: url('../images/info.png');}
 
 /* Container/Partitions */
 .container {width:800px;margin:0 auto;position: relative;}
-.container #menu { position: fixed; padding-top: 10px; z-index: 10; background:url(../images/background.jpg) repeat 0 0;}
-.container .pages { position: absolute; top: 70px; z-index: 0; }
-.half { width: 378px; float: left; margin: 15px 40px 0px 0px; }
+.container #menu { position: fixed; padding-top: 10px; z-index: 10;background:#fff;}
+.container .pages { position: absolute; top: 70px; z-index: 0;}
+.half { width: 368px; float: left; margin: 15px 40px 0px 0px; _margin: 15px 20px 0px 0; }
 .one-third { width: 248px; float: left; margin-right: 25px; }
+.page-content { padding:10px; -moz-border-radius:8px; border-radius:8px; -webkit-border-radius:8px;border:2px solid #eee; }
 
 /* Code */
 span.number_title { font-size: 120%; font-weight: bold; padding-right: 5px; }
-div.code { background: #F8F8F8; border: 1px solid #bbb; padding: 0.5em; margin: 5px 0px 5px 25px; }
+div.code { background: #ccc; border: 1px solid #bbb; padding: 0.5em; margin: 5px 0px 5px 25px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; }
 div.code p { font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;white-space: pre; margin: 0; padding: 0px 10px;overflow-x:auto; }
 
 /* Tabs on all pages */
@@ -89,7 +89,7 @@ h5.question { margin-top: 15px; }
 .navi h2 a{display:block;position:relative;text-align:center;}
 .top-navi h2 {-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;}
 .top-navi { height: 60px; float: left; width: 105px; margin-right: 7px; }
-.top-navi h2 a {margin:-4px 0 0 -4px;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);}
+.top-navi h2 a {margin:-4px 0 0 -4px;}
 .top-navi h2 { font-size: 130%; padding: 10px 0; }
 .navi h2 a:hover { text-decoration: underline; }
 .navi.last {padding-right:23px;}
@@ -104,7 +104,7 @@ li.floating-navi h2 a {margin:0;padding:1px 0;font-size: 120%;}
 /* Buy/Upgrade in Sidebar */
 table { margin-bottom: 0; }
 .paypal-page { margin: 10px 0px 0px 40px; }
-.buy-sidebar {border: 1px solid #222;}
+.buy-sidebar {border: 1px solid #ddd;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;}
 .buy-sidebar .title {text-align: center; padding: 1px 0px;margin:0px 0px 5px 0px;border-bottom:1px solid #222;text-transform:uppercase;font-size:120%; font-weight:bold;color:#eee;}
 .buy-sidebar .paypal-page {margin: 0px;}
 .buy-sidebar form {text-align: center;}
