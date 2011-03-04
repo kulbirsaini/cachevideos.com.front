@@ -56,7 +56,7 @@ function landing_page(cur_hash) {
   return true;
 };
 
-jQuery(document).ready(function() {
+function jQueryMain(){
   // Set opacity to 0.4
   $('.navi h2').css({'opacity' : .4});
   // Hide all content in tabbed views
@@ -103,4 +103,4 @@ jQuery(document).ready(function() {
     $('.navi h2.' + current_page).animate({'opacity' : .8}, 100);
     $('.navi h2.' + current_page + ' a').attr('class', 'menu-item underline');
   });
-});
+};
