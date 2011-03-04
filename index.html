@@ -28,18 +28,17 @@
 
       <div class="pages">
         <ul class="page-container">
-          <li id="home" class='page'>
+          <li id="home" class='hidden page'>
             <div class="page-content">
               <h2>Cache Videos Using Squid + Videocache</h2>
               <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
               <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
-              <br class="clear" />
 
               <div class="half">
                 <h3><strong>Supported Websites</strong></h3>
-                <p>Videocache currently supports the caching of dynamically served videos from the following websites</p>
+                <p>Videocache supports the caching of videos served dynamically from the following websites</p>
                 <ol>
-                  <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com. This includes the youtube videos served from Google (googlevideo.com) servers.</li>
+                  <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com.</li>
                   <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
                   <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
                   <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
@@ -52,43 +51,36 @@
                   <li><strong>Tube 8</strong> Videos - Tube8 dot com</li>
                   <li><strong>Wrzuta</strong> Audio &amp; Videos - Wrzuta.pl</li>
                 </ol>
-                <br class="clear" />
               </div>
 
               <div class="half last">
                 <h3><strong>Supported Operating Systems</strong></h3>
-                <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong> provided the following required packages are installed and working.</p>
-                <ol>
-                  <li><strong>Squid</strong> &gt;= 2.6.Stable21 or 3.x</li>
-                  <li><strong>Python</strong> &gt;= 2.4.3</li>
-                  <li><strong>Python-iniparse</strong> (Any version)</li>
-                  <li><strong>Apache</strong> (Any version)</li>
-                </ol>
-                <br class="clear" />
-
-                <p>Videocache also works on <strong>Mac OS X</strong>. It also works on <strong>Microsoft Windows</strong> with Cygwin. (<strong>Note: </strong> We don't support these platforms officially.)</p>
-                <br class="clear" />
+                <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong>.</p>
+                <p>Videocache also works on <strong>Mac OSX</strong><sup>*</sup> and <strong>Microsoft Windows</strong><sup>*</sup> (with Cygwin).</p>
+                <div class="clear top-15"></div>
 
                 <h3><strong>Supported Video Formats</strong></h3>
                 <p>Videocache currently supports caching of following audio/video formats from the websites specified above: flv, 3gp, mp3, wmv, mp4, rm, ram, mov, avi, m4v</p>
-                <br class="clear" />
+                <div class="clear"></div>
               </div>
             </div>
+            <div class="clear"></div>
+            <p class="center"><strong><sup>*</sup></strong> <strong>Mac OSX</strong> and <strong>Microsoft Windows</strong> are not officially supported.</p>
           </li>
 
           <li id="pricing" class="hidden page">
             <div class="page-content">
               <h2>Videocache Commercial License Pricing</h2>
               <p>Latest version of Videocache is <strong>1.9.8</strong>. Videocache Bundle is one file containing the two packages (rpm and tar.gz) in one archive. With this package, you get free support via <a href="/forum">Support Forums</a>. We will email you the software bundle within 24 hours of the purchase.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h3><strong>Package Availability</strong></h3>
               <p><strong>Videocache</strong> is available in following two formats.</p>
               <ol>
-                <li><strong>RPM</strong> - Binary for rpm based distros like Red Hat, Fedora, CentOS, OpenSuSE etc.</li>
-                <li><strong>Source Archive</strong> - In case your distro doesn't support RPM, you can use the source archive (.tar.gz) and install Videocache using setup script included in the package. Intended for Ubuntu, Debian, BSD, Slackware users.</li>
+                <li><p><strong>RPM</strong> - Binary for rpm based distros like Red Hat, Fedora, CentOS, OpenSuSE etc.</p></li>
+                <li><p><strong>Source Archive</strong> - In case your distro doesn't support RPM, you can use the source archive (.tar.gz) and install Videocache using setup script included in the package. Intended for Ubuntu, Debian, BSD, Slackware users.</p></li>
               </ol>
-              <br class="clear" />
+              <div class="clear"></div>
 
               <div class="half">
                 <h3><strong>Purchase License</strong></h3>
@@ -112,7 +104,6 @@
                     <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
                   </form>
                 </div>
-                <br class="clear" />
               </div>
 
               <div class="half last">
@@ -137,9 +128,7 @@
                     <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
                   </form>
                 </div>
-                <br class="clear" />
               </div>
-              <hr class="space" />
             </div>
           </li>
 
@@ -147,7 +136,7 @@
             <div class="page-content">
               <h2>Installing Videocache</h2>
               <p>If you have not purchased <strong>Videocache</strong> license already, please go to <a class="menu-item" href="#pricing">Pricing Page</a> to purchase a license now.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h3><strong>Required Packages</strong></h3>
               <p><strong>Videocache</strong> requires following packages to work. You should have these packages installed and properly configured on your system. In case you don't have these packages installed check the respective links as shown below.</p>
@@ -157,13 +146,13 @@
                 <li><a href="http://code.google.com/p/iniparse/" target="_blank" rel="nofollow">Python-iniparse</a> (Any version)</li>
                 <li><a href="http://www.apache.org/" target="_blank" rel="nofollow">Apache (httpd) Web Server</a> (Any version)</li>
               </ol>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <ul class="install-tabs tabs install">
                 <li class="install-rpm" onclick="skip_to_section('install', 'install-rpm');">Installation Using RPM</li>
                 <li class="install-script" onclick="skip_to_section('install', 'install-script');" style="margin-left: 10px !important;">Installation Using setup Script</li>
               </ul>
-              <br class="clear" />
+              <div class="clear"></div>
 
               <div class="methods tab-content install">
                 <!-- Installation Using RPM -->
@@ -216,7 +205,6 @@
                     </pre>
                   </div>
                   <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
-                  <br class="clear" />
                 </div>
 
 
@@ -289,10 +277,8 @@
                     </pre>
                   </div>
                   <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
-                  <br class="clear" />
                 </div>
               </div>
-
             </div>
           </li>
 
@@ -302,7 +288,7 @@
               <p>Configuring Videocache is very easy. The configuration file for videocache is located at <em>/etc/videocache.conf</em>. Below is a brief explanation of different options used in <em>videocache.conf</em>.</p>
               <p class="warn">If you change options in configuration file, please use the <a class="menu-item" href="#vc-update">Update Script</a> to update the videocache installation and restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</p>
               <p>Click on the option name to get the details.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <ul class="option-tabs tabs configure">
                 <li class="enable_videocache" onclick="skip_to_section('configure', 'enable_videocache');">enable_videocache</li>
@@ -326,15 +312,14 @@
                 <li class="logdir" onclick="skip_to_section('configure', 'logdir');">logdir</li>
                 <li class="logfile" onclick="skip_to_section('configure', 'logfile');">logfile</li>
                 <li class="max_logfile_size" onclick="skip_to_section('configure', 'max_logfile_size');">max_logfile_size</li>
+                <li class="rpc_host" onclick="skip_to_section('configure', 'rpc_host');">rpc_host</li>
+                <li class="rpc_port" onclick="skip_to_section('configure', 'rpc_port');">rpc_port</li>
                 <li class="max_logfile_backups" onclick="skip_to_section('configure', 'max_logfile_backups');">max_logfile_backups</li>
                 <li class="scheduler_pidfile" onclick="skip_to_section('configure', 'scheduler_pidfile');">scheduler_pidfile</li>
                 <li class="temp_dir" onclick="skip_to_section('configure', 'temp_dir');">temp_dir</li>
-                <li class="rpc_host" onclick="skip_to_section('configure', 'rpc_host');">rpc_host</li>
-                <li class="rpc_port" onclick="skip_to_section('configure', 'rpc_port');">rpc_port</li>
                 <li class="enable_youtube_cache" onclick="skip_to_section('configure', 'enable_youtube_cache');">enable_youtube_cache</li>
               </ul>
-              <br class="clear" />
-              <br class="clear" />
+              <div class="clear top-25"></div>
 
               <div class="options tab-content configure">
                 <div id="enable_videocache" class="option">
@@ -889,12 +874,12 @@
                         <p></p>
                       </div>
                     </li>
-                    <li>
+                    <!--li>
                       <h5 class="question">What if I don't obey the license terms?</h5>
                       <div class="answer">
                         <p>You'll not receive any free upgrades in future and your Videocache license will be terminated.</p>
                       </div>
-                    </li>
+                    </li-->
                   </ul>
                 </div>
               </div>
@@ -1004,7 +989,7 @@
             <div class="page-content">
               <h2>Upgrading Videocache</h2>
               <p>Upgrading Videocache from one version to another is pretty easy. Just follow the easy steps below.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Backup Configuration File</strong></h4>
               <p>Take a backup of your current videocache configuration file normally located at <em>/etc/videocache.conf</em>. <strong>You don't need to backup cache directories as videocache doesn't recreate cache directories if they exist already</strong>.</p>
@@ -1013,15 +998,15 @@
                   [root@localhost ~]# cp /etc/videocache.conf /etc/videocache.conf.back
                 </pre>
               </div>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Install the New Version</strong></h4>
               <p>Now copy the latest version of Videocache to your server and follow the instruction on <a class="menu-item" href="#install">Installation Page</a> to install Videocache normally.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Configure Videocache</strong></h4>
               <p>Now open the backed up configuration file and the new configuration file created by videocache in an editor. Compare the options in the two files and set the options in new configuration file appropriately.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Run Update Script</strong></h4>
               <p>Once you are done with the configuring Videocache, you need to run Videocache Update Script as shown.</p>
@@ -1031,7 +1016,7 @@
                 </pre>
               </div>
               <p>For help related to <em>vc-update</em>, please check <a class="menu-item" href="#vc-update">Update Script Page</a>.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Restart Videocache</strong></h4>
               <p>After running the update script, restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</p>
@@ -1042,21 +1027,15 @@
           <li id="vc-cleaner" class="hidden page">
             <div class="page-content">
               <h2>Videocache Cleaner Script</h2>
-              <p><strong>Videocache Cleaner (<em>vc-cleaner</em>)</strong> script was first introduced in version 1.9. This script helps you to remove stale videos from the cache directories. This script uses two options <a class="menu-item" href="#configure#enable_videocache_cleaner">enable_videocache_cleaner</a> and <a class="menu-item" href="#configure#video_lifetime">video_lifetime</a> from the <em>/etc/videocache.conf</em> file. So, if the value of <em>video_lifetime</em> is 30, then all the videos which were not used since last 30 days will be purged from the cache.</p>
-              <p><strong>NOTE:</strong> Log messages generated by this script are logged in <em>cleaner.log</em> logfile.
-              <br class="clear" />
+              <p><strong>Videocache Cleaner (<em>vc-cleaner</em>)</strong> script was first introduced in version 1.9. This script helps you to remove stale videos from the cache directories. This script uses two options <a class="menu-item" href="#configure#enable_videocache_cleaner">enable_videocache_cleaner</a> and <a class="menu-item" href="#configure#video_lifetime">video_lifetime</a> from the <em>/etc/videocache.conf</em> file. So, if the value of <em>video_lifetime</em> is 30, then all the videos which were not used since last 30 days will be purged from the cache. Please note that log messages generated by this script are logged in <em>cleaner.log</em> logfile.</p>
+              <p class="info">The <em>/usr/sbin/</em> should be in $PATH otherwise the commands below will not work.</p>
+              <div class="clear top-15"></div>
 
               <h4><strong>Usage</strong></h4>
               <p>To use this script, set the appropriate value of <em>video_lifetime</em> and then run the following command</p>
               <div class='code'>
                 <pre lang="bash">
                   [root@localhost ~]# vc-cleaner
-                </pre>
-              </div>
-              <p><strong>OR</strong></p>
-              <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# /usr/sbin/vc-cleaner
                 </pre>
               </div>
               <p>If you installed videocache with --prefix option, then you should run update script command as given below.</p>
@@ -1068,10 +1047,10 @@
               <p>For a list of available options with <em>vc-cleaner</em> command, use option -h as shown below.</p>
               <div class='code'>
                 <pre lang="bash">
-                [root@localhost ~]# /usr/sbin/vc-cleaner -h
+                [root@localhost ~]# vc-cleaner -h
                 </pre>
               </div>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Automate</strong></h4>
               <p>This script is not run automatically. To run Videocache cleaner automatically, you can use the following crontab.</p>
@@ -1086,9 +1065,9 @@
           <li id="vc-scheduler" class="hidden page">
             <div class="page-content">
               <h2>Videocache Scheduler</h2>
-              <p><strong>Videocache Scheduler (<em>vc-scheduler</em>)</strong> daemon was first introduced in version 1.9.8 in order to decouple the XMLRPC server from the base Videocache plugin. Videocache Scheduler is a daemon script which runs an XMLRPC server on port 9100 and a simple scheduler program which schedules the videos for caching periodically.</p>
-              <p><strong>NOTE:</strong> Log messages generated by this script are logged in <em>cleaner.log</em> logfile.
-              <br class="clear" />
+              <p><strong>Videocache Scheduler (<em>vc-scheduler</em>)</strong> daemon was first introduced in version 1.9.8 in order to decouple the XMLRPC server from the base Videocache plugin. Videocache Scheduler is a daemon script which runs an XMLRPC server on port 9100 and a simple scheduler program which schedules the videos for caching periodically. Note that log messages generated by this script are logged in <em>scheduler.log</em> logfile.</p>
+              <p class="info">The <em>/usr/sbin/</em> should be in $PATH otherwise the commands below will not work.</p>
+              <div class="clear top-10"></div>
 
               <h4><strong>Usage</strong></h4>
               <p>Using this script is easy. We basically need to send one of the various available signals to this script. The signals available are as follows.</p>
@@ -1134,7 +1113,6 @@
                 [root@localhost ~]# vc-scheduler -h
                 </pre>
               </div>
-              <br class="clear" />
             </div>
           </li>
 
@@ -1143,9 +1121,11 @@
               <h2>Videocache Update Script</h2>
               <p>The <strong>Videocache Update Script (<em>vc-update</em>)</strong> was first introduced in version 1.3. Update script helps in updating the videocache installation by creating cache and log directories and making other changes that you intend to make via the main configuration file <em>/etc/videocache.conf</em>. It also generates the new Apache configuration file for videocache to suit your new configuration. Let's learn the usage of update script with a sample scenario.</p>
               <p class="warn">You must <a class="menu-item" href="#restart">Restart Videocache</a> after running the update script.</p>
-              <br class="clear" />
+              <p class="info">The <em>/usr/sbin/</em> should be in $PATH otherwise the commands below will not work.</p>
+              <div class="clear top-15"></div>
+
               <h4><strong>Usage</strong></h4>
-              <p><strong>Scenario:</strong> You want to store the cached videos in <em>/videocache/</em> directory instead of <em>/var/spool/videocache/</em>.</p>
+              <p><strong>Scenario:</strong> You want to store the cached videos in <em>/videocache/</em> instead of <em>/var/spool/videocache/</em>.</p>
               <p><strong>Solution:</strong> Change the <a class="menu-item" href="#configure#base_dir">base_dir</a> option in <em>/etc/videocache.conf</em> file as shown below.</p>
               <div class='code'>
                 <pre>
@@ -1155,7 +1135,7 @@
               <p>Then run update script script as root</p>
               <div class='code'>
                 <pre lang="bash">
-                  [root@localhost ~]# update-vc
+                  [root@localhost ~]# vc-update
                   Created : /videocache/
                   Ownership changed : /videocache/
                   Created : /videocache/vimeo
@@ -1169,23 +1149,16 @@
                   ...
                 </pre>
               </div>
-              <p><strong>OR</strong></p>
-              <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# /usr/sbin/update-vc
-                </pre>
-              </div>
-              <p><strong>NOTE:</strong> The second command should be used if <em>/usr/sbin</em> is not in your <em>$PATH</em>.</p>
               <p>If you installed videocache with --prefix option, then you should run update script command as shown below.</p>
               <div class='code'>
                 <pre lang="bash">
-                  [root@localhost ~]# update-vc --prefix=/path/to/videocache/
+                  [root@localhost ~]# vc-update --prefix=/path/to/videocache/
                 </pre>
               </div>
               <p>For a list of available options with <em>vc-update</em> command, use option -h as shown below.</p>
               <div class='code'>
                 <pre lang="bash">
-                  [root@localhost ~]# update-vc -h
+                  [root@localhost ~]# vc-update -h
                 </pre>
               </div>
             </div>
@@ -1214,8 +1187,8 @@
             <div class="page-content">
               <h2>Restarting Videocache</h2>
               <p>Restarting Videocache is a multistep process and doesn't involve actual restarting of Videocache script. We need to restart the different components on which Videocache depends. Below is a step by step process to restart different components.</p>
-              <p><strong>NOTE:</strong> If you made any changes to the configuration file located at <em>/etc/videcache.conf</em>, then you need to run <a class="menu-item" href="#vc-update">Update Script</a> before restarting Videocache.</p>
-              <br class="clear" />
+              <p class="warn">If you made any changes to the configuration file located at <em>/etc/videcache.conf</em>, then you need to run <a class="menu-item" href="#vc-update">Update Script</a> before restarting Videocache.</p>
+              <div class="clear top-15"></div>
 
               <h4><strong>Restart Apache(httpd) Web Server</strong></h4>
               <p>As Videocache serves the cached videos via HTTP, we first need to restart our Apache(httpd) Web Server daemon. To restart Apache web server, use the following command.</p>
@@ -1224,17 +1197,18 @@
                   [root@localhost ~]# apachectl -k restart
                 </pre>
               </div>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Restart Videocache Scheduler</strong></h4>
               <p>Videocache Scheduler is a script which is used to maintain a queue of videos which should be cached. Videocache Scheduler script basically fires up an XMLRPC server which listens on port 9100 and maintains a collection of queued videos. To restart Videocache Scheduler, use the following command.</p>
+              <p class="info">The <em>/usr/sbin/</em> should be in $PATH otherwise the command below will not work.</p>
               <div class='code'>
                 <pre lang="bash">
                   [root@localhost ~]# vc-scheduler -s restart
                 </pre>
               </div>
               <p>For more details on <em>vc-scheduler</em> script, please check <a class="menu-item" href="#vc-scheduler">Videocache Scheduler</a> page.</p>
-              <br class="clear" />
+              <div class="clear top-15"></div>
 
               <h4><strong>Restart or Reload Squid Proxy Server</strong></h4>
               <p>Once you are done restarting Apache Web Server and Videocache Scheduler script, we finally need to reload or restart our Squid proxy server daemon. To restart Squid daemon, use the following command.</p>
@@ -1594,8 +1568,7 @@
         </ul>
 
         <hr class="full"/>
-        <p class="center">Copyright &copy; 2008-2011 Kulbir Saini.</p>
-        <hr class="space" />
+        <p class="center footer">Copyright &copy; 2008-2011 Kulbir Saini.</p>
       </div>
     </div><!--end .container-->
     <div id="floating-box">
