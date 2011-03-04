@@ -12,18 +12,75 @@
 
   </head>
   <body class="">
+  <div class="body">
+    <!-- Floating Box -->
+    <div id="floating-box">
+      <div id="floating-menu">
+        <ul class="list-menu">
+          <li class="floating-navi navi"><h2 class="vc-update"><a class="menu-item" href="#vc-update">Update Script</a></h2></li>
+          <li class="floating-navi navi"><h2 class="vc-scheduler"><a class="menu-item" href="#vc-scheduler">Scheduler Script</a></h2></li>
+          <li class="floating-navi navi"><h2 class="restart"><a class="menu-item" href="#restart">Restart</a></h2></li>
+          <li class="floating-navi navi"><h2 class="vc-cleaner"><a class="menu-item" href="#vc-cleaner">Cleaner Script</a></h2></li>
+          <li class="floating-navi navi"><h2 class="upgrade"><a class="menu-item" href="#upgrade">Upgrade</a></h2></li>
+          <li class="floating-navi navi"><h2 class="changelog"><a class="menu-item" href="#changelog">Change Log</a></h2></li>
+          <li class="floating-navi navi"><h2 class="upgrade-policy"><a class="menu-item" href="#upgrade-policy">Upgrade Policy</a></h2></li>
+        </ul>
+      </div>
+      <div class="sidebar-clear"></div>
+      <div id="buynow" class="buy-sidebar">
+        <p class="title colorfb">Buy Now</p>
+        <div class="paypal-page">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Sidebar') } catch(err) {}; return true;">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
+            <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
+            <select name="os0" class="clear" style="margin-bottom:8px;">
+              <option value="One Server">One Server $199.00</option>
+              <option value="Two Servers">Two Servers $369.00</option>
+              <option value="Three Servers">Three Servers $499.00</option>
+            </select>
+            <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+      </div>
+      <div class="sidebar-clear"></div>
+      <div id="upgradenow" class="buy-sidebar">
+        <p class="title colorfb">Upgrade</p>
+        <div class="paypal-page">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Sidebar') } catch(err) {}; return true;">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
+            <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
+            <select name="os0" class="clear" style="margin-bottom:8px;">
+              <option value="One Server">One Server $99.00</option>
+              <option value="Two Servers">Two Servers $179.00</option>
+              <option value="Three Servers">Three Servers $249.00</option>
+            </select>
+            <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+            <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+      </div>
+      <br class="clear" />
+    </div>
+    <!-- //Floating Box -->
+
+    <!-- Container -->
     <div class="container ">
       <div id="menu">
-        <div id="color">
-          <div class="colora navi top-navi"><h2 class="home"><a class="menu-item" href="#home">Home</a></h2></div>
-          <div class="colorb navi top-navi"><h2 class="pricing"><a class="menu-item" href="#pricing">Pricing</a></h2></div>
-          <div class="colorc navi top-navi"><h2 class="install"><a class="menu-item" href="#install">Install</a></h2></div>
-          <div class="colord navi top-navi"><h2 class="configure"><a class="menu-item" href="#configure">Configure</a></h2></div>
-          <div class="colorf navi top-navi"><h2 class="faqs"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
-          <div class="colore navi top-navi"><h2 class="external"><a href="/forum">Support</a></h2></div>
-          <div class="colorg navi top-navi"><h2 class="external"><a href="/contact">Contact</a></h2></div>
-          <br class="clear" />
-        </div>
+        <div class="navi top-navi"><h2 class="home"><a class="menu-item" href="#home">Home</a></h2></div>
+        <div class="navi top-navi"><h2 class="pricing"><a class="menu-item" href="#pricing">Pricing</a></h2></div>
+        <div class="navi top-navi"><h2 class="install"><a class="menu-item" href="#install">Install</a></h2></div>
+        <div class="navi top-navi"><h2 class="configure"><a class="menu-item" href="#configure">Configure</a></h2></div>
+        <div class="navi top-navi"><h2 class="faqs"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
+        <div class="navi top-navi"><h2 class="external"><a href="/forum">Support</a></h2></div>
+        <div class="navi top-navi last"><h2 class="external"><a href="/contact">Contact</a></h2></div>
+        <br class="clear" />
       </div>
 
       <div class="pages">
@@ -159,50 +216,36 @@
                 <div id="install-rpm" class="">
                   <p><span class="number_title">1.</span> Extract <em>videocache-bundle-x.x.x.tar.gz</em></p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz
-                    </pre>
+                    <p>[root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz</p>
                   </div>
                   <p><span class="number_title">2.</span> Change directory to <em>videocache-bundle-x.x.x</em></p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# cd videocache-bundle-x.x.x
-                    </pre>
+                    <p>[root@localhost ~]# cd videocache-bundle-x.x.x</p>
                   </div>
                   <p><span class="number_title">3.</span> Login as <strong>root</strong> user and install the rpm using the following command.</p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# rpm -ivh videocache-x.x-x-x.noarch.rpm
-                    </pre>
+                    <p>[root@localhost ~]# rpm -ivh videocache-x.x-x-x.noarch.rpm</p>
                   </div>
                   <p><span class="number_title">4.</span> If the installation was successful, open the videocache man page (<em>man videocache</em>) or <em>Readme.txt</eM> or <em>Readme.html</em> and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      # --BEGIN-- videocache config for squid
-                      # LINES THAT SHOULD GO IN squid.conf
-                      # --END-- videocache config for squid
-                    </div>
-                  </p>
+                    <p># --BEGIN-- videocache config for squid
+# LINES THAT SHOULD GO IN squid.conf
+# --END-- videocache config for squid</p>
+                  </div>
                   <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
 
                   <p><span class="number_title">5.</span> Now follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to configure Videocache using the configuration file located at <em>/etc/videocache.conf</em> . Please don't overlook the critical options like <a class="menu-item" href="#configure#cache_host">cache_host</a>, <a class="menu-item" href="#configure#videocache_user">videocache_user</a>, <a class="menu-item" href="#configure#client_email">client_email</a>, <a class="menu-item" href="#configure#proxy">proxy</a> etc.</p>
                   <p><span class="number_title">6.</span> Restart your Apache(httpd) webserver using the following command.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      [root@localhost ~]# apachectl -k restart
-                    </pre>
+                    <p>[root@localhost ~]# apachectl -k restart</p>
                   </div>
                   <p><span class="number_title">7.</span> Start (or restart) videocache scheduler (<a class="menu-item" href="#vc-scheduler">vc-scheduler</a>) using the following command.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      [root@localhost ~]# vc-scheduler -s restart
-                    </pre>
+                    <p>[root@localhost ~]# vc-scheduler -s restart</p>
                   </div>
                   <p><span class="number_title">8.</span> And finally restart Squid server as well using the following command.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      [root@localhost ~]# /etc/init.d/squid restart
-                    </pre>
+                    <p>[root@localhost ~]# /etc/init.d/squid restart</p>
                   </div>
                   <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
                 </div>
@@ -212,69 +255,49 @@
                 <div id="install-script" class="hidden">
                   <p><span class="number_title">1.</span> Extract <em>videocache-bundle-x.x.x.tar.gz</em></p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz
-                    </pre>
+                    <p>[root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz</p>
                   </div>
                   <p><span class="number_title">2.</span> Change directory to <em>videocache-bundle-x.x.x</em></p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# cd videocache-bundle-x.x.x
-                    </pre>
+                    <p>[root@localhost ~]# cd videocache-bundle-x.x.x</p>
                   </div>
                   <p><span class="number_title">3.</span> Untar the <em>videocache-x-x-x.tar.gz</em> archive using the following command</p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# tar -xvzf videocache-x.x-x.tar.gz
-                    </pre>
+                    <p>[root@localhost ~]# tar -xvzf videocache-x.x-x.tar.gz</p>
                   </div>
                   <p><span class="number_title">4.</span> Find out the user who runs Squid on your system. On RedHat/CentOS/Fedora/OpenSuse/Gentoo etc., Squid is run by the user <em>squid</em>. On Debian/Ubuntu/pfSense, Squid is generally run by the user <em>proxy</em>. If squid is already running, use the following command to find out the user running Squid.</p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# ps aux | grep squid
-                    </pre>
+                    <p>[root@localhost ~]# ps aux | grep squid</p>
                   </div>
                   <p><span class="number_title">5.</span> Install videocache using the <em>setup.py</em> script. Once the user who runs Squid is known, you can use the following command to install videocache.</p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# python setup.py -u _squid_user_ install
-                    </pre>
+                    <p>[root@localhost ~]# python setup.py -u _squid_user_ install</p>
                   </div>
                   Let's say if the Squid is run by the user <em>proxy</em>, then we have to use the following command.</p>
                   <div class='code'>
-                    <pre lang="bash">
-                      [root@localhost ~]# python setup.py -u proxy install
-                    </pre>
+                    <p>[root@localhost ~]# python setup.py -u proxy install</p>
                   </div>
 
                   <p>All the activities and errors of the setup script are logged standard output or standard error. Please check the messages for any errors.</p>
                   <p><span class="number_title">6.</span> If the installation was successful, open the videocache man-page (<em>man videocache</em>) or <em>INSTALL</em> or <em>Readme.txt</em> or <em>Readme.html</em> file and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      # --BEGIN-- videocache config for squid
-                      # LINES THAT SHOULD GO IN squid.conf
-                      # --END-- videocache config for squid 
-                    </pre>
+                    <p># --BEGIN-- videocache config for squid
+# LINES THAT SHOULD GO IN squid.conf
+# --END-- videocache config for squid</p>
                   </div>
                   <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
                   <p><span class="number_title">7.</span> Now follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to configure videocache using the configuration file <em>/etc/videocache.conf</em> . Please don't overlook the critical options like <a class="menu-item" href="#configure#cache_host">cache_host</a>, <a class="menu-item" href="#configure#videocache_user">videocache_user</a>, <a class="menu-item" href="#configure#client_email">client_email</a>, <a class="menu-item" href="#configure#proxy">proxy</a> etc.</p>
                   <p><span class="number_title">8.</span> Now restart Apache(httpd) web server using the following command.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      [root@localhost ~]# apachectl -k restart
-                    </pre>
+                    <p>[root@localhost ~]# apachectl -k restart</p>
                   </div>
                   <p><span class="number_title">9.</span> Start (or restart) videocache scheduler (<a class="menu-item" href="#vc-scheduler">vc-scheduler</a>) using the following command.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      [root@localhost ~]# vc-scheduler -s restart
-                    </pre>
+                    <p>[root@localhost ~]# vc-scheduler -s restart</p>
                   </div>
                   <p><span class="number_title">10.</span> And finally restart your Squid server using the following command.</p>
                   <div class='code'>
-                    <pre language="bash">
-                      [root@localhost ~]# /etc/init.d/squid restart
-                    </pre>
+                    <p>[root@localhost ~]# /etc/init.d/squid restart</p>
                   </div>
                   <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
                 </div>
@@ -326,9 +349,7 @@
                   <p>This option controls the global behavior of videocache plugin. If it is 0, videocache will stop caching or serving anything. This option&rsquo;s value can be either 0 or 1.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      enable_videocache = 1
-                    </pre>
+                    <p>enable_videocache = 1</p>
                   </div>
                 </div>
 
@@ -337,9 +358,7 @@
                   <p>Please set this option to the email address using which you purchased Videocache license.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      client_email = &lt;blank&gt;
-                    </pre>
+                    <p>client_email = &lt;blank&gt;</p>
                   </div>
                 </div>
 
@@ -347,9 +366,7 @@
                   <p>When offline mode is enabled, videocache will serve the videos already in cache and will skip caching the new videos. When set to 0, videocache will cache new video and when set to 1, videocache will serve the already cached videos and will not cache the new videos it encounters.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      offline_mode = 0
-                    </pre>
+                    <p>offline_mode = 0</p>
                   </div>
                 </div>
 
@@ -358,9 +375,7 @@
                   <p>Use this option to set the user which should be running videocache scheduler. This user must be same as the squid user. On RedHat/CentOS/SuSE, it's generally <em>squid</em> and on Debian/Ubuntu/BSDs, it generally <em>proxy</em>.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      videocache_user = squid
-                    </pre>
+                    <p>videocache_user = squid</p>
                   </div>
                 </div>
 
@@ -371,9 +386,7 @@
                   <p>Additionally you can specifiy an alternative port to for HTTP. <strong>Example</strong> : 192.168.36.204:81</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      cache_host = 127.0.0.1
-                    </pre>
+                    <p>cache_host = 127.0.0.1</p>
                   </div>
                 </div>
 
@@ -381,16 +394,12 @@
                   <p>Base directories for caching the videos. You can specify multiple caching directories here separated by '|' symbol.</p>
                   <p><strong>Example</strong>: To keep <em>/videocache1</em> and <em>/videocache2</em> as your cache directories, set <em>base_dir</em> to</p>
                   <div class='code'>
-                    <pre>
-                      base_dir = /videocache/ | /videocache2
-                    </pre>
+                    <p>base_dir = /videocache/ | /videocache2</p>
                   </div>
                   <p>Please avoid special characters in directory names like whitespaces, $ etc.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      base_dir = /var/spool/videocache/
-                    </pre>
+                    <p>base_dir = /var/spool/videocache/</p>
                   </div>
                 </div>
 
@@ -398,9 +407,7 @@
                   <p>The maximum number of parallel cache processes allowed. If all connections are consumed, videos will be queued for caching.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      max_cache_processes = 30
-                    </pre>
+                    <p>max_cache_processes = 30</p>
                   </div>
                 </div>
 
@@ -410,9 +417,7 @@
                   <p><strong>Example</strong> : http://proxy.example.com:3128/ or http://192.0.2.25:8080/</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      proxy = &lt;blank&gt;
-                    </pre>
+                    <p>proxy = &lt;blank&gt;</p>
                   </div>
                 </div>
 
@@ -420,9 +425,7 @@
                   <p>If the proxy server specified using proxy option requires authentication, please specify the username.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      proxy_username = &lt;blank&gt;
-                    </pre>
+                    <p>proxy_username = &lt;blank&gt;</p>
                   </div>
                 </div>
 
@@ -430,9 +433,7 @@
                   <p>If the proxy server specified using proxy option requires authentication, please specify the password.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      proxy_password = &lt;blank&gt;
-                    </pre>
+                    <p>proxy_password = &lt;blank&gt;</p>
                   </div>
                 </div>
 
@@ -440,9 +441,7 @@
                   <p>No of times a video should be requested before we cache it.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      hit_threshold = 2
-                    </pre>
+                    <p>hit_threshold = 2</p>
                   </div>
                 </div>
 
@@ -451,9 +450,7 @@
                   <p><strong>Example</strong> : If <em>max_video_size</em> = 50, videocache will not cache videos of size more than 50MB.  Set this to 0 to disable this check. Don't append MB.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      max_video_size = 0
-                    </pre>
+                    <p>max_video_size = 0</p>
                   </div>
                 </div>
 
@@ -462,9 +459,7 @@
                   <p><strong>Example</strong> : If <em>min_video_size</em> = 2, videocache will not cache videos of size less than 2MB.  Set this to 0 to disable this check. Don't append MB.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      min_video_size = 0
-                    </pre>
+                    <p>min_video_size = 0</p>
                   </div>
                 </div>
 
@@ -473,9 +468,7 @@
                   <p><strong>Example</strong> : If <em>disk_avail_threshold</em> = 200, videocache will stop caching videos in a cache directory if the free space available in that cache directory is less than 200 Mega Bytes.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      disk_avail_threshold = 1000
-                    </pre>
+                    <p>disk_avail_threshold = 1000</p>
                   </div>
                 </div>
 
@@ -483,9 +476,7 @@
                   <p>Enables the videocache cleaner script which will remove videos from cache which have not been used since long. The value of this option can be 0 or 1.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      enable_videocache_cleaner = 1
-                    </pre>
+                    <p>enable_videocache_cleaner = 1</p>
                   </div>
                 </div>
 
@@ -494,69 +485,59 @@
                   <p><strong>Example</strong> : <em>video_lifetime</em> = 15 will remove videos which were not used since last 15 or more days.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      video_lifetime = 30
-                    </pre>
+                    <p>video_lifetime = 30</p>
                   </div>
                 </div>
 
                 <div id="logformat" class="option">
                   <p>Logformat allows you to get log messages in your preferred format. This <em>logformat</em>, <em>scheduler_logformat</em>, <em>cleaner_logformat</em> are applicable to main videocache log, scheduler log and cleaner log respectively. Use the format codes described below.</p>
                   <div class='code'>
-                    <pre>
-                      %  - A literal % character
-                      ts - Seconds since epoch
-                      tu - Time in millisecond
-                      tl - Local Time
-                      tg - GMT Time
-                      p  - Process ID of the process logging the message
-                      s  - Severity level of the log message
-                      i  - Client's IP address
-                      w  - Website ID (eg. YOUTUBE/GOOGLE/VIMEO etc.)
-                      c  - Status Code (CACHE_HIT/CACHE_MISS etc.)
-                      v  - Video ID of current video
-                      m  - Additional Message (for verbose logs)
-                      d  - Debug message (for debugging purpose)
-                    </pre>
+                    <p>%  - A literal % character
+ts - Seconds since epoch
+tu - Time in millisecond
+tl - Local Time
+tg - GMT Time
+p  - Process ID of the process logging the message
+s  - Severity level of the log message
+i  - Client's IP address
+w  - Website ID (eg. YOUTUBE/GOOGLE/VIMEO etc.)
+c  - Status Code (CACHE_HIT/CACHE_MISS etc.)
+v  - Video ID of current video
+m  - Additional Message (for verbose logs)
+d  - Debug message (for debugging purpose)</p>
                   </div>
                   <p><strong>Example</strong> : <em>logformat</em> = %ts %i %w %c %v</p>
                   <p>Default Values:</p>
                   <div class="code">
-                    <pre>
-                      logformat = %tl %p %s %i %w %c %v %m %d
-                      scheduler_logformat = %tl %p %s %i %w %c %v %m %d
-                      cleaner_logformat = %tl %p %s %w %c %v %m %d
-                    </pre>
+                    <p>logformat = %tl %p %s %i %w %c %v %m %d
+scheduler_logformat = %tl %p %s %i %w %c %v %m %d
+cleaner_logformat = %tl %p %s %w %c %v %m %d</p>
                   </div>
                 </div>
 
                 <div id="timeformat" class="option">
                   <p>You can use a custom format for displaying time in log messages. Use the format codes described below</p>
                   <div class='code'>
-                    <pre>
-                      %a    Abbreviated weekday name (Sun, Mon, ...)
-                      %A    Full weekday name (Sunday, Monday, ...)
-                      %b    Abbreviated month name (Jan, Feb, Mar, ...)
-                      %B    Full month name (January, February, ...)
-                      %d    Day of the month as a decimal number [01..31]
-                      %H    Hour (24-hour clock) as a decimal number [00..23]
-                      %I    Hour (12-hour clock) as a decimal number [01..12]
-                      %j    Day of the year as a decimal number [001..366]
-                      %m    Month as a decimal number [01..12]
-                      %M    Minute as a decimal number [00..59]
-                      %p    Either AM or PM
-                      %S    Second as a decimal number [00..59]
-                      %y    Year without century as a decimal number [00..99]
-                      %Y    Year with century as a decimal number
-                    </pre>
+                    <p>%a    Abbreviated weekday name (Sun, Mon, ...)
+%A    Full weekday name (Sunday, Monday, ...)
+%b    Abbreviated month name (Jan, Feb, Mar, ...)
+%B    Full month name (January, February, ...)
+%d    Day of the month as a decimal number [01..31]
+%H    Hour (24-hour clock) as a decimal number [00..23]
+%I    Hour (12-hour clock) as a decimal number [01..12]
+%j    Day of the year as a decimal number [001..366]
+%m    Month as a decimal number [01..12]
+%M    Minute as a decimal number [00..59]
+%p    Either AM or PM
+%S    Second as a decimal number [00..59]
+%y    Year without century as a decimal number [00..99]
+%Y    Year with century as a decimal number</p>
                   </div>
                   <p class="warn">The format <em>timeformat</em> will be applicable to localtime and GMT time in the log messages.</p>
                   <p><strong>Example</strong> : <em>timeformat</em> = %B %b, %Y %H:%M:%S</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      timeformat = %d/%b/%Y:%H:%M:%S
-                    </pre>
+                    <p>timeformat = %d/%b/%Y:%H:%M:%S</p>
                   </div>
                 </div>
 
@@ -564,9 +545,7 @@
                   <p>Directory where videocache logs will be stored.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      logdir = /var/log/videocache/
-                    </pre>
+                    <p>logdir = /var/log/videocache/</p>
                   </div>
                 </div>
 
@@ -574,12 +553,10 @@
                   <p>The name of log file can be specified using different logfile options. Please avoid any special characters in filename.</p>
                   <p>Default Values:</p>
                   <div class='code'>
-                    <pre>
-                      logfile = videocache.log
-                      scheduler_logfile = scheduler.log
-                      cleaner_logfile = cleaner.log
-                      tracefile = trace.log
-                    </pre>
+                    <p>logfile = videocache.log
+scheduler_logfile = scheduler.log
+cleaner_logfile = cleaner.log
+tracefile = trace.log</p>
                   </div>
                 </div>
 
@@ -588,12 +565,10 @@
                   <p class="warn">Please don’t use <em>max_logfile_size</em> = 10MB. Don’t append MB.</p>
                   <p>Default Values:</p>
                   <div class='code'>
-                    <pre>
-                      max_logfile_size = 10
-                      max_scheduler_logfile_size = 10
-                      max_cleaner_logfile_size = 10
-                      max_tracefile_size = 10
-                    </pre>
+                    <p>max_logfile_size = 10
+max_scheduler_logfile_size = 10
+max_cleaner_logfile_size = 10
+max_tracefile_size = 10</p>
                   </div>
                 </div>
 
@@ -602,12 +577,10 @@
                   <p><strong>Example</strong> : <em>max_logfile_backups</em> = 2 will keep <em>videocache.log</em> and <em>videocache.log.1</em> and <em>videocache.log.2</em> as logfiles.</p>
                   <p>Default Values:</p>
                   <div class='code'>
-                    <pre>
-                      max_logfile_backups = 10
-                      max_scheduler_logfile_backups = 10
-                      max_cleaner_logfile_backups = 5
-                      max_tracefile_backups = 1
-                    </pre>
+                    <p>max_logfile_backups = 10
+max_scheduler_logfile_backups = 10
+max_cleaner_logfile_backups = 5
+max_tracefile_backups = 1</p>
                   </div>
                 </div>
 
@@ -615,9 +588,7 @@
                   <p>The <em>scheduler_logfile</em> option can be used to specify the location of a file which will be used to track process ID of the currently running Videocache scheduler.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      scheduler_pidfile = /var/run/videocache.pid
-                    </pre>
+                    <p>scheduler_pidfile = /var/run/videocache.pid</p>
                   </div>
                 </div>
 
@@ -625,9 +596,7 @@
                   <p>Directory to store partially cached videos. Directory name is relative to <em>base_dir</em>.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      temp_dir = tmp
-                    </pre>
+                    <p>temp_dir = tmp</p>
                   </div>
                 </div>
 
@@ -635,9 +604,7 @@
                   <p>XMLRPC server is used for memory sharing across different instances of videocache. Leave these settings as it is if you don't have a fair idea of XMLRPC. This will be 127.0.0.1 in most cases.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      rpc_host = 127.0.0.1
-                    </pre>
+                    <p>rpc_host = 127.0.0.1</p>
                   </div>
                 </div>
 
@@ -645,9 +612,7 @@
                   <p>Please make sure this port is not currently in use. If it is in use by some other program, change this to some port above 1024 which is not in use by any other program.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      rpc_port = 9100
-                    </pre>
+                    <p>rpc_port = 9100</p>
                   </div>
                 </div>
 
@@ -655,9 +620,7 @@
                   <p>This option enables the caching of Youtube videos. This option&rsquo;s value can be either 0 or 1.</p>
                   <p>Default value:</p>
                   <div class='code'>
-                    <pre>
-                      enable_youtube_cache = 1
-                    </pre>
+                    <p>enable_youtube_cache = 1</p>
                   </div>
                 </div>
               </div>
@@ -899,9 +862,7 @@
                       <div class="answer">
                         <p>For all Unix/Linux systems, download python-iniparse from <a href="http://code.google.com/p/iniparse/">iniparse website</a>. Untar the package. Go to iniparse-x.x.x directory and use this command to install it.</p>
                         <div class='code'>
-                          <pre>
-                            [root@localhost iniparse-x.x.x]# python setup.py install
-                          </pre>
+                          <p>[root@localhost iniparse-x.x.x]# python setup.py install</p>
                         </div>
                       </div>
                     </li>
@@ -994,9 +955,7 @@
               <h4><strong>Backup Configuration File</strong></h4>
               <p>Take a backup of your current videocache configuration file normally located at <em>/etc/videocache.conf</em>. <strong>You don't need to backup cache directories as videocache doesn't recreate cache directories if they exist already</strong>.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# cp /etc/videocache.conf /etc/videocache.conf.back
-                </pre>
+                <p>[root@localhost ~]# cp /etc/videocache.conf /etc/videocache.conf.back</p>
               </div>
               <div class="clear top-15"></div>
 
@@ -1011,9 +970,7 @@
               <h4><strong>Run Update Script</strong></h4>
               <p>Once you are done with the configuring Videocache, you need to run Videocache Update Script as shown.</p>
               <div class='code'>
-                <pre>
-                  [root@localhost ~]# vc-update
-                </pre>
+                <p>[root@localhost ~]# vc-update</p>
               </div>
               <p>For help related to <em>vc-update</em>, please check <a class="menu-item" href="#vc-update">Update Script Page</a>.</p>
               <div class="clear top-15"></div>
@@ -1034,30 +991,22 @@
               <h4><strong>Usage</strong></h4>
               <p>To use this script, set the appropriate value of <em>video_lifetime</em> and then run the following command</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-cleaner
-                </pre>
+                <p>[root@localhost ~]# vc-cleaner</p>
               </div>
               <p>If you installed videocache with --prefix option, then you should run update script command as given below.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-cleaner --prefix=/path/to/videocache/
-                </pre>
+                <p>[root@localhost ~]# vc-cleaner --prefix=/path/to/videocache/</p>
               </div>
               <p>For a list of available options with <em>vc-cleaner</em> command, use option -h as shown below.</p>
               <div class='code'>
-                <pre lang="bash">
-                [root@localhost ~]# vc-cleaner -h
-                </pre>
+                <p>[root@localhost ~]# vc-cleaner -h</p>
               </div>
               <div class="clear top-15"></div>
 
               <h4><strong>Automate</strong></h4>
               <p>This script is not run automatically. To run Videocache cleaner automatically, you can use the following crontab.</p>
               <div class='code'>
-                <pre>
-                  0 4 * * * /usr/sbin/vc-cleaner
-                </pre>
+                <p>0 4 * * * /usr/sbin/vc-cleaner</p>
               </div>
             </div>
           </li>
@@ -1079,39 +1028,29 @@
               </ul>
               <p>To send one of the above singals to <em>vc-scheduler</em> script, use the following command.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-scheduler -s signal
-                </pre>
+                <p>[root@localhost ~]# vc-scheduler -s signal</p>
               </div>
               <p>For example, to send a restart signal, use the following command.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-scheduler -s restart
-                  Videocache Scheduler stopped.
-                  Videocache Scheduler started.
-                  [root@localhost ~]#
-                </pre>
+                <p>[root@localhost ~]# vc-scheduler -s restart
+Videocache Scheduler stopped.
+Videocache Scheduler started.
+[root@localhost ~]#</p>
               </div>
               <p>Sometimes, you may get a message like shown below when you try to start <em>vc-scheduler</em>.</p>
               <div class='code'>
-                <pre lang="bash">
-                [root@localhost ~]# vc-scheduler -s start
-                Pidfile exists and Videocache Scheduler is already running with process id: 8388.
-                [root@localhost ~]#
-                </pre>
+                <p>[root@localhost ~]# vc-scheduler -s start
+Pidfile exists and Videocache Scheduler is already running...
+[root@localhost ~]#</p>
               </div>
               <p>Please note that the XMLRPC server mentioned above listens on port 9100 and hence no other application can listen on port 9100. If there is a process already listening on port 9100, then you should either stop that process or change the <a class="menu-item" href="#configure#rpc_port">rpc_port</a> option in <em>/etc/videocache.conf</em> to a port above 1024 which is free. To find out the program listening on port 9100, use the following command as root.</p>
               <div class='code'>
-                <pre lang="bash">
-                [root@localhost ~]# netstat -atpn | grep 9100 | grep LISTEN
-                tcp        0      0 127.0.0.1:9100              0.0.0.0:*                   LISTEN      8481/python         
-                </pre>
+                <p>[root@localhost ~]# netstat -atpn | grep 9100 | grep LISTEN
+tcp  0  0  127.0.0.1:9100  0.0.0.0:*  LISTEN  8481/python</p>
               </div>
               <p>In such cases, we can send the restart signal and <em>vc-scheduler</em> will try to restart the process anyway. For a list of available options with <em>vc-scheduler</em> script, use option -h as shown below.</p>
               <div class='code'>
-                <pre lang="bash">
-                [root@localhost ~]# vc-scheduler -h
-                </pre>
+                <p>[root@localhost ~]# vc-scheduler -h</p>
               </div>
             </div>
           </li>
@@ -1128,38 +1067,30 @@
               <p><strong>Scenario:</strong> You want to store the cached videos in <em>/videocache/</em> instead of <em>/var/spool/videocache/</em>.</p>
               <p><strong>Solution:</strong> Change the <a class="menu-item" href="#configure#base_dir">base_dir</a> option in <em>/etc/videocache.conf</em> file as shown below.</p>
               <div class='code'>
-                <pre>
-                  base_dir = /videocache/
-                </pre>
+                <p>base_dir = /videocache/</p>
               </div>
               <p>Then run update script script as root</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-update
-                  Created : /videocache/
-                  Ownership changed : /videocache/
-                  Created : /videocache/vimeo
-                  Ownership changed : /videocache/vimeo
-                  Created : /videocache/youtube
-                  Ownership changed : /videocache/youtube
-                  Created : /videocache/metacafe
-                  Ownership changed : /videocache/metacafe
-                  Created : /videocache/tmp
-                  Ownership changed : /videocache/tmp
-                  ...
-                </pre>
+                <p>[root@localhost ~]# vc-update
+Created : /videocache/
+Ownership changed : /videocache/
+Created : /videocache/vimeo
+Ownership changed : /videocache/vimeo
+Created : /videocache/youtube
+Ownership changed : /videocache/youtube
+Created : /videocache/metacafe
+Ownership changed : /videocache/metacafe
+Created : /videocache/tmp
+Ownership changed : /videocache/tmp
+...</p>
               </div>
               <p>If you installed videocache with --prefix option, then you should run update script command as shown below.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-update --prefix=/path/to/videocache/
-                </pre>
+                <p>[root@localhost ~]# vc-update --prefix=/path/to/videocache/</p>
               </div>
               <p>For a list of available options with <em>vc-update</em> command, use option -h as shown below.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-update -h
-                </pre>
+                <p>[root@localhost ~]# vc-update -h</p>
               </div>
             </div>
           </li>
@@ -1193,9 +1124,7 @@
               <h4><strong>Restart Apache(httpd) Web Server</strong></h4>
               <p>As Videocache serves the cached videos via HTTP, we first need to restart our Apache(httpd) Web Server daemon. To restart Apache web server, use the following command.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# apachectl -k restart
-                </pre>
+                <p>[root@localhost ~]# apachectl -k restart</p>
               </div>
               <div class="clear top-15"></div>
 
@@ -1203,9 +1132,7 @@
               <p>Videocache Scheduler is a script which is used to maintain a queue of videos which should be cached. Videocache Scheduler script basically fires up an XMLRPC server which listens on port 9100 and maintains a collection of queued videos. To restart Videocache Scheduler, use the following command.</p>
               <p class="info">The <em>/usr/sbin/</em> should be in $PATH otherwise the command below will not work.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# vc-scheduler -s restart
-                </pre>
+                <p>[root@localhost ~]# vc-scheduler -s restart</p>
               </div>
               <p>For more details on <em>vc-scheduler</em> script, please check <a class="menu-item" href="#vc-scheduler">Videocache Scheduler</a> page.</p>
               <div class="clear top-15"></div>
@@ -1213,15 +1140,11 @@
               <h4><strong>Restart or Reload Squid Proxy Server</strong></h4>
               <p>Once you are done restarting Apache Web Server and Videocache Scheduler script, we finally need to reload or restart our Squid proxy server daemon. To restart Squid daemon, use the following command.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# /etc/init.d/squid restart
-                </pre>
+                <p>[root@localhost ~]# /etc/init.d/squid restart</p>
               </div>
               <p>Or to reload the Squid daemon, please use the following command.</p>
               <div class='code'>
-                <pre lang="bash">
-                  [root@localhost ~]# /etc/init.d/squid reload
-                </pre>
+                <p>[root@localhost ~]# /etc/init.d/squid reload</p>
               </div>
               <p>That's all for restarting Videocache. Now check videocache logs in <em>/var/log/videocache</em> directory for current videocache activity.</p>
             </div>
@@ -1395,16 +1318,14 @@
                     <li>Complete plugin rebase again to suite python and debian naming/packaging conventions.</li>
                     <li><p>New plugin structure:</p>
                     <div class='code'>
-                      <pre>
-                        /etc/videocache.conf # Global config file
-                        /etc/httpd/conf.d/videocache.conf # Apache config file [Red Hat]
-                        /etc/apache2/conf.d/videocache.conf # Apache config file [Debian]
-                        /usr/share/videocache/ # Core plugin code
-                        /usr/share/man/man8/videocache.8.gz # Man Page
-                        /usr/sbin/update-vc # Update file
-                        /var/spool/videocache/ # Cache directories
-                        /var/log/videocache/ # Logging directories
-                      </pre>
+                      <p>/etc/videocache.conf # Global config file
+/etc/httpd/conf.d/videocache.conf # Apache config file [Red Hat]
+/etc/apache2/conf.d/videocache.conf # Apache config file [Debian]
+/usr/share/videocache/ # Core plugin code
+/usr/share/man/man8/videocache.8.gz # Man Page
+/usr/sbin/update-vc # Update file
+/var/spool/videocache/ # Cache directories
+/var/log/videocache/ # Logging directories</p>
                     </div>
                     <li>No symbolik links as they are considered bad according to packaging guidelines.</li>
                     <li>Squid acls revised.</li>
@@ -1571,58 +1492,6 @@
         <p class="center footer">Copyright &copy; 2008-2011 Kulbir Saini.</p>
       </div>
     </div><!--end .container-->
-    <div id="floating-box">
-      <div id="floating-menu">
-        <ul class="list-menu">
-          <li class="floating-navi navi colorc"><h2 class="vc-update"><a class="menu-item" href="#vc-update">Update Script</a></h2></li>
-          <li class="floating-navi navi colord"><h2 class="vc-scheduler"><a class="menu-item" href="#vc-scheduler">Scheduler Script</a></h2></li>
-          <li class="floating-navi navi colore"><h2 class="restart"><a class="menu-item" href="#restart">Restart</a></h2></li>
-          <li class="floating-navi navi colorb"><h2 class="vc-cleaner"><a class="menu-item" href="#vc-cleaner">Cleaner Script</a></h2></li>
-          <li class="floating-navi navi colorf"><h2 class="upgrade"><a class="menu-item" href="#upgrade">Upgrade</a></h2></li>
-          <li class="floating-navi navi colorg"><h2 class="changelog"><a class="menu-item" href="#changelog">Change Log</a></h2></li>
-          <li class="floating-navi navi colorv"><h2 class="upgrade-policy"><a class="menu-item" href="#upgrade-policy">Upgrade Policy</a></h2></li>
-        </ul>
-      </div>
-      <div class="sidebar-clear"></div>
-      <div id="buynow" class="buy-sidebar">
-        <p class="title colorb">Buy Now</p>
-        <div class="paypal-page">
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Sidebar') } catch(err) {}; return true;">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
-            <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
-            <select name="os0" class="clear" style="margin-bottom:8px;">
-              <option value="One Server">One Server $199.00</option>
-              <option value="Two Servers">Two Servers $369.00</option>
-              <option value="Three Servers">Three Servers $499.00</option>
-            </select>
-            <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60">
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-          </form>
-        </div>
-      </div>
-      <div class="sidebar-clear"></div>
-      <div id="upgradenow" class="buy-sidebar">
-        <p class="title colord">Upgrade</p>
-        <div class="paypal-page">
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Sidebar') } catch(err) {}; return true;">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
-            <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
-            <select name="os0" class="clear" style="margin-bottom:8px;">
-              <option value="One Server">One Server $99.00</option>
-              <option value="Two Servers">Two Servers $179.00</option>
-              <option value="Three Servers">Three Servers $249.00</option>
-            </select>
-            <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-            <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-          </form>
-        </div>
-      </div>
-    </div>
+  </div>
   </body>
 </html>

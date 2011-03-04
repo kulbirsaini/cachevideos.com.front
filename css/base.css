@@ -28,7 +28,7 @@ hr.space {visibility: hidden}
 p + p{margin: 7px 0 0 0}
 
 /* base */
-body {font-family: arial, helvetica, sans-serif;;background: #d7d7d7 url(../images/background.jpg)}
+body {font-family: arial, helvetica, sans-serif;;background: #d7d7d7 url(../images/background.jpg);}
 h2, h3, h4, h5 {font-family: georgia, times, serif; margin: 0;color: rgba(20, 20, 20, 0.8)}
 h2 {font-family: georgia, times, serif;}
 h1 {line-height: 1.2}
@@ -42,17 +42,10 @@ a:hover, a:active {border-bottom:2px solid #AA0000;color:#BB0000; }
 h2 a:hover, h2 a:active {border-bottom:0px;}
 strong {color: #222}
 
-#color{border-bottom: 1px solid #3F002A;}
-.colora{background-color: #dd4f4c;}
-.colorb{background-color: #EDD155;}
-.colorc{background-color: #fdbf42;}
-.colord{background-color: #78B340;}
-.colore{background-color: #40B383;}
-.colorf{background-color: #409EB3;}
-.colorg{background-color: #B86CAF;}
-.colorv{background-color: #cca300;}
+.colorfb{background-color: #3B5A98;}
 
 /* General */
+.body {width:890px;margin:0 auto;}
 .pad {padding: 5px 20px 0 20px;}
 .first {margin-left:0;padding-left:0;}
 .last{margin-right: 0px !important;}
@@ -69,15 +62,15 @@ ul.list-square li { list-style-type: square; }
 
 /* Container/Partitions */
 .container {width:800px;margin:0 auto;position: relative;}
-.container #menu { position: fixed; top: 0px; float: left; z-index: 10;}
-.container .pages { position: absolute; top: 70px; float: left; z-index: 0; }
+.container #menu { position: fixed; padding-top: 10px; z-index: 10; background:url(../images/background.jpg) repeat 0 0;}
+.container .pages { position: absolute; top: 70px; z-index: 0; }
 .half { width: 378px; float: left; margin: 15px 40px 0px 0px; }
 .one-third { width: 248px; float: left; margin-right: 25px; }
 
 /* Code */
 span.number_title { font-size: 120%; font-weight: bold; padding-right: 5px; }
 div.code { background: #F8F8F8; border: 1px solid #bbb; padding: 0.5em; margin: 5px 0px 5px 25px; }
-div.code pre { white-space: pre-line; margin: 0; padding: 0px 10px; }
+div.code p { font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;white-space: pre; margin: 0; padding: 0px 10px;overflow-x:auto; }
 
 /* Tabs on all pages */
 ul.install-tabs, ul.option-tabs, ul.version-tabs, ul.list-menu { margin: 0; }
@@ -91,24 +84,28 @@ h5.question { margin-top: 15px; }
 .answer p + p { margin: 5px 0 0; }
 
 /* Navigation/Menu */
-.top-navi { height: 60px; float: left; width: 113px; }
-.top-navi h2 a {display:block;margin:-4px 0 0 -4px;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)}
-.top-navi h2 { font-size: 150%; padding: 15px 0; }
-.navi h2 a.underline { text-decoration: underline; }
-h2 a:hover { color: #000; text-decoration: underline; }
+.navi h2 { background: #3B5A98; }
+.navi h2 a, .navi h2 a:hover, .navi h2 a:active { color: #eee; }
+.navi h2 a{display:block;position:relative;text-align:center;}
+.top-navi h2 {-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;}
+.top-navi { height: 60px; float: left; width: 105px; margin-right: 7px; }
+.top-navi h2 a {margin:-4px 0 0 -4px;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);}
+.top-navi h2 { font-size: 130%; padding: 10px 0; }
+.navi h2 a:hover { text-decoration: underline; }
+.navi.last {padding-right:23px;}
 
 /* Sidebar */
-#floating-box { position:fixed; width: 160px; top: 60px;}
-#floating-menu ul li { border: 1px solid #000; }
+#floating-box { position:fixed; width: 180px; margin-top: 60px; margin-left:-150px; float: left;}
+#floating-menu ul li { margin-bottom: 2px; }
+li.floating-navi h2 {-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;}
 li.floating-navi h2 { margin: 0px; padding: 0px; font-size: 1em; }
-li.floating-navi h2 a {display:block;margin:0;padding:1px 0;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); font-size: 110%;}
-li.floating-navi a:hover { color: #000; text-decoration: underline; }
+li.floating-navi h2 a {margin:0;padding:1px 0;font-size: 120%;}
 
 /* Buy/Upgrade in Sidebar */
 table { margin-bottom: 0; }
 .paypal-page { margin: 10px 0px 0px 40px; }
 .buy-sidebar {border: 1px solid #222;}
-.buy-sidebar .title {text-align: center; padding: 1px 0px;margin:0px 0px 5px 0px;border-bottom:1px solid #222;text-transform:uppercase;font-size:120%; font-weight:bold;}
+.buy-sidebar .title {text-align: center; padding: 1px 0px;margin:0px 0px 5px 0px;border-bottom:1px solid #222;text-transform:uppercase;font-size:120%; font-weight:bold;color:#eee;}
 .buy-sidebar .paypal-page {margin: 0px;}
 .buy-sidebar form {text-align: center;}
 .buy-sidebar form select {max-width: 155px;}
