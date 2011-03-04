@@ -51,8 +51,9 @@ function landing_page(cur_hash) {
 
   // Set class
   $('.navi h2 a').attr('class', 'menu-item');
+  $('.navi h2.external a').attr('class', '');
   $('.navi h2.' + current_page + ' a').attr('class', 'menu-item underline');
-  return false;
+  return true;
 };
 
 jQuery(document).ready(function() {
@@ -95,6 +96,7 @@ jQuery(document).ready(function() {
   $('.navi').hover(function(){
     $(this).children('h2:not(.active)').animate({'opacity' : .8}, 200);
     $('.navi h2 a').attr('class', 'menu-item');
+    $('.navi h2.external a').attr('class', '');
   }, 
   function(){
     $(this).children('h2:not(.active)').animate({'opacity' : .4}, 100);

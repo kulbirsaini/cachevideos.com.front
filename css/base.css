@@ -1,25 +1,45 @@
-body                     {font-family: arial, helvetica, sans-serif; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);background: #d7d7d7 url(../images/background.jpg)}
-h1, h2, h3, h4, h5, h6 p {font-family: georgia, times, serif; margin: 0;color: rgba(20, 20, 20, 0.8)}
-h1, h2       			  		 {font-family: georgia, times, serif;}
-h1                       {line-height: 1.2}
-h2, h3       			  		 {margin: 0 0 .2em 0}
-h2.center    			  		 {font-size: 1.65em}
-h2 											 {font-size:1.85em;}
-h4 											 {font-family: Arial;}
-p                   		 {font-size: 1em; font-family: arial, helvetica, sans-serif;}
-a                   		 {text-decoration: none;color:#DA1C0E;}
+/* Reset */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, ol, ul, li, form, label {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+ul li { list-style-type: none; }
+ol li { list-style-type: decimal; }
+p { text-align: justify }
+a {text-decoration:none;}
+a:focus { outline: none; }
+
+body {line-height:1.5;font-size:95%;color:#222;}
+h2, h3, h4, h5 {font-weight:normal;}
+h2 {font-size:2em;margin-bottom:0.75em;}
+h3 {font-size:1.6em;line-height:1;margin-bottom:1em;}
+h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+a:focus, a:hover {color:#000;}
+strong {font-weight:bold;}
+pre {margin:1.5em 0;white-space:pre;}
+pre, code {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+ul, ol {margin:0 1.5em 1.5em 1.5em;}
+em{font-style:italic;}
+
+hr {background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:2px;margin:10px 0 ;border:none;}
+hr.clear {clear:both;float:none;width:100%;height:0;margin:0 ;border:none;visibility:hidden}
+hr.full {background-position: center bottom}
+hr.left {height: 2px;margin: 0}
+hr.space {visibility: hidden}
+p + p{margin: 20px 0 0 0}
+
+/* base */
+body {font-family: arial, helvetica, sans-serif; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);background: #d7d7d7 url(../images/background.jpg)}
+h2, h3, h4, h5 {font-family: georgia, times, serif; margin: 0;color: rgba(20, 20, 20, 0.8)}
+h2 {font-family: georgia, times, serif;}
+h1 {line-height: 1.2}
+h2, h3 {margin: 0 0 .2em 0}
+h2.center {font-size: 1.65em}
+h2 {font-size:1.85em;}
+h4 {font-family: Arial;}
+p {font-size: 1em; font-family: arial, helvetica, sans-serif;}
+a {text-decoration: none;color:#DA1C0E;}
 a:hover, a:active {border-bottom:2px solid #AA0000;color:#BB0000; }
 h2 a:hover, h2 a:active {border-bottom:0px;}
-a img               		 {border: none}
-hr                  		 {height:2px}
-hr.full             		 {background-position: center bottom}
-hr.left             		 {height: 2px;margin: 0}
-hr.space            		 {visibility: hidden}
-.pad                		 {padding: 5px 20px 0 20px;}
-label               		 {font-weight: normal;}
-strong              		 {color: #222}
-b                   		 {color: #222}
-blockquote          		 {font-size:2em;}
+strong {color: #222}
 
 #color{border-bottom: 1px solid #3F002A;}
 .colora{background-color: #dd4f4c;}
@@ -32,13 +52,13 @@ blockquote          		 {font-size:2em;}
 .colorv{background-color: #cca300;}
 
 /* General */
+.pad {padding: 5px 20px 0 20px;}
 .first {margin-left:0;padding-left:0;}
 .last{margin-right: 0px !important;}
 .clear {clear:both;}
 .center{text-align: center}
 .hidden { display: none; height: 0px; }
-.warn {color: rgba(50, 150, 50, 0.898); font-size:110%;}
-.warn a {font-size:100%;}
+.warn {border: 1px solid;margin: 10px 0px;padding:15px 10px 15px 70px;background-repeat: no-repeat;background-position: 10px center;color: #9F6000;background-color: #FEEFB3;background-image: url('../images/warn.png');}
 ul.page-container { margin: 0px; }
 ul.list-square li { list-style-type: square; }
 
@@ -67,7 +87,7 @@ h5.question { margin-top: 15px; }
 .container #menu { position: fixed; top: 0px; float: left; z-index: 10;}
 .container .pages { position: absolute; top: 90px; float: left; z-index: 0; }
 .top-navi { height: 60px; float: left; width: 113px; }
-.top-navi h2 a {display:block;margin:-4px 0 0 -4px;position:relative;text-align:center;color: #222;text-shadow:  0 1px 0 rgba(255, 255, 255, 0.5)}
+.top-navi h2 a {display:block;margin:-4px 0 0 -4px;position:relative;text-align:center;color: #222;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)}
 .top-navi h2 { font-size: 150%; padding: 15px 0; }
 .navi h2 a.underline { text-decoration: underline; }
 h2 a:hover { color: #000; text-decoration: underline; }

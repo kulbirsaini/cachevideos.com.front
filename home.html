@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Cache Videos Using Squid | Videocache</title>
     <meta name="description" content="Videocache is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine." />
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="css/base.css" type="text/css" media="screen, projection" />
     <script type="text/javascript" src='js/jquery.js'></script>
     <script type="text/javascript" src='js/videocache.js'></script>
@@ -19,15 +18,15 @@
           <div class="colorc navi top-navi"><h2 class="install"><a class="menu-item" href="#install">Install</a></h2></div>
           <div class="colord navi top-navi"><h2 class="configure"><a class="menu-item" href="#configure">Configure</a></h2></div>
           <div class="colorf navi top-navi"><h2 class="faqs"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
-          <div class="colore navi top-navi"><h2><a href="/forum">Support</a></h2></div>
-          <div class="colorg navi top-navi lastPad"> <h2><a href="/contact">Contact</a></h2></div>
+          <div class="colore navi top-navi"><h2 class="external"><a href="/forum">Support</a></h2></div>
+          <div class="colorg navi top-navi"><h2 class="external"><a href="/contact">Contact</a></h2></div>
           <br class="clear" />
         </div>
       </div>
 
       <div class="pages">
         <ul class="page-container">
-          <li id="home" class='hidden page'>
+          <li id="home" class='page'>
             <div class="page-content">
               <h2>Cache Videos Using Squid + Videocache</h2>
               <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
@@ -299,7 +298,7 @@
             <div class="page-content">
               <h2>Configuring Videocache</h2>
               <p>Configuring Videocache is very easy. The configuration file for videocache is located at <em>/etc/videocache.conf</em>. Below is a brief explanation of different options used in <em>videocache.conf</em>.</p>
-              <p><span class="warn"><strong>IMPORTANT:</strong> If you change options in this file, please use the <a class="menu-item" href="#vc-update">Update Script</a> to update the videocache installation and restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</span></p>
+              <p class="warn">If you change options in configuration file, please use the <a class="menu-item" href="#vc-update">Update Script</a> to update the videocache installation and restart Videocache as explained on <a class="menu-item" href="#restart">Restart Videocache</a> page.</p>
               <p>Click on the option name to get the details.</p>
               <br class="clear" />
 
@@ -347,7 +346,7 @@
                 </div>
 
                 <div id="client_email" class="option">
-                  <p><span class="warn"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
+                  <p class="warn">The option <em>client_email</em> must be set appropriately otherwise videocache will not work.</p>
                   <p>Please set this option to the email address using which you purchased Videocache license.</p>
                   <p>Default value:</p>
                   <div class='code'>
@@ -368,7 +367,7 @@
                 </div>
 
                 <div id="videocache_user" class="option">
-                  <p><span class="warn"><strong>IMPORTANT:</strong> This must be set appropriately otherwise videocache will not work.</span></p>
+                  <p class="warn">The option <em>videocache_user</em> must be set appropriately otherwise videocache will not work.</p>
                   <p>Use this option to set the user which should be running videocache scheduler. This user must be same as the squid user. On RedHat/CentOS/SuSE, it's generally <em>squid</em> and on Debian/Ubuntu/BSDs, it generally <em>proxy</em>.</p>
                   <p>Default value:</p>
                   <div class='code'>
@@ -379,7 +378,7 @@
                 </div>
 
                 <div id="cache_host" class="option">
-                  <p><span class="warn"><strong>IMPORTANT</strong> : Please change this to actual IP address or domain name of your proxy server, otherwise videocache will not work properly.</span></p>
+                  <p class="warn">Please change <em>cache_host</em> to actual IP address or domain name of your proxy server, otherwise videocache will not work properly.</p>
                   <p>The hostname or IP address of the system on which caching is being done. This is used for serving the videos from the cache. Please don&rsquo;t use http:// or slashes (/). Just specify the domain name or IP address.</p>
                   <p><strong>Example</strong> : proxy.example.com</p>
                   <p>Additionally you can specifiy an alternative port to for HTTP. <strong>Example</strong> : 192.168.36.204:81</p>
@@ -419,7 +418,7 @@
                 </div>
 
                 <div id="proxy" class="option">
-                  <p><span class="warn"><strong>IMPORTANT:</strong> Use this option only when Videocache server should go through another proxy server.</span></p>
+                  <p class="warn">Use <em>proxy</em> option only when Videocache server should go through another proxy server.</p>
                   <p>Proxy to be used for caching videos via HTTP.</p>
                   <p><strong>Example</strong> : http://proxy.example.com:3128/ or http://192.0.2.25:8080/</p>
                   <p>Default value:</p>
@@ -564,7 +563,7 @@
                       %Y    Year with century as a decimal number
                     </pre>
                   </div>
-                  <p><span class="warn"><strong>IMPORTANT:</strong> This format will be applicable to localtime and GMT time in the log messages.</span></p>
+                  <p class="warn">The format <em>timeformat</em> will be applicable to localtime and GMT time in the log messages.</p>
                   <p><strong>Example</strong> : <em>timeformat</em> = %B %b, %Y %H:%M:%S</p>
                   <p>Default value:</p>
                   <div class='code'>
@@ -599,7 +598,7 @@
 
                 <div id="max_logfile_size" class="option">
                   <p>Maximum size of logfiles specified above. The size is in mega bytes. The log files will be rotated once they exceed the maximum specified size.</p>
-                  <p><span class="warn"><strong>IMPORTANT:</strong> Please don’t use <em>max_logfile_size</em> = 10MB. Don’t append MB.</span></p>
+                  <p class="warn">Please don’t use <em>max_logfile_size</em> = 10MB. Don’t append MB.</p>
                   <p>Default Values:</p>
                   <div class='code'>
                     <pre>
@@ -1141,7 +1140,7 @@
             <div class="page-content">
               <h2>Videocache Update Script</h2>
               <p>The <strong>Videocache Update Script (<em>vc-update</em>)</strong> was first introduced in version 1.3. Update script helps in updating the videocache installation by creating cache and log directories and making other changes that you intend to make via the main configuration file <em>/etc/videocache.conf</em>. It also generates the new Apache configuration file for videocache to suit your new configuration. Let's learn the usage of update script with a sample scenario.</p>
-              <p><strong>IMPORTANT:</strong> <span class="warn">You must <a class="menu-item" href="#restart">Restart Videocache</a> after running the update script.<span></p>
+              <p class="warn">You must <a class="menu-item" href="#restart">Restart Videocache</a> after running the update script.</p>
               <br class="clear" />
               <h4><strong>Usage</strong></h4>
               <p><strong>Scenario:</strong> You want to store the cached videos in <em>/videocache/</em> directory instead of <em>/var/spool/videocache/</em>.</p>
