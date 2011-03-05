@@ -242,8 +242,8 @@
                     <p><span class="number_title">4.</span> If the installation was successful, open the videocache man page (<em>man videocache</em>) or <em>Readme.txt</eM> or <em>Readme.html</em> and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
                     <div class='code'>
                       <p># --BEGIN-- videocache config for squid
-  # LINES THAT SHOULD GO IN squid.conf
-  # --END-- videocache config for squid</p>
+# LINES THAT SHOULD GO IN squid.conf
+# --END-- videocache config for squid</p>
                     </div>
                     <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
 
@@ -295,8 +295,8 @@
                     <p><span class="number_title">6.</span> If the installation was successful, open the videocache man-page (<em>man videocache</em>) or <em>INSTALL</em> or <em>Readme.txt</em> or <em>Readme.html</em> file and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
                     <div class='code'>
                       <p># --BEGIN-- videocache config for squid
-  # LINES THAT SHOULD GO IN squid.conf
-  # --END-- videocache config for squid</p>
+# LINES THAT SHOULD GO IN squid.conf
+# --END-- videocache config for squid</p>
                     </div>
                     <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
                     <p><span class="number_title">7.</span> Now follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to configure videocache using the configuration file <em>/etc/videocache.conf</em> . Please don't overlook the critical options like <a class="menu-item" href="#configure#cache_host">cache_host</a>, <a class="menu-item" href="#configure#videocache_user">videocache_user</a>, <a class="menu-item" href="#configure#client_email">client_email</a>, <a class="menu-item" href="#configure#proxy">proxy</a> etc.</p>
@@ -506,25 +506,25 @@
                     <p>Logformat allows you to get log messages in your preferred format. This <em>logformat</em>, <em>scheduler_logformat</em>, <em>cleaner_logformat</em> are applicable to main videocache log, scheduler log and cleaner log respectively. Use the format codes described below.</p>
                     <div class='code'>
                       <p>%  - A literal % character
-  ts - Seconds since epoch
-  tu - Time in millisecond
-  tl - Local Time
-  tg - GMT Time
-  p  - Process ID of the process logging the message
-  s  - Severity level of the log message
-  i  - Client's IP address
-  w  - Website ID (eg. YOUTUBE/GOOGLE/VIMEO etc.)
-  c  - Status Code (CACHE_HIT/CACHE_MISS etc.)
-  v  - Video ID of current video
-  m  - Additional Message (for verbose logs)
-  d  - Debug message (for debugging purpose)</p>
+ts - Seconds since epoch
+tu - Time in millisecond
+tl - Local Time
+tg - GMT Time
+p  - Process ID of the process logging the message
+s  - Severity level of the log message
+i  - Client's IP address
+w  - Website ID (eg. YOUTUBE/GOOGLE/VIMEO etc.)
+c  - Status Code (CACHE_HIT/CACHE_MISS etc.)
+v  - Video ID of current video
+m  - Additional Message (for verbose logs)
+d  - Debug message (for debugging purpose)</p>
                     </div>
                     <p><strong>Example</strong> : <em>logformat</em> = %ts %i %w %c %v</p>
                     <p>Default Values:</p>
                     <div class="code">
                       <p>logformat = %tl %p %s %i %w %c %v %m %d
-  scheduler_logformat = %tl %p %s %i %w %c %v %m %d
-  cleaner_logformat = %tl %p %s %w %c %v %m %d</p>
+scheduler_logformat = %tl %p %s %i %w %c %v %m %d
+cleaner_logformat = %tl %p %s %w %c %v %m %d</p>
                     </div>
                   </div>
 
@@ -532,19 +532,19 @@
                     <p>You can use a custom format for displaying time in log messages. Use the format codes described below</p>
                     <div class='code'>
                       <p>%a    Abbreviated weekday name (Sun, Mon, ...)
-  %A    Full weekday name (Sunday, Monday, ...)
-  %b    Abbreviated month name (Jan, Feb, Mar, ...)
-  %B    Full month name (January, February, ...)
-  %d    Day of the month as a decimal number [01..31]
-  %H    Hour (24-hour clock) as a decimal number [00..23]
-  %I    Hour (12-hour clock) as a decimal number [01..12]
-  %j    Day of the year as a decimal number [001..366]
-  %m    Month as a decimal number [01..12]
-  %M    Minute as a decimal number [00..59]
-  %p    Either AM or PM
-  %S    Second as a decimal number [00..59]
-  %y    Year without century as a decimal number [00..99]
-  %Y    Year with century as a decimal number</p>
+%A    Full weekday name (Sunday, Monday, ...)
+%b    Abbreviated month name (Jan, Feb, Mar, ...)
+%B    Full month name (January, February, ...)
+%d    Day of the month as a decimal number [01..31]
+%H    Hour (24-hour clock) as a decimal number [00..23]
+%I    Hour (12-hour clock) as a decimal number [01..12]
+%j    Day of the year as a decimal number [001..366]
+%m    Month as a decimal number [01..12]
+%M    Minute as a decimal number [00..59]
+%p    Either AM or PM
+%S    Second as a decimal number [00..59]
+%y    Year without century as a decimal number [00..99]
+%Y    Year with century as a decimal number</p>
                     </div>
                     <p class="warn">The format <em>timeformat</em> will be applicable to localtime and GMT time in the log messages.</p>
                     <p><strong>Example</strong> : <em>timeformat</em> = %B %b, %Y %H:%M:%S</p>
@@ -567,9 +567,9 @@
                     <p>Default Values:</p>
                     <div class='code'>
                       <p>logfile = videocache.log
-  scheduler_logfile = scheduler.log
-  cleaner_logfile = cleaner.log
-  tracefile = trace.log</p>
+scheduler_logfile = scheduler.log
+cleaner_logfile = cleaner.log
+tracefile = trace.log</p>
                     </div>
                   </div>
 
@@ -579,9 +579,9 @@
                     <p>Default Values:</p>
                     <div class='code'>
                       <p>max_logfile_size = 10
-  max_scheduler_logfile_size = 10
-  max_cleaner_logfile_size = 10
-  max_tracefile_size = 10</p>
+max_scheduler_logfile_size = 10
+max_cleaner_logfile_size = 10
+max_tracefile_size = 10</p>
                     </div>
                   </div>
 
@@ -591,9 +591,9 @@
                     <p>Default Values:</p>
                     <div class='code'>
                       <p>max_logfile_backups = 10
-  max_scheduler_logfile_backups = 10
-  max_cleaner_logfile_backups = 5
-  max_tracefile_backups = 1</p>
+max_scheduler_logfile_backups = 10
+max_cleaner_logfile_backups = 5
+max_tracefile_backups = 1</p>
                     </div>
                   </div>
 
@@ -1046,20 +1046,20 @@
                 <p>For example, to send a restart signal, use the following command.</p>
                 <div class='code'>
                   <p>[root@localhost ~]# vc-scheduler -s restart
-  Videocache Scheduler stopped.
-  Videocache Scheduler started.
-  [root@localhost ~]#</p>
+Videocache Scheduler stopped.
+Videocache Scheduler started.
+[root@localhost ~]#</p>
                 </div>
                 <p>Sometimes, you may get a message like shown below when you try to start <em>vc-scheduler</em>.</p>
                 <div class='code'>
                   <p>[root@localhost ~]# vc-scheduler -s start
-  Pidfile exists and Videocache Scheduler is already running...
-  [root@localhost ~]#</p>
+Pidfile exists and Videocache Scheduler is already running...
+[root@localhost ~]#</p>
                 </div>
                 <p>Please note that the XMLRPC server mentioned above listens on port 9100 and hence no other application can listen on port 9100. If there is a process already listening on port 9100, then you should either stop that process or change the <a class="menu-item" href="#configure#rpc_port">rpc_port</a> option in <em>/etc/videocache.conf</em> to a port above 1024 which is free. To find out the program listening on port 9100, use the following command as root.</p>
                 <div class='code'>
                   <p>[root@localhost ~]# netstat -atpn | grep 9100 | grep LISTEN
-  tcp  0  0  127.0.0.1:9100  0.0.0.0:*  LISTEN  8481/python</p>
+tcp  0  0  127.0.0.1:9100  0.0.0.0:*  LISTEN  8481/python</p>
                 </div>
                 <p>In such cases, we can send the restart signal and <em>vc-scheduler</em> will try to restart the process anyway. For a list of available options with <em>vc-scheduler</em> script, use option -h as shown below.</p>
                 <div class='code'>
@@ -1085,17 +1085,17 @@
                 <p>Then run update script script as root</p>
                 <div class='code'>
                   <p>[root@localhost ~]# vc-update
-  Created : /videocache/
-  Ownership changed : /videocache/
-  Created : /videocache/vimeo
-  Ownership changed : /videocache/vimeo
-  Created : /videocache/youtube
-  Ownership changed : /videocache/youtube
-  Created : /videocache/metacafe
-  Ownership changed : /videocache/metacafe
-  Created : /videocache/tmp
-  Ownership changed : /videocache/tmp
-  ...</p>
+Created : /videocache/
+Ownership changed : /videocache/
+Created : /videocache/vimeo
+Ownership changed : /videocache/vimeo
+Created : /videocache/youtube
+Ownership changed : /videocache/youtube
+Created : /videocache/metacafe
+Ownership changed : /videocache/metacafe
+Created : /videocache/tmp
+Ownership changed : /videocache/tmp
+...</p>
                 </div>
                 <p>If you installed videocache with --prefix option, then you should run update script command as shown below.</p>
                 <div class='code'>
@@ -1332,13 +1332,13 @@
                       <li><p>New plugin structure:</p>
                       <div class='code'>
                         <p>/etc/videocache.conf # Global config file
-  /etc/httpd/conf.d/videocache.conf # Apache config file [Red Hat]
-  /etc/apache2/conf.d/videocache.conf # Apache config file [Debian]
-  /usr/share/videocache/ # Core plugin code
-  /usr/share/man/man8/videocache.8.gz # Man Page
-  /usr/sbin/update-vc # Update file
-  /var/spool/videocache/ # Cache directories
-  /var/log/videocache/ # Logging directories</p>
+/etc/httpd/conf.d/videocache.conf # Apache config file [Red Hat]
+/etc/apache2/conf.d/videocache.conf # Apache config file [Debian]
+/usr/share/videocache/ # Core plugin code
+/usr/share/man/man8/videocache.8.gz # Man Page
+/usr/sbin/update-vc # Update file
+/var/spool/videocache/ # Cache directories
+/var/log/videocache/ # Logging directories</p>
                       </div>
                       <li>No symbolik links as they are considered bad according to packaging guidelines.</li>
                       <li>Squid acls revised.</li>
