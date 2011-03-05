@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <title>Cache Videos Using Squid | Videocache</title>
     <meta name="description" content="Videocache is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine." />
-    <link rel="stylesheet" href="css/base.css" type="text/css" media="screen, projection" />
-    <script type="text/javascript" src='js/script.js'></script>
+    <link rel="stylesheet" href="<?php print base_path(). path_to_theme(); ?>/css/base.css" type="text/css" media="screen, projection" />
+    <script type="text/javascript" src='<?php print base_path(). path_to_theme(); ?>/js/script.js'></script>
     <script type='text/javascript'>
       var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
       document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E'));
       try { var mpmetrics = new MixpanelLib('ed546988fd4ce9cb0ebbd36a56042b59'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; };
     </script>
     <script type="text/javascript">
-      $script(['js/jquery.js', 'js/videocache.js'], function() { $(document).ready(function(){ jQueryMain(); }); });
+      $script(['<?php print base_path(). path_to_theme(); ?>/js/jquery.js', '<?php print base_path(). path_to_theme(); ?>/js/videocache.js'], function() { $(document).ready(function(){ jQueryMain(); }); });
     </script>
 
   </head>
@@ -50,6 +50,7 @@
               <li class="floating-navi navi"><h2 class="changelog"><a class="menu-item" href="#changelog">Change Log</a></h2></li>
               <li class="floating-navi navi"><h2 class="upgrade-policy"><a class="menu-item" href="#upgrade-policy">Upgrade Policy</a></h2></li>
               <li class="floating-navi navi"><h2 class="external"><a href="/user">My Account</a></h2></li>
+              <?php if ($is_admin) { ?><li class="floating-navi navi"><h2 class="external"><a href="/admin">Admin</a></h2></li><?php } ?>
             </ul>
           </div>
           <div class="sidebar-clear"></div>
@@ -66,7 +67,7 @@
                 </select>
                 <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60">
                 <input type="hidden" name="currency_code" value="USD">
-                <input type="image" src="images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
+                <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
               </form>
             </div>
           </div>
@@ -84,7 +85,7 @@
                 </select>
                 <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
                 <input type="hidden" name="currency_code" value="USD">
-                <input type="image" src="images/paynow.gif" border="0" name="submit" alt="Pay Using PayPal">
+                <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/paynow.gif" border="0" name="submit" alt="Pay Using PayPal">
               </form>
             </div>
           </div>
@@ -165,7 +166,7 @@
                       <br class="clear" />
                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                       <input type="hidden" name="currency_code" value="USD">
-                      <input type="image" src="images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
+                      <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
                     </form>
                   </div>
                 </div>
@@ -187,7 +188,7 @@
                       <br class="clear" />
                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                       <input type="hidden" name="currency_code" value="USD">
-                      <input type="image" src="images/paynow.gif" border="0" name="submit" alt="Pay Using PayPal">
+                      <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/paynow.gif" border="0" name="submit" alt="Pay Using PayPal">
                     </form>
                   </div>
                 </div>

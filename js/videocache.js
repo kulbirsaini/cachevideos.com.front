@@ -37,6 +37,7 @@ function skip_to_section(page, section) {
 
 function landing_page(cur_hash) {
   if (typeof(cur_hash) == 'undefined') { cur_hash = window.location.hash; }
+  cur_hash = cur_hash.split('?')[0];
   if (cur_hash == '' || cur_hash == '#') { cur_hash = '#home'; }
   hashes = cur_hash.substr(1).split('#');
   if (hashes.length >= 2) {
