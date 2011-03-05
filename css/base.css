@@ -69,7 +69,7 @@ ul.list-square li { list-style-type: square; }
 
 /* Header logo */
 #header { background:url(../images/videocache-header-logo.jpg) no-repeat scroll 0 0 transparent; height:180px; margin-bottom:10px; -webkit-border-radius:8px; -moz-border-radius: 8px; border-radius:8px; }
-#header .logo {float: left; height:136px; width: 136px; margin:10px; cursor:pointer; }
+#header .logo {float: left; height:136px; width: 136px; margin:10px; _margin: 5px; cursor:pointer; }
 
 /* Navigation/Menu */
 .navi h2 { background: #3B5A98; }
