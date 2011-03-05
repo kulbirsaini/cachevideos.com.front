@@ -68,10 +68,8 @@ ul.list-square li { list-style-type: square; }
 .page-content { padding:10px; -moz-border-radius:8px; border-radius:8px; -webkit-border-radius:8px;border:2px solid #eee; _border:0px; }
 
 /* Header logo */
-#header { background:url(../images/header.jpg) no-repeat scroll 0 0 transparent; height:180px; margin-bottom:10px; -webkit-border-radius:8px; -moz-border-radius: 8px; border-radius:8px; }
-#header .logo {float: left; background:url(../images/videocache-logo.jpg) no-repeat scroll 0px 0px transparent; height:136px; margin: 10px; cursor:pointer; }
-.logo p.header-title {color: #fff; font-size:200%;margin-left:150px;}
-p.header-title + p.header-title {margin-top:0px; }
+#header { background:url(../images/videocache-header-logo.jpg) no-repeat scroll 0 0 transparent; height:180px; margin-bottom:10px; -webkit-border-radius:8px; -moz-border-radius: 8px; border-radius:8px; }
+#header .logo {float: left; height:136px; width: 136px; margin:10px; cursor:pointer; }
 
 /* Navigation/Menu */
 .navi h2 { background: #3B5A98; }
