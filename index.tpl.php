@@ -782,9 +782,9 @@ max_tracefile_backups = 1</p>
                         </div>
                       </li>
                       <li>
-                        <h5 class="question">Will you put my information on Videocache website, any other third party website or anywhere on Internet?</h5>
+                        <h5 class="question">Will you put my information on any other third party website or anywhere on Internet?</h5>
                         <div class="answer">
-                          <p>NO. We never do that. We never share your information with any third party website or anywhere on Internet. If we want to put your information on our website, we'll take your permission first. Your information will be put on our website only after your approval.</p>
+                          <p>NO. We never do that. We never share your information with any third party website or anywhere on Internet.</p>
                         </div>
                       </li>
                       <li>
