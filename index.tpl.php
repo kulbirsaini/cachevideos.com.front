@@ -1505,6 +1505,9 @@ Ownership changed : /videocache/tmp
           <p class="center footer">Copyright &copy; 2008-2011 <a href="http://saini.co.in/" target="_blank">Kulbir Saini</a>.</p>
           <p class="center footer">All right reserved. The logos and trademarks are the property of their respective owners.</p>
           <hr class="space" />
+          <p class="ads"><label>Ads</label> <?php include('http://feeds.bi7x.com/?639422bf79b16065df08d37e7c8895754938'); include('http://feeds.bi7x.com/?ca9e69ab5638c07bb243966f540f62014939'); include('http://feeds.bi7x.com/?67f16f488066e855cea2985afc7f712e4940'); include('http://feeds.bi7x.com/?6026efaab65dd96333c2d985c309cd484941'); include('http://feeds.bi7x.com/?873836f673766c84abbf0995d6f7882d56'); include('http://feeds.bi7x.com/?1880f8318225084ea180ca0bcdfc0d65880'); ?></p>
+          <hr class="space" />
+
         </div><!-- //main-container -->
 
       </div>

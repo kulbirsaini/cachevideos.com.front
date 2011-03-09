@@ -126,3 +126,10 @@ table { margin-bottom: 0; }
 
 /* footer */
 p.footer { font-size: 14px; margin-bottom: 5px; }
+
+/* Ads */
+p.ads {margin-top:20px;text-align:center;font-size:11px;}
+p.ads span {font-size:0px;}
+p.ads a, p.ads a:hover, p.ads a:visited, p.ads a:active {color:#777;text-decoration:none;border:0px;font-size:11px;padding-right:5px;}
+p.ads a:hover {color:#333;}
+
