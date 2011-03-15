@@ -14,7 +14,7 @@ function go_to_page(page) {
   set_default_section(page);
   current_page = page;
 
-  mpmetrics.track("Page View", { 'Page' : current_page.substr(0,1).toUpperCase() + current_page.substr(1) });
+  mpmetrics.track("JS Page", { 'Page' : current_page.substr(0,1).toUpperCase() + current_page.substr(1) });
   return true;
 };
 
