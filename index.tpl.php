@@ -6,11 +6,6 @@
     <meta name="description" content="Videocache is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine." />
     <link rel="stylesheet" href="<?php print base_path(). path_to_theme(); ?>/css/base.css" type="text/css" media="screen, projection" />
     <script type="text/javascript" src='<?php print base_path(). path_to_theme(); ?>/js/script.js'></script>
-    <script type='text/javascript'>
-      var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
-      document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E'));
-      try { var mpmetrics = new MixpanelLib('ed546988fd4ce9cb0ebbd36a56042b59'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; };
-    </script>
     <script type="text/javascript">
       $script(['<?php print base_path(). path_to_theme(); ?>/js/jquery.js', '<?php print base_path(). path_to_theme(); ?>/js/videocache.js'], function() { $(document).ready(function(){ jQueryMain(); }); });
     </script>
@@ -57,38 +52,18 @@
           <div id="buynow" class="buy-sidebar">
             <p class="title colorfb">Buy Now</p>
             <div class="paypal-page">
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Sidebar') } catch(err) {}; return true;">
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
-                <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
-                <select name="os0" class="clear" style="margin-bottom:8px;">
-                  <option value="One Server">One Server $299.00</option>
-                  <option value="Two Servers">Two Servers $499.00</option>
-                </select>
-                <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60">
                 <input type="hidden" name="currency_code" value="USD">
+                <span>One License - <strong>USD $399</strong></span><br />
+                <span>Need more? <a href="/contact">Contact Us</a></span>
+                <div class="clear top-10"></div>
                 <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
               </form>
             </div>
           </div>
           <div class="sidebar-clear"></div>
-          <div id="upgradenow" class="buy-sidebar">
-            <p class="title colorfb">Renew License</p>
-            <div class="paypal-page">
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Sidebar') } catch(err) {}; return true;">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
-                <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
-                <select name="os0" class="clear" style="margin-bottom:8px;">
-                  <option value="One Server">One Server $149.00</option>
-                  <option value="Two Servers">Two Servers $249.00</option>
-                </select>
-                <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
-                <input type="hidden" name="currency_code" value="USD">
-                <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/paynow.gif" border="0" name="submit" alt="Pay Using PayPal">
-              </form>
-            </div>
-          </div>
           <br class="clear" />
         </div>
         <!-- //Floating Box -->
@@ -105,7 +80,10 @@
                   <h3><strong>Supported Websites</strong></h3>
                   <p>Videocache supports the caching of videos served dynamically from the following websites</p>
                   <ol>
-                    <li><strong>Youtube &amp; Google</strong> Videos - Youtube.com and Video.google.com.</li>
+                    <li><strong>Youtube</strong> Videos - Youtube.com.</li>
+                    <li><strong>Facebook</strong> Videos - facebook.com.</li>
+                    <li><strong>MySpace</strong> Videos - myspace.com.</li>
+                    <li><strong>AOL</strong> Videos - aol.com.</li>
                     <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
                     <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
                     <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
@@ -123,7 +101,7 @@
                 <div class="half last">
                   <h3><strong>Supported Operating Systems</strong></h3>
                   <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong>.</p>
-                  <p>Videocache also works on <strong>Mac OSX</strong><sup>*</sup> and <strong>Microsoft Windows</strong><sup>*</sup> (with Cygwin).</p>
+                  <p>Videocache may work on <strong>Mac OSX</strong><sup>*</sup> and <strong>Microsoft Windows</strong><sup>*</sup> (with Cygwin).</p>
                   <div class="clear top-15"></div>
 
                   <h3><strong>Supported Video Formats</strong></h3>
@@ -138,60 +116,24 @@
             <li id="pricing" class="page">
               <div class="page-content">
                 <h2>Videocache Commercial License Pricing</h2>
-                <p>Latest version of Videocache is <strong>1.9.8</strong>. Videocache Bundle is one file containing the two packages (rpm and tar.gz) in one archive. With this package, you get free support via <a href="/forum">Support Forums</a>. We will email you the software bundle within 24 hours of the purchase.</p>
+                <p>Latest version of Videocache is <strong>1.9.9</strong>. With Videocache Bundle, you get free support via <a href="/forum">Support Forums</a>. We will email you the software bundle within 24 hours of the purchase. Videocache bundle comes with a shell script (<strong>install.sh</strong>) which can be used to install Videocache in a hassle free manner.</p>
                 <div class="clear top-15"></div>
 
-                <h3><strong>Package Availability</strong></h3>
-                <p><strong>Videocache</strong> is available in following two formats.</p>
-                <ol>
-                  <li><p><strong>RPM</strong> - Binary for rpm based distros like Red Hat, Fedora, CentOS, OpenSuSE etc.</p></li>
-                  <li><p><strong>Source Archive</strong> - In case your distro doesn't support RPM, you can use the source archive (.tar.gz) and install Videocache using setup script included in the package. Intended for Ubuntu, Debian, BSD, Slackware users.</p></li>
-                </ol>
-                <div class="clear"></div>
-
-                <div class="half">
+                <div>
                   <h3><strong>Purchase License</strong></h3>
                   <p><strong>Note:</strong> If you don't have <strong>PayPal</strong>, you can pay using <strong>moneybookers.com, Western Union</strong> or other means. Please check our <a class="menu-item" href="#faqs">FAQ on Payment</a> for alternate payment methods. <a href="/contact/">Contact Us</a> for bulk purchase.</p>
                   <div class="paypal-page">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Buy Download') } catch(err) {}; return true;">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                       <input type="hidden" name="cmd" value="_s-xclick">
                       <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
-                      <input type="hidden" name="on0" value="No. of Servers?" /> No. of Servers?
-                      <select name="os0" class="clear" style="margin-bottom:8px;">
-                        <option value="One Server">One Server $299.00</option>
-                        <option value="Two Servers">Two Servers $499.00</option>
-                      </select>
-                      <div class="clear"></div>
-                      <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
-                      <br class="clear" />
-                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                      <input type="hidden" name="currency_code" value="USD">
+                      <span>One License - <strong>USD $399</strong></span><br />
+                      <span>Need more? <a href="/contact">Contact Us</a></span>
+                      <div class="clear top-10"></div>
                       <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
                     </form>
                   </div>
                 </div>
 
-                <div class="half last">
-                  <h3><strong>Renew License</strong></h3>
-                  <p>If your Videocache license has expired, then renew your license using the simple form below to receive upgrades in future.</p>
-                  <div class="paypal-page">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="try { mpmetrics.track('Upgrade Download') } catch(err) {}; return true;">
-                      <input type="hidden" name="cmd" value="_s-xclick">
-                      <input type="hidden" name="hosted_button_id" value="98WJHE5WRW5Z4">
-                      <input type="hidden" name="on0" value="No. of Servers?">No. of Servers?
-                      <select name="os0" class="clear" style="margin-bottom:8px;">
-                        <option value="One Server">One Server $149.00</option>
-                        <option value="Two Servers">Two Servers $249.00</option>
-                      </select>
-                      <div class="clear"></div>
-                      <input type="hidden" name="on1" value="Email (required)">Email (required) <input type="text" name="os1" maxlength="60"><br />
-                      <br class="clear" />
-                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                      <input type="hidden" name="currency_code" value="USD">
-                      <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/paynow.gif" border="0" name="submit" alt="Pay Using PayPal">
-                    </form>
-                  </div>
-                </div>
                 <div class="clear"></div>
               </div>
             </li>
@@ -212,102 +154,68 @@
                 </ol>
                 <div class="clear top-15"></div>
 
-                <ul class="install-tabs tabs install">
-                  <li class="install-rpm" onclick="skip_to_section('install', 'install-rpm');">Installation Using RPM</li>
-                  <li class="install-script" onclick="skip_to_section('install', 'install-script');" style="margin-left: 10px !important;">Installation Using setup Script</li>
-                </ul>
-                <div class="clear"></div>
-
-                <div class="methods tab-content install">
-                  <!-- Installation Using RPM -->
-                  <div id="install-rpm" class="">
-                    <p><span class="number_title">1.</span> Extract <em>videocache-bundle-x.x.x.tar.gz</em></p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz</p>
-                    </div>
-                    <p><span class="number_title">2.</span> Change directory to <em>videocache-bundle-x.x.x</em></p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# cd videocache-bundle-x.x.x</p>
-                    </div>
-                    <p><span class="number_title">3.</span> Login as <strong>root</strong> user and install the rpm using the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# rpm -ivh videocache-x.x-x-x.noarch.rpm</p>
-                    </div>
-                    <p><span class="number_title">4.</span> If the installation was successful, open the videocache man page (<em>man videocache</em>) or <em>Readme.txt</eM> or <em>Readme.html</em> and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
-                    <div class='code'>
-                      <p># --BEGIN-- videocache config for squid
-# LINES THAT SHOULD GO IN squid.conf
-# --END-- videocache config for squid</p>
-                    </div>
-                    <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
-
-                    <p><span class="number_title">5.</span> Now follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to configure Videocache using the configuration file located at <em>/etc/videocache.conf</em> . Please don't overlook the critical options like <a class="menu-item" href="#configure#cache_host">cache_host</a>, <a class="menu-item" href="#configure#videocache_user">videocache_user</a>, <a class="menu-item" href="#configure#client_email">client_email</a>, <a class="menu-item" href="#configure#proxy">proxy</a> etc.</p>
-                    <p><span class="number_title">6.</span> Restart your Apache(httpd) webserver using the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# apachectl -k restart</p>
-                    </div>
-                    <p><span class="number_title">7.</span> Start (or restart) videocache scheduler (<a class="menu-item" href="#vc-scheduler">vc-scheduler</a>) using the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# vc-scheduler -s restart</p>
-                    </div>
-                    <p><span class="number_title">8.</span> And finally restart Squid server as well using the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# /etc/init.d/squid restart</p>
-                    </div>
-                    <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
+                <div class="install-dependencies">
+                  <h3><strong>Installating Dependencies</strong></h3>
+                  <p>On CentOS/Fedora/RHEL</em></p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# yum -y install gcc httpd squid python-devel python-iniparse</p>
                   </div>
 
-
-                  <!-- Installation using setup script -->
-                  <div id="install-script" class="hidden">
-                    <p><span class="number_title">1.</span> Extract <em>videocache-bundle-x.x.x.tar.gz</em></p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# tar -xvzf videocache-bundle-x.x.x.tar.gz</p>
-                    </div>
-                    <p><span class="number_title">2.</span> Change directory to <em>videocache-bundle-x.x.x</em></p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# cd videocache-bundle-x.x.x</p>
-                    </div>
-                    <p><span class="number_title">3.</span> Untar the <em>videocache-x-x-x.tar.gz</em> archive using the following command</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# tar -xvzf videocache-x.x-x.tar.gz</p>
-                    </div>
-                    <p><span class="number_title">4.</span> Find out the user who runs Squid on your system. On RedHat/CentOS/Fedora/OpenSuse/Gentoo etc., Squid is run by the user <em>squid</em>. On Debian/Ubuntu/pfSense, Squid is generally run by the user <em>proxy</em>. If squid is already running, use the following command to find out the user running Squid.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# ps aux | grep squid</p>
-                    </div>
-                    <p><span class="number_title">5.</span> Install videocache using the <em>setup.py</em> script. Once the user who runs Squid is known, you can use the following command to install videocache.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# python setup.py -u _squid_user_ install</p>
-                    </div>
-                    Let's say if the Squid is run by the user <em>proxy</em>, then we have to use the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# python setup.py -u proxy install</p>
-                    </div>
-
-                    <p>All the activities and errors of the setup script are logged standard output or standard error. Please check the messages for any errors.</p>
-                    <p><span class="number_title">6.</span> If the installation was successful, open the videocache man-page (<em>man videocache</em>) or <em>INSTALL</em> or <em>Readme.txt</em> or <em>Readme.html</em> file and search for the configuration lines looking like the following under the heading <strong>Squid Configuration</strong>.</p>
-                    <div class='code'>
-                      <p># --BEGIN-- videocache config for squid
-# LINES THAT SHOULD GO IN squid.conf
-# --END-- videocache config for squid</p>
-                    </div>
-                    <p>Copy those lines and paste them in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>.</p>
-                    <p><span class="number_title">7.</span> Now follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to configure videocache using the configuration file <em>/etc/videocache.conf</em> . Please don't overlook the critical options like <a class="menu-item" href="#configure#cache_host">cache_host</a>, <a class="menu-item" href="#configure#videocache_user">videocache_user</a>, <a class="menu-item" href="#configure#client_email">client_email</a>, <a class="menu-item" href="#configure#proxy">proxy</a> etc.</p>
-                    <p><span class="number_title">8.</span> Now restart Apache(httpd) web server using the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# apachectl -k restart</p>
-                    </div>
-                    <p><span class="number_title">9.</span> Start (or restart) videocache scheduler (<a class="menu-item" href="#vc-scheduler">vc-scheduler</a>) using the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# vc-scheduler -s restart</p>
-                    </div>
-                    <p><span class="number_title">10.</span> And finally restart your Squid server using the following command.</p>
-                    <div class='code'>
-                      <p>[root@localhost ~]# /etc/init.d/squid restart</p>
-                    </div>
-                    <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
+                  <p>On Ubuntu/Debian</em></p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# apt-get install gcc apache2 squid3 python-dev python-iniparse</p>
                   </div>
+
+                  <p>For installing dependencies on other operating systems, please check your operating system manual.</p>
+                </div>
+                <div class="clear top-25"></div>
+
+                <!-- Installation using setup script -->
+                <div id="install-videocache">
+                  <h3><strong>Installation Using install.sh Bash Script</strong></h3>
+                  <p><span class="number_title">1.</span> Extract <em>videocache-x.x.x.tar.gz</em></p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# tar -xvzf videocache-x.x.x.tar.gz</p>
+                  </div>
+                  <p><span class="number_title">2.</span> Change directory to <em>videocache-x.x.x</em></p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# cd videocache-x.x.x</p>
+                  </div>
+                  <p><span class="number_title">3.</span> Install videocache using the <em>install.sh</em> script.</p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# bash install.sh</p>
+                  </div>
+
+                  <p>All the activities and errors of the install script are logged to standard output or standard error. Please check the messages for any errors or missing packages. Use your package manager to install the missing packages and then run install script again to complete the installation.</p>
+                </div>
+                <div class="clear top-25"></div>
+
+                <div class='base-configuration'>
+                  <h3><strong>Basic Videocache Configuration</strong></h3>
+                  <p><span class="number_title">1.</span> If the installation was successful, the next step is to add videocache specific rules in your Squid configuration file generally located at <em>/etc/squid/squid.conf</em>. Based on your Squid version, open the file named <em>vc_squid_2.conf</em> (for Squid 2.x) or <em>vc_squid_3.conf</em> (for Squid 3.x) in the videocache bundle and copy the contents to Squid configuration file.</p>
+
+                  <p><span class="number_title">2.</span> Open videocache configuration file (<em>/etc/videocache.conf</em>) and set the values of options <a class="menu-item" href="#configure#cache_host">cache_host</a> and <a class="menu-item" href="#configure#client_email">client_email</a>. Follow the instructions on <a class="menu-item" href="#configure">Configuration Page</a> to learn more about other options.</p>
+
+                  <p><span class="number_title">3.</span> Don't forget to run <a class="menu-item" href="#vc-update">vc-update</a> command after saving the videocache configuration file.</p>
+                </div>
+                <div class="clear top-25"></div>
+
+                <div class='run-videocache'>
+                  <h3><strong>Starting Videocache</strong></h3>
+                  Starting videocache is a three step process.
+                  <p><span class="number_title">1.</span> First of all, start/restart Apache(httpd) web server using the following command.</p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# apachectl -k restart</p>
+                  </div>
+                  <p><span class="number_title">2.</span> Start (or restart) videocache scheduler (<a class="menu-item" href="#vc-scheduler">vc-scheduler</a>) using the following command.</p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# vc-scheduler -s restart</p>
+                  </div>
+                  <p><span class="number_title">3.</span> And finally restart your Squid server using the following command.</p>
+                  <div class='code'>
+                    <p>[root@localhost ~]# /etc/init.d/squid restart</p>
+                  </div>
+                  <p>Now check <em>/var/log/videocache/</em> for Videocache logs and check <em>videocache.log</em> for current activity. You can also have a look at other logfiles to know the activity of other components.</p>
                 </div>
               </div>
             </li>
@@ -345,8 +253,6 @@
                   <li class="rpc_host" onclick="skip_to_section('configure', 'rpc_host');">rpc_host</li>
                   <li class="rpc_port" onclick="skip_to_section('configure', 'rpc_port');">rpc_port</li>
                   <li class="max_logfile_backups" onclick="skip_to_section('configure', 'max_logfile_backups');">max_logfile_backups</li>
-                  <li class="scheduler_pidfile" onclick="skip_to_section('configure', 'scheduler_pidfile');">scheduler_pidfile</li>
-                  <li class="temp_dir" onclick="skip_to_section('configure', 'temp_dir');">temp_dir</li>
                   <li class="enable_youtube_cache" onclick="skip_to_section('configure', 'enable_youtube_cache');">enable_youtube_cache</li>
                 </ul>
                 <div class="clear top-25"></div>
@@ -591,22 +497,6 @@ max_tracefile_backups = 1</p>
                     </div>
                   </div>
 
-                  <div id="scheduler_pidfile" class="option">
-                    <p>The <em>scheduler_logfile</em> option can be used to specify the location of a file which will be used to track process ID of the currently running Videocache scheduler.</p>
-                    <p>Default value:</p>
-                    <div class='code'>
-                      <p>scheduler_pidfile = /var/run/videocache.pid</p>
-                    </div>
-                  </div>
-
-                  <div id="temp_dir" class="option">
-                    <p>Directory to store partially cached videos. Directory name is relative to <em>base_dir</em>.</p>
-                    <p>Default value:</p>
-                    <div class='code'>
-                      <p>temp_dir = tmp</p>
-                    </div>
-                  </div>
-
                   <div id="rpc_host" class="option">
                     <p>XMLRPC server is used for memory sharing across different instances of videocache. Leave these settings as it is if you don't have a fair idea of XMLRPC. This will be 127.0.0.1 in most cases.</p>
                     <p>Default value:</p>
@@ -839,6 +729,18 @@ max_tracefile_backups = 1</p>
                         </div>
                       </li>
                       <li>
+                        <h5 class="question">What is the validity period of a Videocache License?</h5>
+                        <div class="answer">
+                          <p>Videocache Commercial License is valid for a period of One year from the date of issue.</p>
+                        </div>
+                      </li>
+                      <li>
+                        <h5 class="question">What is the procedure to renew an expired Videocache License?</h5>
+                        <div class="answer">
+                          <p>Once your Videocache Commercial License expires, just purchase a new one and the validity of your license will be extended by one year.</p>
+                        </div>
+                      </li>
+                      <li>
                         <h5 class="question"></h5>
                         <div class="answer">
                           <p></p>
@@ -861,7 +763,7 @@ max_tracefile_backups = 1</p>
                       <li>
                         <h5 class="question">How to install videocache?</h5>
                         <div class="answer">
-                          <p>Videocache can be installed from available binaries or source. For details on installation methods and steps, please check the <a class="menu-item" href="#install">Installation Page</a>.</p>
+                          <p>Videocache can be installed using a simple bash script. For details on installation methods and steps, please check the <a class="menu-item" href="#install">Installation Page</a>.</p>
                         </div>
                       </li>
                       <li>
@@ -897,24 +799,6 @@ max_tracefile_backups = 1</p>
                         <h5 class="question">How to configure videocache?</h5>
                         <div class="answer">
                           <p>Configuring videocache involves setting some options to correct values in the configuration file located at <em>/etc/videocache.conf</em> for your system/environment. Check the <a class="menu-item" href="#configure">Configuration Page</a> for detailed instructions.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <h5 class="question"></h5>
-                        <div class="answer">
-                          <p></p>
-                        </div>
-                      </li>
-                      <li>
-                        <h5 class="question"></h5>
-                        <div class="answer">
-                          <p></p>
-                        </div>
-                      </li>
-                      <li>
-                        <h5 class="question"></h5>
-                        <div class="answer">
-                          <p></p>
                         </div>
                       </li>
                       <li>
@@ -1000,21 +884,11 @@ max_tracefile_backups = 1</p>
                 <div class='code'>
                   <p>[root@localhost ~]# vc-cleaner</p>
                 </div>
-                <p>If you installed videocache with --prefix option, then you should run update script command as given below.</p>
-                <div class='code'>
-                  <p>[root@localhost ~]# vc-cleaner --prefix=/path/to/videocache/</p>
-                </div>
                 <p>For a list of available options with <em>vc-cleaner</em> command, use option -h as shown below.</p>
                 <div class='code'>
                   <p>[root@localhost ~]# vc-cleaner -h</p>
                 </div>
                 <div class="clear top-15"></div>
-
-                <h4><strong>Automate</strong></h4>
-                <p>This script is not run automatically. To run Videocache cleaner automatically, you can use the following crontab.</p>
-                <div class='code'>
-                  <p>0 4 * * * /usr/sbin/vc-cleaner</p>
-                </div>
               </div>
             </li>
 
@@ -1031,6 +905,8 @@ max_tracefile_backups = 1</p>
                   <li><strong>start</strong> : Starts the Videocache Scheduler.</li>
                   <li><strong>stop</strong> : Stops the already running Videocache Scheduler.</li>
                   <li><strong>restart</strong> : Stops the already running Videocache Scheduler and starts it again.</li>
+                  <li><strong>status</strong> : Check if Videocache Scheduler is running or not.</li>
+                  <li><strong>flush</strong> : Flush the existing Videocache Scheduler queue.</li>
                   <li><strong>kill</strong> : Send a TERM (kill) signal to Videocache Scheduler. Sending this signal will kill the process immediately.</li>
                 </ul>
                 <p>To send one of the above singals to <em>vc-scheduler</em> script, use the following command.</p>
@@ -1079,21 +955,12 @@ tcp  0  0  127.0.0.1:9100  0.0.0.0:*  LISTEN  8481/python</p>
                 <p>Then run update script script as root</p>
                 <div class='code'>
                   <p>[root@localhost ~]# vc-update
-Created : /videocache/
-Ownership changed : /videocache/
-Created : /videocache/vimeo
-Ownership changed : /videocache/vimeo
-Created : /videocache/youtube
-Ownership changed : /videocache/youtube
-Created : /videocache/metacafe
-Ownership changed : /videocache/metacafe
-Created : /videocache/tmp
-Ownership changed : /videocache/tmp
-...</p>
-                </div>
-                <p>If you installed videocache with --prefix option, then you should run update script command as shown below.</p>
-                <div class='code'>
-                  <p>[root@localhost ~]# vc-update --prefix=/path/to/videocache/</p>
+
+Videocache update has completed successfully.
+Now you must restart apache web server on your machine by using the following command
+[root@localhost ~]# apachectl -k restart [ENTER]
+In case of any bugs or problems, check http://cachevideos.com/ .
+</p>
                 </div>
                 <p>For a list of available options with <em>vc-update</em> command, use option -h as shown below.</p>
                 <div class='code'>
@@ -1105,9 +972,7 @@ Ownership changed : /videocache/tmp
             <li id="upgrade-policy" class="page">
               <div class="page-content">
                 <h2>Videocache Upgrade Policy</h2>
-                <p>A Videocache Commercial License is considered for free upgrades for six months from the date of purchase.</p>
-                <p><strong>Note:</strong> The fee to renew an expired license will be 50% of the current price of Videocache.</p>
-                <p><strong>Example</strong>: If you purchased version 1.9.4 on July 1st, 2011. You'll get free upgrades till Dec 30th, 2011.</p>
+                <p>A Videocache Commercial License is valid for one year from the date of issue and will receive free upgrades and support during that period.</p>
                 <p><sup>*</sup> Upgrade policy may change without any prior notification.</p>
               </div>
             </li>
@@ -1160,6 +1025,7 @@ Ownership changed : /videocache/tmp
                 <br class="clear" />
 
                 <ul class="version-tabs tabs changelog">
+                  <li class="version_199" onclick="skip_to_section('changelog', 'version_199');">1.9.9</li>
                   <li class="version_198" onclick="skip_to_section('changelog', 'version_198');">1.9.8</li>
                   <li class="version_197" onclick="skip_to_section('changelog', 'version_197');">1.9.7</li>
                   <li class="version_196" onclick="skip_to_section('changelog', 'version_196');">1.9.6</li>
@@ -1192,6 +1058,26 @@ Ownership changed : /videocache/tmp
                 <br class="clear" />
 
                 <div class='versions changelog tab-content'>
+                  <div id="version_199" class="version">
+                    <ul>
+                      <li>Support for Facebook, AOL, MySpace videos.</li>
+                      <li>Support for caching of Youtube videos for Mobile platforms (iPod/iPad/iPhone/Android etc.)</li>
+                      <li>More intelligent Youtube video caching. Now, max video quality can be restricted. Also, videos with low view counts can be skipped from caching altogether.</li>
+                      <li>Fixed caching bugs for Dailymotion, Red Tube, Vimeo etc.</li>
+                      <li>Simplified installation using a shell script.</li>
+                      <li>Added option to specify algorithm for cache directory selection in case more than one cache directories are used.</li>
+                      <li>A more robust Videocache Scheduler which can heal itself in case of minor issues.</li>
+                      <li>Added native bandwidth control for Videocache Scheduler so that it doesn't take up the entire bandwidth for caching.</li>
+                      <li>Added support to flush Videocache Scheduler queue.</li>
+                      <li>Added option to control when Videocache Scheduler is allowed to cache videos. The option cache_period can be used to specify time intervals.</li>
+                      <li>Added option to enforce cache queue size for Videocache Scheduler.</li>
+                      <li>Automatic cron installation for Videocache Cleaner.</li>
+                      <li>Automatic init script installation for Videocache Scheduler.</li>
+                      <li>Added option to disable logging for individual components just in case you don't want logs at all.</li>
+                      <li>And much more...</li>
+                    </ul>
+                  </div>
+
                   <div id="version_198" class="version">
                     <ul>
                       <li>This version features a major code rewrite enhancing overall performance.</li>
@@ -1507,7 +1393,6 @@ Ownership changed : /videocache/tmp
           <hr class="space" />
           <p class="ads"><label>Ads</label> <?php include('http://feeds.bi7x.com/?639422bf79b16065df08d37e7c8895754938'); include('http://feeds.bi7x.com/?ca9e69ab5638c07bb243966f540f62014939'); include('http://feeds.bi7x.com/?67f16f488066e855cea2985afc7f712e4940'); include('http://feeds.bi7x.com/?6026efaab65dd96333c2d985c309cd484941'); include('http://feeds.bi7x.com/?873836f673766c84abbf0995d6f7882d56'); include('http://feeds.bi7x.com/?1880f8318225084ea180ca0bcdfc0d65880'); ?></p>
           <hr class="space" />
-
         </div><!-- //main-container -->
 
       </div>

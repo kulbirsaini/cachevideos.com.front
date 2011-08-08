@@ -1,6 +1,6 @@
 var current_page = 'home';
 var pages = Array('home', 'pricing', 'install', 'configure', 'faqs', 'upgrade', 'upgrade-policy', 'vc-cleaner', 'vc-update', 'vc-scheduler', 'response-codes', 'changelog', 'restart', 'upgrade-policy');
-var sections = { 'install' : ['install-rpm', 'install-script'], 'configure' : ["enable_videocache", "client_email", "offline_mode", "videocache_user", "cache_host", "base_dir", "max_cache_processes", "proxy", "proxy_username", "proxy_password", "hit_threshold", "max_video_size", "min_video_size", "disk_avail_threshold", "enable_videocache_cleaner", "video_lifetime", "logformat", "timeformat", "logdir", "logfile", "max_logfile_size", "max_logfile_backups", "scheduler_pidfile", "temp_dir", "rpc_host", "rpc_port", "enable_youtube_cache"], 'faqs' : [], 'changelog' : ["version_198", "version_197", "version_196", "version_195", "version_194", "version_193", "version_192", "version_191", "version_19", "version_18", "version_17", "version_16", "version_15", "version_14", "version_13", "version_12", "version_11", "version_10", "version_09", "version_08", "version_07", "version_06", "version_05", "version_04", "version_03", "version_02", "version_01"] };
+var sections = { 'configure' : ["enable_videocache", "client_email", "offline_mode", "videocache_user", "cache_host", "base_dir", "max_cache_processes", "proxy", "proxy_username", "proxy_password", "hit_threshold", "max_video_size", "min_video_size", "disk_avail_threshold", "enable_videocache_cleaner", "video_lifetime", "logformat", "timeformat", "logdir", "logfile", "max_logfile_size", "max_logfile_backups", "scheduler_pidfile", "temp_dir", "rpc_host", "rpc_port", "enable_youtube_cache"], 'faqs' : [], 'changelog' : ["version_199", "version_198", "version_197", "version_196", "version_195", "version_194", "version_193", "version_192", "version_191", "version_19", "version_18", "version_17", "version_16", "version_15", "version_14", "version_13", "version_12", "version_11", "version_10", "version_09", "version_08", "version_07", "version_06", "version_05", "version_04", "version_03", "version_02", "version_01"] };
 
 function set_default_section(page) {
   if (sections[page] == undefined) { return false; }
@@ -14,7 +14,6 @@ function go_to_page(page) {
   set_default_section(page);
   current_page = page;
 
-  mpmetrics.track("JS Page", { 'Page' : current_page.substr(0,1).toUpperCase() + current_page.substr(1) });
   return true;
 };
 
