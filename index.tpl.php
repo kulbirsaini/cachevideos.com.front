@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <title>Cache Videos Using Squid | Videocache</title>
     <meta name="description" content="Videocache is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine." />
-    <link rel="stylesheet" href="<?php print base_path(). path_to_theme(); ?>/css/base.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="<?php print base_path(). path_to_theme(); ?>/css/base.css?" type="text/css" media="screen, projection" />
     <script type="text/javascript" src='<?php print base_path(). path_to_theme(); ?>/js/script.js'></script>
     <script type="text/javascript">
       $script(['<?php print base_path(). path_to_theme(); ?>/js/jquery.js', '<?php print base_path(). path_to_theme(); ?>/js/videocache.js'], function() { $(document).ready(function(){ jQueryMain(); }); });
     </script>
+    <!--link rel="stylesheet" href="./css/base.css?" type="text/css" media="screen, projection" /-->
+    <!--script type="text/javascript" src='./js/script.js'></script-->
+    <!--script type="text/javascript">
+      $script(['./js/jquery.js', './js/videocache.js'], function() { $(document).ready(function(){ jQueryMain(); }); });
+    </script-->
 
   </head>
   <body class="">
@@ -23,11 +28,11 @@
         <div class="navi top-navi"><h2 class="faqs"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
         <div class="navi top-navi"><h2 class="external"><a href="/forum">Support</a></h2></div>
         <div class="navi top-navi"><h2 class="external"><a href="/contact">Contact</a></h2></div>
-        <div class="navi top-navi book"><h2 class="external"><a href="http://link.packtpub.com/UN6yov" target="_blank">My Book On Squid</a></h2></div>
+        <div class="navi top-navi book"><h2 class="external"><a href="http://link.packtpub.com/UN6yov" target="_blank">Book On Squid</a></h2></div>
         <br class="clear" />
       </div>
 
-      <div id="header">
+      <div id="header" class="header-<?php $a = array('blue', 'red'); shuffle($a); print $a[0]; ?>">
         <div class="logo" onclick="landing_page('#home');">
         </div>
       </div>
@@ -44,7 +49,11 @@
               <li class="floating-navi navi"><h2 class="upgrade"><a class="menu-item" href="#upgrade">Upgrade</a></h2></li>
               <li class="floating-navi navi"><h2 class="changelog"><a class="menu-item" href="#changelog">Change Log</a></h2></li>
               <li class="floating-navi navi"><h2 class="upgrade-policy"><a class="menu-item" href="#upgrade-policy">Upgrade Policy</a></h2></li>
-              <li class="floating-navi navi"><h2 class="external"><a href="/user">My Account</a></h2></li>
+              <li class="floating-navi navi"><h2 class="privacy-policy"><a class="menu-item" href="#privacy-policy">Privacy Policy</a></h2></li>
+              <li class="floating-navi navi"><h2 class="refunds-policy"><a class="menu-item" href="#refunds-policy">Refunds Policy</a></h2></li>
+              <li class="floating-navi navi"><h2 class="terms"><a class="menu-item" href="#terms">License Agreement</a></h2></li>
+              <li class="floating-navi navi"><h2 class="external"><strong><a href="/user">My Account</a></strong></h2></li>
+              <li class="floating-navi navi"><h2 class="external"><a href="http://whitemag.net/" target="_blank">About Company</a></h2></li>
               <?php if ($is_admin) { ?><li class="floating-navi navi"><h2 class="external"><a href="/admin">Admin</a></h2></li><?php } ?>
             </ul>
           </div>
@@ -52,17 +61,7 @@
           <div id="buynow" class="buy-sidebar">
             <p class="title colorfb">Purchase/Renew</p>
             <div class="paypal-page">
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
-                <input type="hidden" name="currency_code" value="USD">
-                <span>One License - <strong>USD $399<sup>*</sup></strong></span><br />
-                <span>Validity - <strong>One Year</strong></span><br />
-                <span>Need more? <a href="/contact">Contact Us</a></span><br />
-                <span><sup>*</sup>Includes free upgrades and support for one year.</span>
-                <div class="clear top-10"></div>
-                <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
-              </form>
+              <p>Payments will be back soon!</p>
             </div>
           </div>
           <div class="sidebar-clear"></div>
@@ -113,6 +112,16 @@
                 <div class="clear"></div>
                 <p class="center"><strong><sup>*</sup></strong> <strong>Mac OSX</strong> and <strong>Microsoft Windows</strong> are not officially supported.</p>
               </div>
+              <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-27164299-2']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+              </script>
             </li>
 
             <li id="pricing" class="page">
@@ -123,18 +132,9 @@
 
                 <div>
                   <h3><strong>Purchase/Renew License</strong></h3>
-                  <p><strong>Note:</strong> If you don't have <strong>PayPal</strong>, you can pay using <strong>moneybookers.com, Western Union</strong> or other means. Please check our <a class="menu-item" href="#faqs">FAQ on Payment</a> for alternate payment methods. <a href="/contact/">Contact Us</a> for bulk purchase.</p>
+                  <p><strong>Note:</strong> If you don't have <strong>AlertPay</strong>, you can pay using <strong>moneybookers.com</strong> or other means. Please check our <a class="menu-item" href="#faqs">FAQ on Payment</a> for alternate payment methods. <a href="/contact/">Contact Us</a> for bulk purchase.</p>
                   <div class="paypal-page">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                      <input type="hidden" name="cmd" value="_s-xclick">
-                      <input type="hidden" name="hosted_button_id" value="98G37JTG77VLN">
-                      <span>One License - <strong>USD $399<sup>*</sup></strong></span><br />
-                      <span>Validity - <strong>One Year</strong></span><br />
-                      <span>Need more? <a href="/contact">Contact Us</a></span><br />
-                      <span><sup>*</sup>Includes free upgrades and support for one year.</span>
-                      <div class="clear top-10"></div>
-                      <input type="image" src="<?php print base_path(). path_to_theme(); ?>/images/buynow.gif" border="0" name="submit" alt="Pay Using PayPal">
-                    </form>
+                    <p>Payments will be back soon!</p>
                   </div>
                 </div>
 
@@ -628,7 +628,7 @@ max_tracefile_backups = 1</p>
                 </div>
 
                 <div class="faqs-category">
-                  <h3 class="faqs-category-name">Payment/Purchase</h3>
+                  <h3 class="faqs-category-name">Payment/Purchase/Refunds</h3>
                   <div class="faqs">
                     <ul class="list-faqs">
                       <li>
@@ -636,26 +636,25 @@ max_tracefile_backups = 1</p>
                         <div class="answer">
                           <p>We support the following payments methods:</p>
                           <ul class="list-square">
-                            <li><a href="https://www.paypal.com/">PayPal</a> (Recommended)</li>
+                            <li><a href="https://www.alertpay.com/">ALertPay</a> (coming soon)</li>
                             <li><a href="http://moneybookers.com/">MoneyBookers</a></li>
-                            <li><a href="http://www.westernunion.com/">Western Union</a></li>
                             <li><a href="http://en.wikipedia.org/wiki/Wire_transfer">Wire Transfer/Direct Bank Transfer</a></li>
                             <li><a href="http://en.wikipedia.org/wiki/Online_banking">Internet Banking/Online Banking</a> (Supported only in selected countries)</li>
                             <li>Cheque or Demand Draft (Supported only in selected countries)</a>
                           </ul>
-                          <p><strong>NOTE:</strong> Customer will have to bear any extra charges charged by various payments gateways other than PayPal and MoneyBookers.</p> 
+                          <p><strong>NOTE:</strong> Customer will have to bear any extra charges charged by various payments gateways other than AlertPay and MoneyBookers.</p> 
                         </div>
                       </li>
                       <li>
-                        <h5 class="question">PayPal doesn't work in my country. How can I purchase Videocache?</h5>
+                        <h5 class="question">AlertPay doesn't work in my country. How can I purchase Videocache?</h5>
                         <div class="answer">
                           <p>Please check the above FAQ on supported payment methods.</p>
                         </div>
                       </li>
                       <li>
-                        <h5 class="question">Can I use a friend's PayPal account or credit card to purchase Videocache?</h5>
+                        <h5 class="question">Can I use a friend's AlertPay account or credit card to purchase Videocache?</h5>
                         <div class="answer">
-                          <p>Yes. But we encourage you to use your own account or credit card. In case you are using a friend's account or credit card, please leave a note mentioning the same.</p>
+                          <p>No.</p>
                         </div>
                       </li>
                       <li>
@@ -679,6 +678,12 @@ max_tracefile_backups = 1</p>
                         <h5 class="question">Will you put my information on any other third party website or anywhere on Internet?</h5>
                         <div class="answer">
                           <p>NO. We never do that. We never share your information with any third party website or anywhere on Internet.</p>
+                        </div>
+                      </li>
+                      <li>
+                        <h5 class="question">What is your refunds policy?</h5>
+                        <div class="answer">
+                          <p>Buyer is eligible for refunds only if the software has not been delivered already. Once the software is delivered, there will be no refunds.</p>
                         </div>
                       </li>
                       <li>
@@ -1019,6 +1024,107 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                   <p>[root@localhost ~]# /etc/init.d/squid reload</p>
                 </div>
                 <p>That's all for restarting Videocache. Now check videocache logs in <em>/var/log/videocache</em> directory for current videocache activity.</p>
+              </div>
+            </li>
+
+            <li id="privacy-policy" class="page">
+              <div class="page-content">
+                <h2>Privacy Policy</h2>
+                <p>White Magnet Software Private Limited collects e-mail addresses of those who communicate with us via-email, aggregate information on what pages consumers access or visit, and information volunteered by the consumer, requests for information, and/or forum registrations. Physical addresses are needed for orders. The information White Magnet Software Private Limited collects is used to improve our software, used to notify clients about updates to our software, web site. If you do not want to receive e-mail from us in the future, please let us know by sending an e-mail to us or by writing to us and telling us that you do not want to receive e-mail from our company.</p>
+                <p>Note: We do not make the e-mail addresses of those who use our site available to any other organizations, companies or third parties other than our Payment Gateway which is must for order completion.</p>
+              </div>
+            </li>
+
+            <li id="terms" class="page">
+              <div class="page-content">
+                <h2>Software License Agreement / Terms and Conditions</h2>
+                <p>Videocache Commercial License.</p>
+                <p>Copyright (c) White Magnet Software Private Limited, all rights reserved</p>
+                <p>Please read this License carefully before using or installing the Software (Videocache, as defined below). By using or installing the Software, Licensee is agreeing to be bound by this License and the licenses granted hereunder are subject to compliance with any and all terms of this License. IF YOU DO NOT ACCEPT THE TERMS AND CONDITIONS OF THIS LICENSE, DO NOT USE, INSTALL OR DISTRIBUTE ANY OF THE LICENSED SOFTWARE.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Terms and definitions</strong>
+                <ul class="list-square">
+                  <li>"Software" means the licensed Videocache software</li>
+                  <li>"Adaptation" means a derivative work based upon the Licensed Software resulting from any addition to, editing of or deletion from the substance or structure of the original source code or a compiled version of the Licensed Software or any previous Adaptations or a work that programmatically interacts with the Licensed Software.</li>
+                  <li>"Licensed Software" means the same as Software.</li>
+                  <li>"License" means this document.</li>
+                  <li>"Licensor" means White Magnet Software Private Limited. </li>
+                  <li>"Licensee" means an individual or entity exercising rights under and complying with the terms of this License who has not previously violated the terms of this License with respect to the Software, or who has received express permission from the Licensor to exercise rights under this License despite a previous violation.</li>
+                </ul>
+                <div class="clear top-15"></div>
+
+                <strong>License Grant</strong>
+                <p>Licensor hereby grants the Licensee a non-exclusive, non-transferable, non-assignable license, without the right to sublicense to: Access, display, integrate and use the Software in one (1) Server/Computer that has been registered with Licensor for a period of one (1) year from the date of purchase of the license.</p>
+                <p>Licensor hereby grants the Licensee a non-exclusive, worldwide, royalty-free, non-transferable, non-assignable patent license, without the right to sublicense, under any patent rights the Licensor holds in the Software to use, run, and modify the Software in the one (1) Server/Computer that has been registered with Licensor.</p>
+                <p>All rights not expressly granted by this Agreement are expressly reserved by Licensor.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Applicability of License</strong>
+                <p>This License applies to the Software version purchased by the Licensee.</p>
+                <p>Additional later versions released by the Licensor are not part of this License.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Protection of Licensed Software</strong>
+                <p>Except as specifically set forth herein or as otherwise agreed to between Licensor and Licensee, Licensee shall not have the right to copy, relicense, sell, lease, transfer, encumber, assign or make available for public use the Software. Any attempt to take any such actions is void, and will automatically terminate your rights under this License.</p>
+                <p>Licensee shall use its best efforts to ensure that no unauthorized copy of the Licensed Programs shall be made, in whole or in part, in any form. Licensee shall prohibit all users of the Software from modifying, reverse-engineering or disassembling any part of the Software. All rights not expressly granted by Licensor are hereby reserved.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Effective Date</strong>
+                <p>The rights and licenses granted hereunder shall commence on the date any of the Software are electronically delivered to Licensee. Licensor agrees to make the Software available for electronic delivery to Licensee promptly after receipt by Licensor of the License Fee. For purposes of this Agreement, the "License Fee" means the amount of money required to be paid by Licensee to Licensor for legal usage of the Software under the terms of this agreement.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Termination of the license</strong>
+                <p>This license is subject to termination by Licensor at any time if (a) Licensee violates any terms of this License, (b) Licensor has a reasonable basis to believe that Licensee's business is impairing Licensor's business, (c) Licensee failes to renew the the license after one (1) year from the date of purchase of the license.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Ownership of Intellectual Property</strong>
+                <p>Licensor is the sole owner of all intellectual property rights pertaining to the Licensed Software. Licensor reserves all rights not expressly granted herein.</p>
+                <div class="clear top-15"></div>
+
+                <strong>NO WARRANTY</strong>
+                <p>TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, THE LICENSED SOFTWARE IS PROVIDED TO YOU "AS IS," WITH ALL FAULTS, WITHOUT WARRANTY OF ANY KIND, AND YOUR USE IS AT YOUR SOLE RISK. THE ENTIRE RISK OF SATISFACTORY QUALITY AND PERFORMANCE RESIDES WITH YOU. LICENSOR DISCLAIMS ANY AND ALL EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT OF THIRD PARTY RIGHTS, ANY WARRANTIES OR CONDITIONS OF TITLE, AND WARRANTIES (IF ANY) ARISING FROM A COURSE OF DEALING, USAGE, OR TRADE PRACTICE. LICENSOR DOES NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE PROGRAM; THAT THE PROGRAM WILL MEET YOUR REQUIREMENTS; THAT OPERATION OF THE PROGRAM WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT THE PROGRAM WILL BE COMPATIBLE WITH THIRD PARTY SOFTWARE OR THAT ANY ERRORS IN THE PROGRAM WILL BE CORRECTED. NO ORAL OR WRITTEN ADVICE PROVIDED BY LICENSOR OR ANY AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF OR LIMITATIONS ON IMPLIED WARRANTIES OR THE LIMITATIONS ON THE APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO SOME OR ALL OF THE ABOVE EXCLUSIONS AND LIMITATIONS MAY NOT APPLY TO YOU.</p>
+                <p>LICENSEE IS SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING AND DISTRIBUTING THE LICENSED SOFTWARE AND ASSUMES ALL RISKS ASSOCIATED WITH ITS EXERCISE OF RIGHTS UNDER THIS AGREEMENT, INCLUDING BUT NOT LIMITED TO THE RISKS AND COSTS OF PROGRAM ERRORS, COMPLIANCE WITH APPLICABLE LAWS, DAMAGE TO OR LOSS OF DATA, PROGRAMS OR EQUIPMENT, SUITABILITY FOR HOSTING AND UNAVAILABILITY OR INTERRUPTION OF OPERATIONS.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Limitation of Liability</strong>
+                <p>Except to the extent required by applicable law, THE CUMULATIVE, AGGREGATE LIABILITY OF LICENSOR TO LICENSEE FOR ALL CLAIMS RELATED TO THE LICENSED SOFTWARE AND THIS AGREEMENT, WILL NOT EXCEED THE TOTAL AMOUNT OF ALL LICENSE FEES PAID TO LICENSOR HEREUNDER. LICENSOR WILL NOT IN ANY CASE BE LIABLE FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, INDIRECT, PUNITIVE, OR EXEMPLARY DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PRODUCT, THE SERVICES OR THIS AGREEMENT, INCLUDING WITHOUT LIMITATION, DAMAGES FOR LOST PROFIT, LOST REVENUE, LOSS OF USE, LOSS OF DATA, COSTS OF RECREATING LOST DATA, THE COST OF ANY SUBSTITUTE EQUIPMENT, PROGRAM, OR DATA, OR CLAIMS BY ANY THIRD PARTY, INCLUDING WITH LIMITATION THIRD PARTY CLAIMS OF INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS, INFRINGEMENT OF COPYRIGHT, TRADEMARK, PATENT, OR TRADE SECRETS. LICENSEE'S SOLE AND EXCLUSIVE REMEDY IS SET FORTH IN THIS AGREEMENT. THE LIMITATION ON DAMAGES SET FORTH IN SECTION WILL NOT APPLY TO INDEMNIFICATION OBLIGATIONS OR BREACHES BY LICENSEE.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Indemnity</strong>
+                <p>Licensee shall indemnify Licensor, its employees, officers, licensees and agents for all damages, costs and expenses, including, without limitation, attorneys' fees, arising from any claims arising as a result of Licensee's use of the Licensed Software, either as provided or as Adapted by Licensee.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Export</strong>
+                <p>Licensee agrees and certifies that it will not export or re-export, directly or indirectly, the Licensed Software contrary to the laws of the United States or any other country.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Severability</strong>
+                <p>If for any reason a court of competent jurisdiction finds any provision of this License or portion thereof, to be unenforceable, that provision of the License shall be enforced to the maximum extent permissible so as to effect the intent of the parties, and the remainder of this License shall continue in full force and effect.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Complete Agreement</strong>
+                <p>This License constitutes the entire agreement between Licensor and Licensee with respect to the use of the Licensed Software and supersedes all prior or contemporaneous understandings or agreements, written or oral, regarding such subject matter. No one other than Licensor has the right to modify or amend this License.</p>
+                <div class="clear top-15"></div>
+
+                <strong>Waiver of Breach</strong>
+                <p>No term or provision of this License shall be deemed waived and no breach excused, unless such waiver or consent shall be in writing and signed by Licensor.</p>
+              </div>
+            </li>
+
+            <li id="refunds-policy" class="page">
+              <div class="page-content">
+                <h2>Refund Policy Terms</h2>
+                <p>The softwares available for purchase on our web site are downloadable, <a href="/contact">try-before-you-buy</a>. We provide free trial periods to let you fully evaluate our products before you make a purchase decision.</p>
+                <p>Please use the trial period to make sure that the software meets your needs before purchasing a license. All of our software is fully-functional or some limitation during the trial period. Our software requires registration to enable its primary functionality.</p>
+                <p>If you purchase one of our products, after your payment has cleared and confirmed by our payment gateway, you will receive an email with the license code and software bundle to install and activate the software. <strong>Once this information is emailed to you, no refunds will be given.</strong> We have this policy since it would be impossible for you to return your registered version of our software.</p>
+                <p>During your trial period, our support staff is available to assist in installation and configuration via email. We strongly recommend that all customers download, install, and test the trial version of our software prior to making a purchase.</p>
+                <p>In rare instances and only within 30 days of purchase, if due to technical difficulties or platform incompatibilities the software will not function, we may, at our discretion, issue a refund. In such instances, we require that you provide enough information for us to positively identify your purchase transaction (e.g., order number, your company name, date of transaction, purchase code, number of licenses purchased, etc.). If we are able to positively identify your order, and if your request is made within 30 days of purchase, you must submit to us a letter of destruction of software on your company letterhead before we will process the refund.</p>
+
+                <h2>Acceptance of this Refund Policy</h2>
+                <p>It is your responsibility to familiarize yourself with this refund policy. By placing an order for any of our products, you indicate that you have read this refund policy and that you agree with and fully accept the terms of this refund policy.</p>
+                <p>If you do not agree with or fully accept the terms of this refund policy, we ask that you do not place an order with us.</p>
+                <p>Please send any questions regarding our refund policy to support@whitemagnet.com</p>
               </div>
             </li>
 
@@ -1392,7 +1498,7 @@ In case of any bugs or problems, check http://cachevideos.com/ .
             </li>
           </ul>
           <hr class="space" />
-          <p class="center footer">Copyright &copy; 2008-2011 <a href="http://saini.co.in/" target="_blank">Kulbir Saini</a>.</p>
+          <p class="center footer">&copy; <a href="http://whitemag.net/" target="_blank">White Magnet Software Pvt Ltd</a>.</p>
           <p class="center footer">All right reserved. The logos and trademarks are the property of their respective owners.</p>
           <hr class="space" />
         </div><!-- //main-container -->
