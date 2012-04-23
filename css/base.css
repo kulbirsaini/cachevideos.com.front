@@ -78,6 +78,7 @@ ul.list-square li { list-style-type: square; }
 .navi h2 { background: #3B5A98; }
 .navi h2 a, .navi h2 a:hover, .navi h2 a:active { color: #eee; }
 .navi h2 a{display:block;text-align:center;}
+.navi h2.contact { background: #d24d41; font-family: Arial; font-weight: bold; }
 .top-navi h2 {-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;}
 .top-navi { float: left; margin-right: 7px; }
 .top-navi h2 { font-size: 130%; padding: 10px 22px; _padding: 10px 20px; }
@@ -112,10 +113,14 @@ h5.question { margin-top: 15px; }
 
 /* Buy/Upgrade in Sidebar */
 table { margin-bottom: 0; }
-.paypal-page { margin: 10px 0px 0px 40px; }
+.paypal-page { margin: 10px 0px 0px 40px; width: 240px }
+.paypal-page p { text-align: justify; margin-bottom: 0px; }
+.paypal-page select { text-align: center; }
+.paypal-page input.buy-button { margin-left: 40px; }
 .buy-sidebar {border: 1px solid #ddd;-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;}
 .buy-sidebar .title {text-align: center; padding: 1px 0px;margin:0px 0px 5px 0px;border-bottom:1px solid #222;text-transform:uppercase;font-size:120%; font-weight:bold;color:#eee;}
-.buy-sidebar .paypal-page {margin: 0px;}
+.buy-sidebar .paypal-page {margin: 0px; width: 160px; padding: 0px 7px;}
+.buy-sidebar .paypal-page input.buy-button { margin-left: 0px; }
 .buy-sidebar form {text-align: center;}
 .buy-sidebar form select {max-width: 155px;}
 .buy-sidebar form input {max-width: 130px;}

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head> 
+  <head>
     <meta charset="utf-8">
     <title>Cache Videos Using Squid | Videocache</title>
     <meta name="description" content="Videocache is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine." />
     <link rel="stylesheet" href="<?php print base_path(). path_to_theme(); ?>/css/base.css?" type="text/css" media="screen, projection" />
     <script type="text/javascript" src='<?php print base_path(). path_to_theme(); ?>/js/script.js'></script>
     <script type="text/javascript">
-      $script(['<?php print base_path(). path_to_theme(); ?>/js/jquery.js', '<?php print base_path(). path_to_theme(); ?>/js/videocache.js'], function() { $(document).ready(function(){ jQueryMain(); }); });
+      $script(['<?php print base_path(). path_to_theme(); ?>/js/jquery.js', '<?php print base_path(). path_to_theme(); ?>/js/videocache.js'], function() {
+        $(document).ready(function(){
+          jQueryMain();
+          $('a[href*="contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
+        });
+      });
     </script>
     <!--link rel="stylesheet" href="./css/base.css?" type="text/css" media="screen, projection" /-->
     <!--script type="text/javascript" src='./js/script.js'></script-->
@@ -27,8 +32,8 @@
         <div class="navi top-navi"><h2 class="configure"><a class="menu-item" href="#configure">Configure</a></h2></div>
         <div class="navi top-navi"><h2 class="faqs"><a class="menu-item" href="#faqs">FAQs</a></h2></div>
         <div class="navi top-navi"><h2 class="external"><a href="/forum">Support</a></h2></div>
-        <div class="navi top-navi"><h2 class="external"><a href="/contact">Contact</a></h2></div>
-        <div class="navi top-navi book"><h2 class="external"><a href="http://link.packtpub.com/UN6yov" target="_blank">Book On Squid</a></h2></div>
+        <div class="navi top-navi"><h2 class="external contact"><a href="/contact">Contact</a></h2></div>
+        <div class="navi top-navi book"><h2 class="external"><a rel="nofollow" href="http://link.packtpub.com/UN6yov" target="_blank">Book On Squid</a></h2></div>
         <br class="clear" />
       </div>
 
@@ -61,7 +66,25 @@
           <div id="buynow" class="buy-sidebar">
             <p class="title colorfb">Purchase/Renew</p>
             <div class="paypal-page">
-              <p>Payments will be back soon!</p>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="RDYYZNX5Z28UG">
+                <input type="hidden" name="on0" value="Number of Licenses">
+                <p>Select number of licenses (servers)</p>
+                <select name="os0">
+                  <option value="One License">One License $395.00 USD</option>
+                  <option value="Two Licenses">Two Licenses $750.00 USD</option>
+                  <option value="Three Licenses">Three Licenses $1,090.00 USD</option>
+                  <option value="Five Licenses">Five Licenses $1,680.00 USD</option>
+                </select><br />
+                <p>By clicking the <strong>Buy Now</strong> button, you agree that you have read and accepted our <a class="menu-item" href="#terms">Terms &amp; Conditions</a> and <a class="menu-item" href="#refunds-policy">Refunds Policy</a>.</p>
+                <input type="hidden" name="currency_code" value="USD">
+                <input class="buy-button" type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                <br /><br />
+                <p><strong>*</strong> One (1) Videocache commercial license can be installed only on one server.</p>
+                <p><strong>*</strong> Videocache license is <strong>valid for one year</strong> from the date of purchase. You will need to renew your license to continue using Videocache.</p>
+              </form>
             </div>
           </div>
           <div class="sidebar-clear"></div>
@@ -132,9 +155,26 @@
 
                 <div>
                   <h3><strong>Purchase/Renew License</strong></h3>
-                  <p><strong>Note:</strong> If you don't have <strong>AlertPay</strong>, you can pay using <strong>moneybookers.com</strong> or other means. Please check our <a class="menu-item" href="#faqs">FAQ on Payment</a> for alternate payment methods. <a href="/contact/">Contact Us</a> for bulk purchase.</p>
+                  <p><strong>Note:</strong> If you don't have <strong>PayPal</strong>, you can pay using <strong>moneybookers.com</strong> or other means. Please check our <a class="menu-item" href="#faqs">FAQ on Payment</a> for alternate payment methods. <a href="/contact/">Contact Us</a> for bulk purchase.</p>
+                  <p><strong>*</strong> One (1) Videocache commercial license can be installed only on one server.</p>
+                  <p><strong>*</strong> Videocache license is <strong>valid for one year</strong> from the date of purchase. You will need to renew your license to continue using Videocache.</p>
                   <div class="paypal-page">
-                    <p>Payments will be back soon!</p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                      <input type="hidden" name="cmd" value="_s-xclick">
+                      <input type="hidden" name="hosted_button_id" value="RDYYZNX5Z28UG">
+                      <input type="hidden" name="on0" value="Number of Licenses">
+                      <p>Select number of licenses (servers)</p>
+                      <select name="os0">
+                        <option value="One License">One License $395.00 USD</option>
+                        <option value="Two Licenses">Two Licenses $750.00 USD</option>
+                        <option value="Three Licenses">Three Licenses $1,090.00 USD</option>
+                        <option value="Five Licenses">Five Licenses $1,680.00 USD</option>
+                      </select><br />
+                      <p>By clicking the <strong>Buy Now</strong> button, you agree that you have read and accepted our <a class="menu-item" href="#terms">Terms &amp; Conditions</a> and <a class="menu-item" href="#refunds-policy">Refunds Policy</a>.</p>
+                      <input type="hidden" name="currency_code" value="USD">
+                      <input class="buy-button" type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+                      <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                    </form>
                   </div>
                 </div>
 
@@ -636,23 +676,23 @@ max_tracefile_backups = 1</p>
                         <div class="answer">
                           <p>We support the following payments methods:</p>
                           <ul class="list-square">
-                            <li><a href="https://www.alertpay.com/">ALertPay</a> (coming soon)</li>
-                            <li><a href="http://moneybookers.com/">MoneyBookers</a></li>
-                            <li><a href="http://en.wikipedia.org/wiki/Wire_transfer">Wire Transfer/Direct Bank Transfer</a></li>
-                            <li><a href="http://en.wikipedia.org/wiki/Online_banking">Internet Banking/Online Banking</a> (Supported only in selected countries)</li>
+                            <li><a rel="nofollow" href="https://www.paypal.com/">PayPal</a></li>
+                            <li><a rel="nofollow" href="http://moneybookers.com/">MoneyBookers</a></li>
+                            <li><a rel="nofollow" href="http://en.wikipedia.org/wiki/Wire_transfer">Wire Transfer/Direct Bank Transfer</a></li>
+                            <li><a rel="nofollow" href="http://en.wikipedia.org/wiki/Online_banking">Internet Banking/Online Banking</a> (Supported only in selected countries)</li>
                             <li>Cheque or Demand Draft (Supported only in selected countries)</a>
                           </ul>
-                          <p><strong>NOTE:</strong> Customer will have to bear any extra charges charged by various payments gateways other than AlertPay and MoneyBookers.</p> 
+                          <p><strong>NOTE:</strong> Customer will have to bear any extra charges charged by various payments gateways other than PayPal and MoneyBookers.</p>
                         </div>
                       </li>
                       <li>
-                        <h5 class="question">AlertPay doesn't work in my country. How can I purchase Videocache?</h5>
+                        <h5 class="question">PayPal doesn't work in my country. How can I purchase Videocache?</h5>
                         <div class="answer">
                           <p>Please check the above FAQ on supported payment methods.</p>
                         </div>
                       </li>
                       <li>
-                        <h5 class="question">Can I use a friend's AlertPay account or credit card to purchase Videocache?</h5>
+                        <h5 class="question">Can I use a friend's PayPal account or credit card to purchase Videocache?</h5>
                         <div class="answer">
                           <p>No.</p>
                         </div>
@@ -778,7 +818,7 @@ max_tracefile_backups = 1</p>
                       <li>
                         <h5 class="question">Python-iniparse is not installed on my system. How do I install python-iniparse?</h5>
                         <div class="answer">
-                          <p>For all Unix/Linux systems, download python-iniparse from <a href="http://code.google.com/p/iniparse/">iniparse website</a>. Untar the package. Go to iniparse-x.x.x directory and use this command to install it.</p>
+                          <p>For all Unix/Linux systems, download python-iniparse from <a rel="nofollow" href="http://code.google.com/p/iniparse/">iniparse website</a>. Untar the package. Go to iniparse-x.x.x directory and use this command to install it.</p>
                           <div class='code'>
                             <p>[root@localhost iniparse-x.x.x]# python setup.py install</p>
                           </div>
@@ -1360,7 +1400,7 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                       <li>Setup file configured to make the transition for caching directories.</li>
                       <li>Corrected spec file. Uninstalling rpm will not delete cached files.</li>
                       <li>Added critical lines missing from INSTALL/Readme/Manpage.</li>
-                      <li>Manpage generation using <a href="http://txt2tags.org/">Text2Tags</a>.</li>
+                      <li>Manpage generation using <a rel="nofollow" href="http://txt2tags.org/">Text2Tags</a>.</li>
                       <li>Manpage will be delivered uncompressed.</li>
                     </ul>
                   </div>
@@ -1507,4 +1547,6 @@ In case of any bugs or problems, check http://cachevideos.com/ .
     </div><!--end .container-->
   </div>
   </body>
+  <script src="https://sbassets.s3.amazonaws.com/widget/script.js" type="text/javascript"></script>
+  <script type="text/javascript" src='<?php print base_path(). path_to_theme(); ?>/js/supportbee.js'></script>
 </html>
