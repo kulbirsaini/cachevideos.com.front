@@ -103,32 +103,43 @@
                   <h3><strong>Supported Websites</strong></h3>
                   <p>Videocache supports the caching of videos served dynamically from the following websites</p>
                   <ol>
-                    <li><strong>Youtube</strong> Videos - Youtube.com.</li>
-                    <li><strong>Facebook</strong> Videos - facebook.com.</li>
-                    <li><strong>MySpace</strong> Videos - myspace.com.</li>
-                    <li><strong>AOL</strong> Videos - aol.com.</li>
-                    <li><strong>Metacafe</strong> Videos - Metacafe.com</li>
-                    <li><strong>DailyMotion</strong> Videos - Dailymotion.com</li>
-                    <li><strong>Vimeo HD</strong> Videos - Vimeo.com</li>
-                    <li><strong>Bing &amp; MSN</strong> Videos - Video.bing.com</li>
-                    <li><strong>Blip TV</strong> Videos - Blip.tv</li>
-                    <li><strong>Break</strong> Videos - Break.com</li>
-                    <li><strong>Red Tube</strong> Videos - Redtube dot com</li>
-                    <li><strong>X Tube</strong> Videos - Xtube dot com</li>
-                    <li><strong>You P0rn</strong> Videos - Youporn dot com</li>
-                    <li><strong>Tube 8</strong> Videos - Tube8 dot com</li>
-                    <li><strong>Wrzuta</strong> Audio &amp; Videos - Wrzuta.pl</li>
+                    <li><strong>Youtube</strong> - youtube.com.</li>
+                    <li><strong>AOL</strong> - aol.com.</li>
+                    <li><strong>Bing &amp; MSN</strong> - Video.bing.com</li>
+                    <li><strong>Blip TV</strong> - blip.tv</li>
+                    <li><strong>Break</strong> - break.com</li>
+                    <li><strong>CNN</strong> - cnn.com</li>
+                    <li><strong>Dailymotion</strong> - dailymotion.com</li>
+                    <li><strong>Facebook</strong> - facebook.com</li>
+                    <li><strong>Metacafe</strong> - metacafe.com</li>
+                    <li><strong>MySpace</strong> - myspace.com</li>
+                    <li><strong>Vimeo</strong> - vimeo.com</li>
+                    <li><strong>Weather</strong> - weather.com</li>
+                    <li><strong>Wrzuta</strong> - wrzuta.pl</li>
+                    <li><strong>Youku</strong> - youku.com</li>
                   </ol>
                 </div>
 
                 <div class="half last">
-                  <h3><strong>Supported Operating Systems</strong></h3>
-                  <p>Videocache currently works on almost every Linux/Unix based Operating System like <strong>Fedora, CentOS, Red Hat, RHEL, OpenSuSE, Mandriva, Ubuntu, Debian, Gentoo, FreeBSD, NetBSD, Slackware</strong>.</p>
-                  <p>Videocache may work on <strong>Mac OSX</strong><sup>*</sup> and <strong>Microsoft Windows</strong><sup>*</sup> (with Cygwin).</p>
+                  <h3><strong>Supported pr0n Websites</strong></h3>
+                  <ol>
+                    <li><strong>Extreme Tube</strong> - extremetube dot com</li>
+                    <li><strong>Hard S3x Tube</strong> - hardsextube dot com</li>
+                    <li><strong>Keez Movies</strong> - keezmovies dot com</li>
+                    <li><strong>P0rn Hub</strong> - pornhub dot com</li>
+                    <li><strong>Red Tube</strong> - redtube dot com</li>
+                    <li><strong>S1ut Load</strong> - slutload dot com</li>
+                    <li><strong>Spank Wire</strong> - spankwire dot com</li>
+                    <li><strong>Tube 8</strong> - tube8 dot com</li>
+                    <li><strong>X hamster</strong> - xhamster dot com</li>
+                    <li><strong>X Tube</strong> - xtube dot com</li>
+                    <li><strong>X Videos</strong> - xvideos dot com</li>
+                    <li><strong>You P0rn</strong> - youporn dot com</li>
+                  </ol>
                   <div class="clear top-15"></div>
 
-                  <h3><strong>Supported Video Formats</strong></h3>
-                  <p>Videocache currently supports caching of following audio/video formats from the websites specified above: flv, 3gp, mp3, wmv, mp4, rm, ram, mov, avi, m4v</p>
+                  <h3><strong>Supported Operating Systems</strong></h3>
+                  <p>Videocache currently works on almost all Linux/Unix based Operating Systems.</p>
                   <div class="clear"></div>
                 </div>
                 <div class="clear"></div>
