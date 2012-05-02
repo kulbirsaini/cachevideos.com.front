@@ -105,7 +105,7 @@ ul.install-tabs, ul.option-tabs, ul.version-tabs, ul.list-menu { margin: 0; }
 .install-tabs li { float: left; cursor: pointer; font-family: georgia, times, serif; color: #999;;font-size:1.6em;line-height:1;font-weight:bold;margin: 0 0 .2em 0; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 10px; border:1px solid;border-color:#999;}
 .install-tabs li.active, .option-tabs li.active, .version-tabs li.active {color: #000; }
 .option-tabs li, .version-tabs li { float: left; margin: 7px 6px 0px 0px; cursor: pointer; font-family: georgia, times, serif; color: #4488AA;;font-size:120%;line-height:1;font-weight:bold; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding: 3px; border:1px solid;border-color:#999;}
-.versions li { list-style-type: square; }
+.versions li, .options li { list-style-type: square; }
 
 /* FAQs */
 h5.question { margin-top: 15px; }

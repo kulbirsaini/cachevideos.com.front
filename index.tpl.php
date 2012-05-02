@@ -14,9 +14,9 @@
         });
       });
     </script>
-    <!--link rel="stylesheet" href="./css/base.css?" type="text/css" media="screen, projection" /-->
-    <!--script type="text/javascript" src='./js/script.js'></script-->
-    <!--script type="text/javascript">
+    <!--link rel="stylesheet" href="./css/base.css?" type="text/css" media="screen, projection" />
+    <script type="text/javascript" src='./js/script.js'></script>
+    <script type="text/javascript">
       $script(['./js/jquery.js', './js/videocache.js'], function() { $(document).ready(function(){ jQueryMain(); }); });
     </script-->
 
@@ -50,7 +50,6 @@
               <li class="floating-navi navi"><h2 class="vc-update"><a class="menu-item" href="#vc-update">Update Script</a></h2></li>
               <li class="floating-navi navi"><h2 class="vc-scheduler"><a class="menu-item" href="#vc-scheduler">Scheduler Script</a></h2></li>
               <li class="floating-navi navi"><h2 class="restart"><a class="menu-item" href="#restart">Restart</a></h2></li>
-              <li class="floating-navi navi"><h2 class="vc-cleaner"><a class="menu-item" href="#vc-cleaner">Cleaner Script</a></h2></li>
               <li class="floating-navi navi"><h2 class="upgrade"><a class="menu-item" href="#upgrade">Upgrade</a></h2></li>
               <li class="floating-navi navi"><h2 class="changelog"><a class="menu-item" href="#changelog">Change Log</a></h2></li>
               <li class="floating-navi navi"><h2 class="upgrade-policy"><a class="menu-item" href="#upgrade-policy">Upgrade Policy</a></h2></li>
@@ -150,7 +149,7 @@
             <li id="pricing" class="page">
               <div class="page-content">
                 <h2>Videocache Commercial License Pricing</h2>
-                <p>Latest version of Videocache is <strong>1.9.9</strong>. With Videocache Bundle, you get free support via <a href="/forum">Support Forums</a>. We will email you the software bundle within 24 hours of the purchase. Videocache bundle comes with a shell script (<strong>install.sh</strong>) which can be used to install Videocache in a hassle free manner.</p>
+                <p>Latest version of Videocache is <strong>2.0.0</strong>. With Videocache Bundle, you get free support via <a href="/forum">Support Forums</a>. We will email you the software bundle within 24 hours of the purchase. Videocache bundle comes with a shell script (<strong>install.sh</strong>) which can be used to install Videocache in a hassle free manner.</p>
                 <div class="clear top-15"></div>
 
                 <div>
@@ -287,8 +286,6 @@
                   <li class="max_video_size" onclick="skip_to_section('configure', 'max_video_size');">max_video_size</li>
                   <li class="min_video_size" onclick="skip_to_section('configure', 'min_video_size');">min_video_size</li>
                   <li class="disk_avail_threshold" onclick="skip_to_section('configure', 'disk_avail_threshold');">disk_avail_threshold</li>
-                  <li class="enable_videocache_cleaner" onclick="skip_to_section('configure', 'enable_videocache_cleaner');">enable_videocache_cleaner</li>
-                  <li class="video_lifetime" onclick="skip_to_section('configure', 'video_lifetime');">video_lifetime</li>
                   <li class="logformat" onclick="skip_to_section('configure', 'logformat');">logformat</li>
                   <li class="timeformat" onclick="skip_to_section('configure', 'timeformat');">timeformat</li>
                   <li class="logdir" onclick="skip_to_section('configure', 'logdir');">logdir</li>
@@ -297,7 +294,17 @@
                   <li class="rpc_host" onclick="skip_to_section('configure', 'rpc_host');">rpc_host</li>
                   <li class="rpc_port" onclick="skip_to_section('configure', 'rpc_port');">rpc_port</li>
                   <li class="max_logfile_backups" onclick="skip_to_section('configure', 'max_logfile_backups');">max_logfile_backups</li>
+                  <li class="disk_cleanup_strategy" onclick="skip_to_section('configure', 'disk_cleanup_strategy');">disk_cleanup_strategy</li>
+                  <li class="base_dir_selection" onclick="skip_to_section('configure', 'base_dir_selection');">base_dir_selection</li>
+                  <li class="this_proxy" onclick="skip_to_section('configure', 'this_proxy');">this_proxy</li>
+                  <li class="enable_store_log_monitoring" onclick="skip_to_section('configure', 'enable_store_log_monitoring');">enable_store_log_monitoring</li>
+                  <li class="squid_store_log" onclick="skip_to_section('configure', 'squid_store_log');">squid_store_log</li>
+                  <li class="force_video_size" onclick="skip_to_section('configure', 'force_video_size');">force_video_size</li>
                   <li class="enable_youtube_cache" onclick="skip_to_section('configure', 'enable_youtube_cache');">enable_youtube_cache</li>
+                  <li class="enable_youtube_format_support" onclick="skip_to_section('configure', 'enable_youtube_format_support');">enable_youtube_format_support</li>
+                  <li class="enable_youtube_html5_videos" onclick="skip_to_section('configure', 'enable_youtube_html5_videos');">enable_youtube_html5_videos</li>
+                  <li class="enable_youtube_3d_videos" onclick="skip_to_section('configure', 'enable_youtube_3d_videos');">enable_youtube_3d_videos</li>
+                  <li class="enable_youtube_partial_caching" onclick="skip_to_section('configure', 'enable_youtube_partial_caching');">enable_youtube_partial_caching</li>
                 </ul>
                 <div class="clear top-25"></div>
 
@@ -371,7 +378,7 @@
                   <div id="proxy" class="option">
                     <p class="warn">Use <em>proxy</em> option only when Videocache server should go through another proxy server.</p>
                     <p>Proxy to be used for caching videos via HTTP.</p>
-                    <p><strong>Example</strong> : http://proxy.example.com:3128/ or http://192.0.2.25:8080/</p>
+                    <p><strong>Example</strong> : proxy.example.com:3128 or 192.0.2.25:8080</p>
                     <p>Default value:</p>
                     <div class='code'>
                       <p>proxy = &lt;blank&gt;</p>
@@ -426,23 +433,6 @@
                     <p>Default value:</p>
                     <div class='code'>
                       <p>disk_avail_threshold = 1000</p>
-                    </div>
-                  </div>
-
-                  <div id="enable_videocache_cleaner" class="option">
-                    <p>Enables the videocache cleaner script which will remove videos from cache which have not been used since long. The value of this option can be 0 or 1.</p>
-                    <p>Default value:</p>
-                    <div class='code'>
-                      <p>enable_videocache_cleaner = 1</p>
-                    </div>
-                  </div>
-
-                  <div id="video_lifetime" class="option">
-                    <p>The maximum life of a video in cache without being used. If the video was not accessed for more than <em>video_lifetime</em> days, it'll be removed from the cache. The unit of <em>video_lifetime</em> is days.</p>
-                    <p><strong>Example</strong> : <em>video_lifetime</em> = 15 will remove videos which were not used since last 15 or more days.</p>
-                    <p>Default value:</p>
-                    <div class='code'>
-                      <p>video_lifetime = 30</p>
                     </div>
                   </div>
 
@@ -541,6 +531,71 @@ max_tracefile_backups = 1</p>
                     </div>
                   </div>
 
+                  <div id="disk_cleanup_strategy" class="option">
+                    <p>When all the cache directories are full, Videocache will start removing old videos to make space for the new ones. We can define Videocache’s strategy to remove old videos using this option.</p>
+                    <p>Available strategies:
+                      <ul>
+                        <li>1 : Delete least recently used videos (preserves videos with most hits)</li>
+                        <li>2 : Delete videos which are larger in size. (frees maximum disk space)</li>
+                      </ul>
+                    </p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p> disk_cleanup_strategy= 1</p>
+                    </div>
+                  </div>
+
+                  <div id="base_dir_selection" class="option">
+                    <p>This option can be used to specify the algorithm which Videocache will use to select a cache directory to store the videos when more than one cache directories are used. Please select one of the values as described below.</p>
+                    <p>Available algorithms:
+                      <ul>
+                        <li>1 : Sequential - Fill the first cache dir, then second and so on.</li>
+                        <li>2 : Round Robin - Round robin among cache directories to save videos.</li>
+                        <li>3 : Disk Space - Save videos to a directory with max free space at that time.</li>
+                      </ul>
+                    </p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p>base_dir_selection = 2</p>
+                    </div>
+                  </div>
+
+                  <div id="this_proxy" class="option">
+                    <p class="warn">Not necessary to specify this option if you are not using <a class="menu-item" href="#configure#enable_store_log_monitoring">enable_store_log_monitoring</a> option.</p>
+                    <p>The proxy server setup on the machine where Videocache is being installed. This proxy server is used to transfer temporarily cached videos in Squid's cache directory to Videocache's cache directory.</p>
+                    <p><strong>Example</strong> : proxy.example.com:3128 or 192.0.2.25:8080</p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p> this_proxy = &lt;blank&gt;</p>
+                    </div>
+                  </div>
+
+                  <div id="enable_store_log_monitoring" class="option">
+                    <p class="warn">Please don’t forget to configure Squid to enable store.log using cache_store_log directive in Squid configuration file.</p>
+                    <p>This option enables the monitoring of Squid's cache store log (store.log). Videocache will try to cache the videos permanently at a different location without using any upstream bandwidth. Enable this option to optimize videocache. This option’s value can be either 0 or 1.</p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p> enable_store_log_monitoring = 1</p>
+                    </div>
+                  </div>
+
+                  <div id="squid_store_log" class="option">
+                    <p class="warn">Please make sure that you enable Squid's store log to optimize the caching capabilities of videocache. Note that videocache will use this file in read-only mode.</p>
+                    <p>Full path to Squid's store.log determined by cache_store_log directive in Squid configuration file (squid.conf). </p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p>squid_store_log = &lt;blank&gt;</p>
+                    </div>
+                  </div>
+
+                  <div id="force_video_size" class="option">
+                    <p>This option forces the max_video_size and min_video_size options strictly. If enabled and we try to cache a video for which Content-Length HTTP header is not provided by the web server, then videocache will not cache it. Set to 0 to disable it.</p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p> force_video_size = 1</p>
+                    </div>
+                  </div>
+
                   <div id="rpc_host" class="option">
                     <p>XMLRPC server is used for memory sharing across different instances of videocache. Leave these settings as it is if you don't have a fair idea of XMLRPC. This will be 127.0.0.1 in most cases.</p>
                     <p>Default value:</p>
@@ -562,6 +617,46 @@ max_tracefile_backups = 1</p>
                     <p>Default value:</p>
                     <div class='code'>
                       <p>enable_youtube_cache = 1</p>
+                    </div>
+                  </div>
+
+                  <div id="enable_youtube_format_support" class="option">
+                    <p>This options determines if Videocache will cache different YouTube video formats separately. Please select an appropriate algorithm from the listed below.</p>
+                    <p>Available strategies:
+                      <ul>
+                        <li>1 : (disabled) Don't check for YouTube video formats. Cache one of the formats and serve it for requests for all kinds of formats.</li>
+                        <li>2 : (strict) Strictly check for YouTube formats and cache all formats separately. Consumes maximum bandwidth.</li>
+                        <li>3 : (approximate) Check YouTube formats but with approximation. For example, if a client asked for a video in 480p format and we already have 360p format of the same video in cache, then serve 360p format and vice-versa.</li>
+                      </ul>
+                    </p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p>enable_youtube_format_support = 1</p>
+                    </div>
+                  </div>
+
+                  <div id="enable_youtube_html5_videos" class="option">
+                    <p>This option enables the caching of HTML5 videos from YouTube. This option's value can be 0 or 1.</p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p>enable_youtube_html5_videos = 1</p>
+                    </div>
+                  </div>
+
+                  <div id="enable_youtube_3d_videos" class="option">
+                    <p>This option enables the caching of 3D videos from YouTube. This option's value can either be 0 or 1.</p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p>enable_youtube_3d_videos = 1</p>
+                    </div>
+                  </div>
+
+                  <div id="enable_youtube_partial_caching" class="option">
+                    <p class="warn">This option works only when <a href="#configure#enable_store_log_monitoring" class="menu-item">enable_store_log_monitoring</a> option is enabled. This option's value can either be 0 or 1.</p>
+                    <p>This option enables the caching of several video segments used by YouTube to serve a single video.</p>
+                    <p>Default value:</p>
+                    <div class='code'>
+                      <p>enable_youtube_partial_caching = 1</p>
                     </div>
                   </div>
                 </div>
@@ -921,26 +1016,6 @@ max_tracefile_backups = 1</p>
               </div>
             </li>
 
-            <li id="vc-cleaner" class="page">
-              <div class="page-content">
-                <h2>Videocache Cleaner Script</h2>
-                <p><strong>Videocache Cleaner (<em>vc-cleaner</em>)</strong> script was first introduced in version 1.9. This script helps you to remove stale videos from the cache directories. This script uses two options <a class="menu-item" href="#configure#enable_videocache_cleaner">enable_videocache_cleaner</a> and <a class="menu-item" href="#configure#video_lifetime">video_lifetime</a> from the <em>/etc/videocache.conf</em> file. So, if the value of <em>video_lifetime</em> is 30, then all the videos which were not used since last 30 days will be purged from the cache. Please note that log messages generated by this script are logged in <em>cleaner.log</em> logfile.</p>
-                <p class="info">The <em>/usr/sbin/</em> should be in $PATH otherwise the commands below will not work.</p>
-                <div class="clear top-15"></div>
-
-                <h4><strong>Usage</strong></h4>
-                <p>To use this script, set the appropriate value of <em>video_lifetime</em> and then run the following command</p>
-                <div class='code'>
-                  <p>[root@localhost ~]# vc-cleaner</p>
-                </div>
-                <p>For a list of available options with <em>vc-cleaner</em> command, use option -h as shown below.</p>
-                <div class='code'>
-                  <p>[root@localhost ~]# vc-cleaner -h</p>
-                </div>
-                <div class="clear top-15"></div>
-              </div>
-            </li>
-
             <li id="vc-scheduler" class="page">
               <div class="page-content">
                 <h2>Videocache Scheduler</h2>
@@ -1015,6 +1090,13 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                 <div class='code'>
                   <p>[root@localhost ~]# vc-update -h</p>
                 </div>
+              </div>
+            </li>
+
+            <li id="vc-cleaner" class="page">
+              <div class="page-content">
+                <h2>Videocache Cleaner</h2>
+                <p>Videocache cleaner has been removed in version 2.0.0. Now, Videocache automatically takes care of cleaning up old videos whenever required.</p>
               </div>
             </li>
 
@@ -1175,6 +1257,7 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                 <br class="clear" />
 
                 <ul class="version-tabs tabs changelog">
+                  <li class="version_200" onclick="skip_to_section('changelog', 'version_200');">2.0.0</li>
                   <li class="version_199" onclick="skip_to_section('changelog', 'version_199');">1.9.9</li>
                   <li class="version_198" onclick="skip_to_section('changelog', 'version_198');">1.9.8</li>
                   <li class="version_197" onclick="skip_to_section('changelog', 'version_197');">1.9.7</li>
@@ -1208,6 +1291,51 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                 <br class="clear" />
 
                 <div class='versions changelog tab-content'>
+                  <div id="version_200" class="version">
+                    <ul>
+                      <li>Removed double downloading issue while caching videos.</li>
+                      <li>Added caching support for 11 fresh websites.</li>
+                      <li>Fixed caching for Dailymotion, AOL, Wrzuta, Extremetube, Hardsextube, Keezmovies, Pornhub, Spankwire, Xhamster and Xtube etc.</li>
+                      <li>New features and changes for YouTube videos
+                        <ul>
+                          <li>New optimized caching mechanism</li>
+                          <li>Added format support</li>
+                          <li>Added support for HTML5 and 3D videos</li>
+                          <li>Added support for caching partial videos</li>
+                          <li>format approximation to save more bandwidth</li>
+                          <li>No hard links within video IDs</li>
+                        </ul>
+                      </li>
+                      <li>Improved queueing system for videos.</li>
+                      <li>Removed videocache cleaner. No need to cron jobs to cleanup videos. They'll be cleaned automatically whenever needed.</li>
+                      <li>Removed man page and added new, complete and detailed user manual in HTML and PDF.</li>
+                      <li>Added feature to select random browser user agents for caching videos.</li>
+                      <li>Option to force size of videos while caching.</li>
+                      <li>Proxy is specified using only host and port.</li>
+                      <li>Fixed video id ascii encoding issue.</li>
+                      <li>Removed Options:
+                        <ul>
+                          <li>enable_videocache_cleaner</li>
+                          <li>video_lifetime</li>
+                        </ul>
+                      </li>
+                      <li>Added Options:
+                        <ul>
+                          <li><a class="menu-item" href="#configure#disk_cleanup_strategy">disk_cleanup_strategy</a></li>
+                          <li><a class="menu-item" href="#configure#base_dir_selection">base_dir_selection</a></li>
+                          <li><a class="menu-item" href="#configure#enable_store_log_monitoring">enable_store_log_monitoring</a></li>
+                          <li><a class="menu-item" href="#configure#squid_store_log">squid_store_log</a></li>
+                          <li><a class="menu-item" href="#configure#this_proxy">this_proxy</a></li>
+                          <li><a class="menu-item" href="#configure#force_video_size">force_video_size</a></li>
+                          <li><a class="menu-item" href="#configure#enable_youtube_format_support">enable_youtube_format_support</a></li>
+                          <li><a class="menu-item" href="#configure#enable_youtube_html5_videos">enable_youtube_html5_videos</a></li>
+                          <li><a class="menu-item" href="#configure#enable_youtube_3d_videos">enable_youtube_3d_videos</a></li>
+                          <li><a class="menu-item" href="#configure#enable_youtube_partial_caching">enable_youtube_partial_caching</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+
                   <div id="version_199" class="version">
                     <ul>
                       <li>Support for Facebook, AOL, MySpace videos.</li>
