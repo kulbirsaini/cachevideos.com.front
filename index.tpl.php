@@ -10,7 +10,10 @@
       $script(['<?php print base_path(). path_to_theme(); ?>/js/jquery.js', '<?php print base_path(). path_to_theme(); ?>/js/videocache.js'], function() {
         $(document).ready(function(){
           jQueryMain();
-          $('a[href*="contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
+          $('a[href^="contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
+          $('a[href^="/contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
+          $('a[href$="contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
+          $('a[href$="contact/"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
         });
       });
     </script>
@@ -1319,7 +1322,7 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                       </li>
                       <li>Improved queueing system for videos.</li>
                       <li>Removed videocache cleaner. No need to cron jobs to cleanup videos. They'll be cleaned automatically whenever needed.</li>
-                      <li>Removed man page and added new, complete and detailed user manual in HTML and PDF.</li>
+                      <li>Removed man page and added new, complete and detailed user manual in <a href="/Manual.html">HTML</a> and <a href="/Manual.pdf">PDF</a>.</li>
                       <li>Added feature to select random browser user agents for caching videos.</li>
                       <li>Option to force size of videos while caching.</li>
                       <li>Proxy is specified using only host and port.</li>
