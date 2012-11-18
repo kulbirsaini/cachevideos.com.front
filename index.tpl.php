@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Cache Videos Using Squid | Videocache</title>
+    <title>Cache Videos | Cache Youtube Videos | Squid with Videocache</title>
+    <meta name="keywords" content="videocache, cache videos, cache youtube videos, youtube cache, cache videos with squid, squid with videocache, dailymotion cache, cache vimeo" />
     <meta name="description" content="Videocache is a Squid URL rewriter plugin written in Python for bandwidth optimization while browsing famous video sharing portals/websites like Youtube, Metacafe etc. It helps you save bandwidth when a particular video is requested more than once from the same network/machine." />
     <link rel="stylesheet" href="<?php print base_path(). path_to_theme(); ?>/css/base.css?" type="text/css" media="screen, projection" />
     <script type="text/javascript" src='<?php print base_path(). path_to_theme(); ?>/js/script.js'></script>
@@ -10,10 +11,6 @@
       $script(['<?php print base_path(). path_to_theme(); ?>/js/jquery.js', '<?php print base_path(). path_to_theme(); ?>/js/videocache.js'], function() {
         $(document).ready(function(){
           jQueryMain();
-          $('a[href^="contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
-          $('a[href^="/contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
-          $('a[href$="contact"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
-          $('a[href$="contact/"]').each( function(){ $(this).attr('data-controls-modal', 'sb-overlay'); } );
         });
       });
     </script>
@@ -75,9 +72,10 @@
                 <p>Select number of licenses (servers)</p>
                 <select name="os0">
                   <option value="One License">One License $395.00 USD</option>
-                  <option value="Two Licenses">Two Licenses $750.00 USD</option>
-                  <option value="Three Licenses">Three Licenses $1,090.00 USD</option>
-                  <option value="Five Licenses">Five Licenses $1,680.00 USD</option>
+                  <option value="Two Licenses">Two Licenses $740.00 USD</option>
+                  <option value="Three Licenses">Three Licenses $1,040.00 USD</option>
+                  <option value="Three Licenses">Three Licenses $1,320.00 USD</option>
+                  <option value="Five Licenses">Five Licenses $1,590.00 USD</option>
                 </select><br />
                 <p>By clicking the <strong>Buy Now</strong> button, you agree that you have read and accepted our <a class="menu-item" href="#terms">Terms &amp; Conditions</a> and <a class="menu-item" href="#refunds-policy">Refunds Policy</a>.</p>
                 <input type="hidden" name="currency_code" value="USD">
@@ -179,9 +177,10 @@
                       <p>Select number of licenses (servers)</p>
                       <select name="os0">
                         <option value="One License">One License $395.00 USD</option>
-                        <option value="Two Licenses">Two Licenses $750.00 USD</option>
-                        <option value="Three Licenses">Three Licenses $1,090.00 USD</option>
-                        <option value="Five Licenses">Five Licenses $1,680.00 USD</option>
+                        <option value="Two Licenses">Two Licenses $740.00 USD</option>
+                        <option value="Three Licenses">Three Licenses $1,040.00 USD</option>
+                        <option value="Three Licenses">Three Licenses $1,320.00 USD</option>
+                        <option value="Five Licenses">Five Licenses $1,590.00 USD</option>
                       </select><br />
                       <p>By clicking the <strong>Buy Now</strong> button, you agree that you have read and accepted our <a class="menu-item" href="#terms">Terms &amp; Conditions</a> and <a class="menu-item" href="#refunds-policy">Refunds Policy</a>.</p>
                       <input type="hidden" name="currency_code" value="USD">
@@ -1688,7 +1687,22 @@ In case of any bugs or problems, check http://cachevideos.com/ .
       </div>
     </div><!--end .container-->
   </div>
+<!-- Google Code for Videocache Click Conversion Page -->
+<script type="text/javascript">
+var google_conversion_id = 1043985984;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "KPk_CNj24QMQwOzn8QM";
+var google_conversion_value = 0.1;
+</script>
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1043985984/?value=0.1&amp;label=KPk_CNj24QMQwOzn8QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
   </body>
-  <script src="https://sbassets.s3.amazonaws.com/widget/script.js" type="text/javascript"></script>
-  <script type="text/javascript" src='<?php print base_path(). path_to_theme(); ?>/js/supportbee.js'></script>
 </html>
