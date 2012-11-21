@@ -96,7 +96,8 @@
           <ul class="page-container">
             <li id="home" class='page'>
               <div class="page-content">
-                <h2>Cache Videos Using Squid + Videocache</h2>
+                <h2>Cache Videos (including Youtube) Using Squid + Videocache</h2>
+                <p style="color: #B00;"><strong>Latest Version :</strong> 2.1</p>
                 <p><strong>Videocache</strong> is a Squid URL rewriter plugin written in Python for <strong>bandwidth optimization</strong> while browsing famous video sharing portals/websites like <strong>Youtube</strong>, Metacafe etc. It helps you <strong>save bandwidth</strong> when a particular video is requested more than once from the same network/machine.</p>
                 <p>Squid can not cache the videos served dynamically. Videocache fits into squid to help it cache the videos as well. The cached videos are stored on your proxy server's local storage or on a storage server in your network. These cached videos can be served to your clients at a very fast speed saving your upstream bandwidth.</p>
 
@@ -161,7 +162,7 @@
             <li id="pricing" class="page">
               <div class="page-content">
                 <h2>Videocache Commercial License Pricing</h2>
-                <p>Latest version of Videocache is <strong>2.0.0</strong>. With Videocache Bundle, you get free support via <a href="/forum">Support Forums</a>. We will email you the software bundle within 24 hours of the purchase. Videocache bundle comes with a shell script (<strong>install.sh</strong>) which can be used to install Videocache in a hassle free manner.</p>
+                <p>Latest version of Videocache is <strong>2.1</strong>. With Videocache Bundle, you get free support via <a href="/forum">Support Forums</a>. We will email you the software bundle within 24 hours of the purchase. Videocache bundle comes with a shell script (<strong>install.sh</strong>) which can be used to install Videocache in a hassle free manner.</p>
                 <div class="clear top-15"></div>
 
                 <div>
@@ -1270,6 +1271,7 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                 <br class="clear" />
 
                 <ul class="version-tabs tabs changelog">
+                  <li class="version_21" onclick="skip_to_section('changelog', 'version_21');">2.1</li>
                   <li class="version_200" onclick="skip_to_section('changelog', 'version_200');">2.0.0</li>
                   <li class="version_199" onclick="skip_to_section('changelog', 'version_199');">1.9.9</li>
                   <li class="version_198" onclick="skip_to_section('changelog', 'version_198');">1.9.8</li>
@@ -1304,6 +1306,22 @@ In case of any bugs or problems, check http://cachevideos.com/ .
                 <br class="clear" />
 
                 <div class='versions changelog tab-content'>
+                  <div id="version_21" class="version">
+                    <ul>
+                      <li>Improved store log monitoring to cache videos in first request itself.</li>
+                      <li>Improved and optimized cleaner code performance.</li>
+                      <li>Filelist hash is now stored in sqlite3 database.</li>
+                      <li>More user friendly installer script.</li>
+                      <li>Optimized squid config lines to improve Squid performance.</li>
+                      <li>Added option to hide cache directories via HTTP.</li>
+                      <li>Added X-Cache HTTP header to all videos served from cache.</li>
+                      <li>Fixed bug with video size enforcement.</li>
+                      <li>Fixed caching of Youtube and hardsextube.</li>
+                      <li>Fixed bug which kept caching videos even when disk gets full.</li>
+                      <li>No store log monitoring in offline mode.</li>
+                    </ul>
+                  </div>
+
                   <div id="version_200" class="version">
                     <ul>
                       <li>Removed double downloading issue while caching videos.</li>
